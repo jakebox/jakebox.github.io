@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-03-13 Sat 13:47 -->
+<!-- 2021-03-13 Sat 21:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ch. 18-19 Exam - Circuits</title>
@@ -270,46 +270,47 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf76ef4e">1. Equations/Summaries</a></li>
-<li><a href="#org5ac95ce">2. Jamboards</a></li>
-<li><a href="#orgb03472b">3. Homework Readings</a></li>
-<li><a href="#org23fc5e4">4. Unit Topics/Objectives</a>
+<li><a href="#org4514077">1. Equations/Summaries</a></li>
+<li><a href="#orgae93a8b">2. Jamboards</a></li>
+<li><a href="#orgccfcc01">3. Homework Readings</a></li>
+<li><a href="#org51c998a">4. Unit Topics/Objectives</a>
 <ul>
-<li><a href="#orgc84438d">4.1. Theoretical</a></li>
-<li><a href="#org08659f8">4.2. Skills</a></li>
+<li><a href="#orgcc254ac">4.1. Theoretical</a></li>
+<li><a href="#orgecada91">4.2. Skills</a></li>
 </ul>
 </li>
-<li><a href="#orgc8c9e49">5. Guidelines from Portal</a></li>
-<li><a href="#org0626d83">6. Resources</a></li>
+<li><a href="#org9cde37a">5. Guidelines from Portal</a></li>
+<li><a href="#org89c6f17">6. Resources</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf76ef4e" class="outline-2">
-<h2 id="orgf76ef4e"><span class="section-number-2">1</span> Equations/Summaries</h2>
+<div id="outline-container-org4514077" class="outline-2">
+<h2 id="org4514077"><span class="section-number-2">1</span> Equations/Summaries</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <i>The general ones.</i>
 </p>
 <ul class="org-ul">
-<li>Current, \(I\), refers to <i>rate of flow</i> of electric charge
+<li><b>Current</b>, \(I\), refers to <i>rate of flow</i> of electric charge
 <ul class="org-ul">
 <li>Measured in amperes (A, amps, \(1A = 1 C/s\))</li>
+<li>Also, \(I = \frac{Q}{t}\)</li>
 </ul></li>
-<li>Resistance, \(R\), 
+<li><b>Resistance</b>, \(R\)
 <ul class="org-ul">
-<li>Measured in ohms (Ω (Greek capital omega), ohms, \(1Ω = 1V/A\))</li>
+<li>Measured in ohms (Ω  - Greek capital omega, \(1Ω = 1V/A\))</li>
 <li>For metals \(R\) is constant (disregarding temperature) and <i>independent</i> of voltage (it&rsquo;s an inherent property of the material)
 <ul class="org-ul">
 <li>Thicker wire = less resistance</li>
 </ul></li>
 </ul></li>
-<li>\(V=IR\)
+<li><b>Voltage</b>, \(V=IR\)
 <ul class="org-ul">
 <li>Voltage, aka electric potential difference (in Volts)</li>
-<li>Not potential energy (\(\Delta PE\)) but <i>potential energy per unit charge</i></li>
+<li><i>Not</i> potential energy (\(\Delta PE\)) but <i>potential energy per unit charge</i></li>
 </ul></li>
-<li>\(P=IV\)
+<li><b>Power</b>, \(P=IV\)
 <ul class="org-ul">
 <li>Power (in Watts, 1W=1 J/s)</li>
 <li>For resistors:
@@ -337,19 +338,59 @@ for the JavaScript code in this tag.
 <li>\(\frac{1}{R_{EQ}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}\)</li>
 </ul></li>
 
-<li><b>Kirchoff&rsquo;s Rules</b>
+<li><b>Kirchhoff&rsquo;s Rules</b>
+<ol class="org-ol">
+<li><span class="underline">Current Law aka Junction Rule (KCL)</span>: the <i>sum</i> of all <b>currents</b> <i>entering</i> the junction equals the sum of all currents <i>leaving</i> that junction
 <ul class="org-ul">
-<li>Junction rule: the <i>sum</i> of all <b>currents</b> <i>entering</i> the junction equals the sum of all currents <i>leaving</i> that junction</li>
-<li>Loop Rule: conservation of energy, the <i>sum</i> of the changes in <b>potential</b> in a circuit must be zero</li>
+<li>\(\Sigma i_n = 0\), or \(I_{in} = I_{out}\)</li>
+<li>Junction - where three or more wires meet</li>
 </ul></li>
-<li>Ammeter - in series</li>
-<li>Voltmeter - in parallel</li>
+<li><span class="underline">Voltage Law aka Loop Rule (KVL)</span>: conservation of energy, the <i>sum</i> of the changes in <b>potential</b> in a circuit must be zero
+<ul class="org-ul">
+<li>\(\Sigma V_{loop} = 0\)</li>
+<li>Battery (or any EMF - &epsilon;) in the loop:</li>
+</ul></li>
+</ol></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border" align="center">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Loop - to +</td>
+<td class="org-left">Voltage +</td>
+</tr>
+
+<tr>
+<td class="org-left">Loop + to -</td>
+<td class="org-left">Voltage -</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>Measurement Devices
+<ul class="org-ul">
+<li>Ammeter - measures amps, wire in series</li>
+<li>Voltmeter - measures volts, wire in parallel</li>
+<li>Multimeter - does all of them</li>
+</ul></li>
+<li>Batteries
+<ul class="org-ul">
+<li>In series, voltage is sum</li>
+<li>In parallel, voltage is same but increased current</li>
+<li>Useful <a href="https://www.minderresearch.com/wp-content/uploads/2020/09/Series-VS-Parallel-Battery-Connections1.jpg">graphic</a></li>
+</ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5ac95ce" class="outline-2">
-<h2 id="org5ac95ce"><span class="section-number-2">2</span> Jamboards</h2>
+<div id="outline-container-orgae93a8b" class="outline-2">
+<h2 id="orgae93a8b"><span class="section-number-2">2</span> Jamboards</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Chapter 18/19 Part 1 HW (misc. circuit, electricity, resistors)
@@ -360,7 +401,7 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 <li>No Jamboard</li>
 </ul></li>
-<li>Chapter 19 Part 3 HW (Kirchoff)
+<li>Chapter 19 Part 3 HW (Kirchhoff)
 <ul class="org-ul">
 <li><a href="https://jamboard.google.com/d/1N1QzYYfBVMXbmLuvquqp_ZRUAoZaUaVUL81W4IMWlOI/">https://jamboard.google.com/d/1N1QzYYfBVMXbmLuvquqp_ZRUAoZaUaVUL81W4IMWlOI/</a></li>
 </ul></li>
@@ -368,8 +409,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgb03472b" class="outline-2">
-<h2 id="orgb03472b"><span class="section-number-2">3</span> Homework Readings</h2>
+<div id="outline-container-orgccfcc01" class="outline-2">
+<h2 id="orgccfcc01"><span class="section-number-2">3</span> Homework Readings</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><b>Chapter 18 Part 2 and Chapter 19 Part 1 (3/1/2021)</b>
@@ -396,7 +437,7 @@ for the JavaScript code in this tag.
 </ul></li>
 <li><b>Chapter 19 Part 3 (3/9/2021)</b>
 <ul class="org-ul">
-<li><i>On: Kirchoff&rsquo;s Rules, Charging Battery</i></li>
+<li>On: <i>Kirchhoff&rsquo;s Rules, Charging Battery</i></li>
 <li>Pages:
 <ul class="org-ul">
 <li>532-537</li>
@@ -406,19 +447,19 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org23fc5e4" class="outline-2">
-<h2 id="org23fc5e4"><span class="section-number-2">4</span> Unit Topics/Objectives</h2>
+<div id="outline-container-org51c998a" class="outline-2">
+<h2 id="org51c998a"><span class="section-number-2">4</span> Unit Topics/Objectives</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Very basic ones have omitted deleted to keep list shorter.
 </p>
 </div>
-<div id="outline-container-orgc84438d" class="outline-3">
-<h3 id="orgc84438d"><span class="section-number-3">4.1</span> Theoretical</h3>
+<div id="outline-container-orgcc254ac" class="outline-3">
+<h3 id="orgcc254ac"><span class="section-number-3">4.1</span> Theoretical</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-org13db992" class="outline-4">
-<h4 id="org13db992"><span class="section-number-4">4.1.1</span> Lesser Difficulty</h4>
+<div id="outline-container-org1d045fe" class="outline-4">
+<h4 id="org1d045fe"><span class="section-number-4">4.1.1</span> Lesser Difficulty</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>Understand that all charges move simultaneously in a closed circuit.
@@ -441,7 +482,7 @@ Very basic ones have omitted deleted to keep list shorter.
 </ul></li>
 <li>Understand the charges that flow in circuits are electrons and they flow opposite to the direction of conventional flow.</li>
 </ul>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border" align="center">
 
 
 <colgroup>
@@ -461,10 +502,16 @@ Very basic ones have omitted deleted to keep list shorter.
 </tr>
 </tbody>
 </table>
+<ul class="org-ul">
+<li>Understand how ammeters and voltmeters must be connected in a circuit.
+<ul class="org-ul">
+<li>Ammeter - series, voltmeter parallel</li>
+</ul></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org9a6db29" class="outline-4">
-<h4 id="org9a6db29"><span class="section-number-4">4.1.2</span> Higher Difficulty</h4>
+<div id="outline-container-org756fefc" class="outline-4">
+<h4 id="org756fefc"><span class="section-number-4">4.1.2</span> Higher Difficulty</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <ul class="org-ul">
 <li>Be able to determine the conducting path of a light bulb.</li>
@@ -485,20 +532,17 @@ Very basic ones have omitted deleted to keep list shorter.
 <ul class="org-ul">
 <li>Think: rollercoaster analogy, high points and low points. Or waterfall analogy.</li>
 </ul></li>
-<li>Understand how ammeters and voltmeters must be connected in a circuit.
-<ul class="org-ul">
-<li>Ammeter - series, voltmeter parallel</li>
-</ul></li>
+<li>Understand the difference between AC and DC and know which way circuits are constructed in our homes. <i>(Jake note - I think he forgot to cross this out but idk)</i></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org08659f8" class="outline-3">
-<h3 id="org08659f8"><span class="section-number-3">4.2</span> Skills</h3>
+<div id="outline-container-orgecada91" class="outline-3">
+<h3 id="orgecada91"><span class="section-number-3">4.2</span> Skills</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-org80ee25a" class="outline-4">
-<h4 id="org80ee25a"><span class="section-number-4">4.2.1</span> Lesser Difficulty</h4>
+<div id="outline-container-org4f2d3a1" class="outline-4">
+<h4 id="org4f2d3a1"><span class="section-number-4">4.2.1</span> Lesser Difficulty</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <ul class="org-ul">
 <li>Draw the schematic diagram for a circuit which consists of a battery, bulb, and a capacitor.</li>
@@ -507,14 +551,13 @@ Very basic ones have omitted deleted to keep list shorter.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb7ef790" class="outline-4">
-<h4 id="orgb7ef790"><span class="section-number-4">4.2.2</span> Higher Difficulty</h4>
+<div id="outline-container-org032aaa4" class="outline-4">
+<h4 id="org032aaa4"><span class="section-number-4">4.2.2</span> Higher Difficulty</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <ul class="org-ul">
 <li>Know how to find equivalent resistance of resistors in series and in parallel</li>
 <li>Understand how to simplify circuits and find current through and voltage across resistors.</li>
 <li>Understand how to use Kirchoff’s rules to find current through and voltage across resistors.</li>
-<li>Understand the difference between AC and DC and know which way circuits are constructed in our homes. <i>(Jake note - I think he forgot to cross this out but idk)</i></li>
 </ul>
 </div>
 </div>
@@ -522,9 +565,12 @@ Very basic ones have omitted deleted to keep list shorter.
 </div>
 
 
-<div id="outline-container-orgc8c9e49" class="outline-2">
-<h2 id="orgc8c9e49"><span class="section-number-2">5</span> Guidelines from Portal</h2>
+<div id="outline-container-org9cde37a" class="outline-2">
+<h2 id="org9cde37a"><span class="section-number-2">5</span> Guidelines from Portal</h2>
 <div class="outline-text-2" id="text-5">
+<p>
+These have also been slimmed down slightly.
+</p>
 <ul class="org-ul">
 <li>Quiz covers Ch 18-19 but some on the info build on foundational topics from ch 16-17</li>
 <li>30mins long (solve, upload photo, record), + 10 to upload on Portal</li>
@@ -548,13 +594,13 @@ Here are some help ways to prepare for taking the quiz:
 </div>
 </div>
 
-<div id="outline-container-org0626d83" class="outline-2">
-<h2 id="org0626d83"><span class="section-number-2">6</span> Resources</h2>
+<div id="outline-container-org89c6f17" class="outline-2">
+<h2 id="org89c6f17"><span class="section-number-2">6</span> Resources</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="https://www.khanacademy.org/science/physics/circuits-topic">Khan Academy</a>
 <ul class="org-ul">
-<li>Basically everything we&rsquo;ve covered - resistors in series and parallel, circuit with two batteries, both of Kirchoff&rsquo;s laws, etc</li>
+<li>Basically everything we&rsquo;ve covered - resistors in series and parallel, circuit with two batteries, both of Kirchhoff&rsquo;s laws, etc</li>
 </ul></li>
 <li>Page 519 - Chapter 18 Summary</li>
 <li>Page 549 - Chapter 19 Summary</li>
@@ -565,7 +611,7 @@ Here are some help ways to prepare for taking the quiz:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jake</p>
-<p class="date">Created: 2021-03-13 Sat 13:47</p>
+<p class="date">Created: 2021-03-13 Sat 21:02</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
