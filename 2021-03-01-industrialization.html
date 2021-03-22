@@ -1,0 +1,1564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-22 Mon 18:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Industrialization and Urbanization Unit</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jake Boxerman" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Industrialization and Urbanization Unit</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf37b18c">1. Study Prep</a>
+<ul>
+<li><a href="#org1650ce0">1.1. Links</a></li>
+<li><a href="#orgc7b7f1e">1.2. Essential Questions</a></li>
+<li><a href="#org0576aa7">1.3. Key Terms</a></li>
+<li><a href="#org13cad5f">1.4. Readings &amp; Associated &ldquo;Fun Quizzes&rdquo;</a></li>
+</ul>
+</li>
+<li><a href="#org6314790">2. The Gilded Age</a>
+<ul>
+<li><a href="#org4b66710">2.1. Pre-Gilded Age</a></li>
+<li><a href="#orgae68557">2.2. Post Gilded Age</a></li>
+</ul>
+</li>
+<li><a href="#orgdb466e5">3. Labor Unions</a>
+<ul>
+<li><a href="#orgdb76c48">3.1. Goals of Labor Unions</a></li>
+<li><a href="#org1af06ca">3.2. Early Labor Unions</a></li>
+<li><a href="#orgaf290c6">3.3. Tools of Labor Unions</a>
+<ul>
+<li><a href="#org9b366f8">3.3.1. Collective Bargaining</a></li>
+<li><a href="#orge56f5a0">3.3.2. Strikes</a></li>
+<li><a href="#orgc02d868">3.3.3. Boycotts</a></li>
+<li><a href="#org9df4230">3.3.4. Demonstrations - work stoppages</a></li>
+</ul>
+</li>
+<li><a href="#orgaa5f789">3.4. Major Labor Strikes</a>
+<ul>
+<li><a href="#orgc03020c">3.4.1. Great Railway Strike of 1877</a></li>
+<li><a href="#orgfdddd82">3.4.2. Haymarket Bombing</a></li>
+<li><a href="#org3a6c6f5">3.4.3. Homestead Strike</a></li>
+<li><a href="#orgc6da751">3.4.4. Pullman Strike</a></li>
+<li><a href="#orgd817a6b">3.4.5. Problems With Strikes</a></li>
+</ul>
+</li>
+<li><a href="#org2ff8ed7">3.5. General Union Notes</a>
+<ul>
+<li><a href="#orgf0b84a7">3.5.1. Unions vs Top 1%</a></li>
+</ul>
+</li>
+<li><a href="#orgcb6c56c">3.6. National Labor Relations Act</a>
+<ul>
+<li><a href="#org896e6ee">3.6.1. Changes</a></li>
+<li><a href="#orgdb5ff38">3.6.2. Right to Work States</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org562bde7">4. Populism</a>
+<ul>
+<li><a href="#orgfc92cc3">4.1. Omaha Platform</a>
+<ul>
+<li><a href="#orgada69e2">4.1.1. Sub-treasuries</a></li>
+</ul>
+</li>
+<li><a href="#org934a66d">4.2. Farmers Discontent in the 1890s</a>
+<ul>
+<li><a href="#orgac5c48f">4.2.1. Natural Debtors</a></li>
+</ul>
+</li>
+<li><a href="#orgb109d8e">4.3. Metals</a>
+<ul>
+<li><a href="#orgc07e1e0">4.3.1. Goldbugs</a></li>
+<li><a href="#org3b54c18">4.3.2. Silverites (bimetallism)</a></li>
+</ul>
+</li>
+<li><a href="#org1d0cab2">4.4. Election of 1896</a></li>
+<li><a href="#orgd9e62aa">4.5. Populists of 1890s vs Populists Today</a>
+<ul>
+<li><a href="#orgc312401">4.5.1. Religion</a></li>
+<li><a href="#org46d962c">4.5.2. Anti-Immigrant</a></li>
+<li><a href="#org775adec">4.5.3. Anti-Elite</a></li>
+<li><a href="#orgffd71bb">4.5.4. Agrarian Interests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge6df2fe">5. The Progressives</a>
+<ul>
+<li><a href="#org750573b">5.1. Progressive Presidents 1901-1912</a>
+<ul>
+<li><a href="#orgf005271">5.1.1. Theodore Roosevelt</a></li>
+<li><a href="#orgac0cb24">5.1.2. William Howard Taft</a></li>
+<li><a href="#orgbd717de">5.1.3. Woodrow Wilson</a></li>
+</ul>
+</li>
+<li><a href="#org72eb486">5.2. Election of 1912</a></li>
+<li><a href="#org7fee042">5.3. Wilson&rsquo;s New Freedom</a>
+<ul>
+<li><a href="#org2786a47">5.3.1. Tarrif Reform</a></li>
+<li><a href="#org29c324b">5.3.2. Trust Freedom</a></li>
+<li><a href="#orgc451e0a">5.3.3. The Bank - Federal Reserve System</a></li>
+</ul>
+</li>
+<li><a href="#orgb996579">5.4. Roosevelt&rsquo;s New Nationalism</a>
+<ul>
+<li><a href="#org7625b50">5.4.1. Progressive Accomplishments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1d7bfb2">6. World War 1</a></li>
+<li><a href="#org93560cb">7. The Great Depression</a>
+<ul>
+<li><a href="#orgf7b7957">7.1. Bank Failures</a>
+<ul>
+<li><a href="#orga1c0f7d">7.1.1. Run on the bank</a></li>
+</ul>
+</li>
+<li><a href="#org390c76f">7.2. Minorities</a>
+<ul>
+<li><a href="#org5b72dc2">7.2.1. Latinx people deported</a></li>
+<li><a href="#orge47e3c9">7.2.2. Women</a></li>
+</ul>
+</li>
+<li><a href="#orge2b6405">7.3. Housing &amp; Hoovervilles</a></li>
+<li><a href="#org657c627">7.4. Philosophies of Government Stimulation</a>
+<ul>
+<li><a href="#orge2d6a1f">7.4.1. Hoover</a></li>
+</ul>
+</li>
+<li><a href="#orgdd74110">7.5. FDR</a></li>
+<li><a href="#org1cd5e18">7.6. Keynesian Economics</a></li>
+</ul>
+</li>
+<li><a href="#orga6ef7e6">8. New Advances &amp; Industries</a>
+<ul>
+<li><a href="#orgaaed92c">8.1. Advertising</a></li>
+<li><a href="#org24fd847">8.2. Cars</a>
+<ul>
+<li><a href="#org39c30a6">8.2.1. Transformed American demographics</a></li>
+</ul>
+</li>
+<li><a href="#org86e13ff">8.3. Radio</a></li>
+<li><a href="#orgad85791">8.4. Electrificaiton</a></li>
+<li><a href="#org241dc07">8.5. Theater/Movies</a></li>
+<li><a href="#org6b60546">8.6. Fashion industry</a></li>
+</ul>
+</li>
+<li><a href="#orgad9546a">9. The New Deal</a></li>
+<li><a href="#orgadffa36">10. Democrats &amp; Republicans</a></li>
+<li><a href="#org71458dc">11. 1950s</a>
+<ul>
+<li><a href="#org2fe4fb6">11.1. Pre-50s - the setup (WWII)</a></li>
+<li><a href="#orga4e9165">11.2. Baby Boom</a></li>
+<li><a href="#orgb90614c">11.3. Great Society</a>
+<ul>
+<li><a href="#org504a4bd">11.3.1. Reforms &amp; Acts</a></li>
+<li><a href="#orgd4daa5c">11.3.2. Problems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<p>
+<b>Note:</b> Please understand that this document is not comprehensive and may be missing content discussed throughout the unit, I suggest cross-referencing with your own notes to ensure nothing is missed. The key terms have also been modified (some removed, some added).
+</p>
+
+<div id="outline-container-orgf37b18c" class="outline-2">
+<h2 id="orgf37b18c"><span class="section-number-2">1</span> Study Prep</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org1650ce0" class="outline-3">
+<h3 id="org1650ce0"><span class="section-number-3">1.1</span> Links</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><a href="https://fwparker.myschoolapp.com/ftpimages/1048/download/download_5554957.pdf">Ms. Elliot Study guide</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc7b7f1e" class="outline-3">
+<h3 id="orgc7b7f1e"><span class="section-number-3">1.2</span> Essential Questions</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>How would one define progress during the Industrial Era at the turn of the century? Who benefited from rapid industrialization and who was exploited in the process?</li>
+<li>To what extent were labor unions successful at the turn of the century? What obstacles did they face?</li>
+<li>How effective were measures to address the plight of the poor on the part of the Progressives and the Populists?</li>
+<li>What caused the Stock Market Crash and the Great Depression and what response was necessary in the recovery?</li>
+<li>To what extent was the New Deal revolutionary?</li>
+<li>Who were the winners and losers of the post WWII economic boom?</li>
+<li>In what ways does the Republican Party and the Democratic Party differ on economic policy in the period from 1950s to today?</li>
+</ol>
+
+<p>
+\newpage
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0576aa7" class="outline-3">
+<h3 id="org0576aa7"><span class="section-number-3">1.3</span> Key Terms</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Captains of Industry/Robber Barons</li>
+<li>Organized Labor - 421</li>
+<li>Industrialization</li>
+<li>Populism - 461</li>
+<li>Urbanization - 428</li>
+<li>Capitalism</li>
+<li>Socialism</li>
+<li>Strikes and Strike Breaking - 423, 424</li>
+<li>Square Deal - 506</li>
+<li>Progressives - 488, 500, Roosevelt - 505</li>
+<li>New Nationalism - 511, 513</li>
+<li>New Freedom - 515</li>
+<li>Social Darwinism
+<ul class="org-ul">
+<li><a href="https://www.khanacademy.org/humanities/us-history/the-gilded-age/gilded-age/a/social-darwinism-in-the-gilded-age">Khan Academy</a></li>
+</ul></li>
+<li>Classism</li>
+<li>Consumerism - 1920s - 551, 1950s - 686</li>
+<li>Stock Market Crash 1929 - 564</li>
+<li>Great Depression - 565</li>
+<li>New Deal - 587</li>
+<li>Great Society (LBJ) - 711</li>
+<li>Keynesian Economics</li>
+<li>Modern Republicanism - 773</li>
+<li>Reaganomics - 779</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org13cad5f" class="outline-3">
+<h3 id="org13cad5f"><span class="section-number-3">1.4</span> Readings &amp; Associated &ldquo;Fun Quizzes&rdquo;</h3>
+<div class="outline-text-3" id="text-1-4">
+<ol class="org-ol">
+<li>419-425 - <a href="https://forms.gle/wn6VkwKX5vxR3oqg7">https://forms.gle/wn6VkwKX5vxR3oqg7</a>
+<ul class="org-ul">
+<li>Post Civil War workers, immigrant workforce wages &amp; working conditions, child labor, emerging unionziation, Knights of Labor, AFL, labor strikes, general worker info</li>
+</ul></li>
+<li>460-468 - <a href="https://forms.gle/Dno5vm93TqCGT3MG6">https://forms.gle/Dno5vm93TqCGT3MG6</a>
+<ul class="org-ul">
+<li>Farmers, Populism, Panic of 1893, metals (Bryan), Election of 1896 (McKinley)</li>
+</ul></li>
+<li>505-516 - <a href="https://forms.gle/8NGnQSCzSqAroSGt8">https://forms.gle/8NGnQSCzSqAroSGt8</a>
+<ul class="org-ul">
+<li>Roosevelt presidency, Square Deal, environment, Taft, New Nationalism, Election of 1912 (Wilson), Wilson presidency</li>
+</ul></li>
+<li>551-561 - no quiz
+<ul class="org-ul">
+<li>New Culture of consumerism, radio/tv/cinema, women, social issues, Prohibition, Nativism &amp; KKK, religious fundamentalism, Republican government of Harding &amp; Coolidge, Election of 1928 (Hoover)</li>
+</ul></li>
+<li>564-574 - <a href="https://forms.gle/Kh88iY8Z3d3KzvGq7">https://forms.gle/Kh88iY8Z3d3KzvGq7</a>
+<ul class="org-ul">
+<li>Great Depression, unemployment, hard times, minorities in Great Depression, women &amp; the family in Great Depression</li>
+</ul></li>
+<li>588-598 - <a href="https://forms.gle/AgfEEz2RZcCCMMUW8">https://forms.gle/AgfEEz2RZcCCMMUW8</a>
+<ul class="org-ul">
+<li>Roosevelt, New Deal</li>
+</ul></li>
+<li>598-609 - <a href="https://forms.gle/dLuqYrfeGnGjYqjRA">https://forms.gle/dLuqYrfeGnGjYqjRA</a>
+<ul class="org-ul">
+<li>2nd New Deal, more reform &amp; relief, arguments for/against New Deal, social views on New Deal (minorities, other issues)</li>
+</ul></li>
+<li>686-696 - <a href="https://forms.gle/g4vfc1BzYjbeGAAB6">https://forms.gle/g4vfc1BzYjbeGAAB6</a>
+<ul class="org-ul">
+<li>Baby Boom, consumerism pt. 2, suburbanism, anti-society/critics (writers, beatniks), rock &amp; roll, 50s social issues (poverty despite wealth in country)</li>
+</ul></li>
+<li>773-781 - <a href="https://forms.gle/VknPVoGRNxBxb9tL7">https://forms.gle/VknPVoGRNxBxb9tL7</a>
+<ul class="org-ul">
+<li>Reagan, New Right</li>
+</ul></li>
+</ol>
+
+<p>
+\newpage
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6314790" class="outline-2">
+<h2 id="org6314790"><span class="section-number-2">2</span> The Gilded Age</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">Monday, March 01, 2021</span></span>
+</p>
+
+<p>
+<i>&ldquo;In United States history, the Gilded Age was an era that occurred during the late 19th century, from the 1870s to about 1900. The Gilded Age was an era of rapid economic growth, especially in the Northern and Western United States.&rdquo;</i>
+</p>
+
+<p>
+<i>How did it change our country?</i>
+</p>
+</div>
+<div id="outline-container-org4b66710" class="outline-3">
+<h3 id="org4b66710"><span class="section-number-3">2.1</span> Pre-Gilded Age</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Not much of a middle class
+<ul class="org-ul">
+<li>Most people are either lower class or exceptionally rich</li>
+</ul></li>
+<li>Lots of stuff being invented</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgae68557" class="outline-3">
+<h3 id="orgae68557"><span class="section-number-3">2.2</span> Post Gilded Age</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Expanded middle class</li>
+<li>Higher incomes</li>
+<li>Increased leisure time</li>
+<li>Primed for consumer culture</li>
+<li>Better education, including for women</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdb466e5" class="outline-2">
+<h2 id="orgdb466e5"><span class="section-number-2">3</span> Labor Unions</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Really got going after Civil War. Because not enough workers, they can start making some demands
+</p>
+</div>
+
+<div id="outline-container-orgdb76c48" class="outline-3">
+<h3 id="orgdb76c48"><span class="section-number-3">3.1</span> Goals of Labor Unions</h3>
+<div class="outline-text-3" id="text-3-1">
+<ol class="org-ol">
+<li>Wages</li>
+<li>Hours</li>
+<li>Working conditions</li>
+<li>Child labor</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1af06ca" class="outline-3">
+<h3 id="org1af06ca"><span class="section-number-3">3.2</span> Early Labor Unions</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>National Labor Union
+<ul class="org-ul">
+<li>Didn&rsquo;t do so well.</li>
+</ul></li>
+<li>Knights of Labor
+<ul class="org-ul">
+<li>Thinking more about small business than wage labor.</li>
+</ul></li>
+<li>American Federation of Labor (AFL)
+<ul class="org-ul">
+<li>Founded by Samuel Gompers</li>
+<li>Different philosophy of how to organize people as workers
+<ul class="org-ul">
+<li>Bunch of small unions rather than a huge worker&rsquo;s union</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaf290c6" class="outline-3">
+<h3 id="orgaf290c6"><span class="section-number-3">3.3</span> Tools of Labor Unions</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-org9b366f8" class="outline-4">
+<h4 id="org9b366f8"><span class="section-number-4">3.3.1</span> Collective Bargaining</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>Group of people asking for something</li>
+<li>One person - business doesn&rsquo;t have to listen</li>
+<li>Hundreds - they do</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge56f5a0" class="outline-4">
+<h4 id="orge56f5a0"><span class="section-number-4">3.3.2</span> Strikes</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<p>
+When collective bargaining breaks down
+</p>
+</div>
+</div>
+<div id="outline-container-orgc02d868" class="outline-4">
+<h4 id="orgc02d868"><span class="section-number-4">3.3.3</span> Boycotts</h4>
+</div>
+<div id="outline-container-org9df4230" class="outline-4">
+<h4 id="org9df4230"><span class="section-number-4">3.3.4</span> Demonstrations - work stoppages</h4>
+</div>
+</div>
+<div id="outline-container-orgaa5f789" class="outline-3">
+<h3 id="orgaa5f789"><span class="section-number-3">3.4</span> Major Labor Strikes</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+<div id="outline-container-orgc03020c" class="outline-4">
+<h4 id="orgc03020c"><span class="section-number-4">3.4.1</span> Great Railway Strike of 1877</h4>
+</div>
+<div id="outline-container-orgfdddd82" class="outline-4">
+<h4 id="orgfdddd82"><span class="section-number-4">3.4.2</span> Haymarket Bombing</h4>
+<div class="outline-text-4" id="text-3-4-2">
+<ul class="org-ul">
+<li>Seen as symbol of anarchism</li>
+<li>Gave negative light to the work and goals of labor organizations</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3a6c6f5" class="outline-4">
+<h4 id="org3a6c6f5"><span class="section-number-4">3.4.3</span> Homestead Strike</h4>
+<div class="outline-text-4" id="text-3-4-3">
+<ul class="org-ul">
+<li>Violently beaten down and out of existence</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc6da751" class="outline-4">
+<h4 id="orgc6da751"><span class="section-number-4">3.4.4</span> Pullman Strike</h4>
+<div class="outline-text-4" id="text-3-4-4">
+<ul class="org-ul">
+<li>Chicago</li>
+<li>People in Pullman, Chicago worked for Pullman Company making luxury rail cars</li>
+<li>Workers lived in Pullman Village
+<ul class="org-ul">
+<li>Had to rent at Pullman Village</li>
+<li>Had to shop at Pullman stores</li>
+</ul></li>
+<li>Company controlled housing, food, furniture</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgcbbd136"></a>Workers couldn&rsquo;t take it anymore<br />
+<div class="outline-text-5" id="text-3-4-4-1">
+<ul class="org-ul">
+<li>Strike/uprising</li>
+<li>Violently crushed</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgd817a6b" class="outline-4">
+<h4 id="orgd817a6b"><span class="section-number-4">3.4.5</span> Problems With Strikes</h4>
+<div class="outline-text-4" id="text-3-4-5">
+<ul class="org-ul">
+<li>Turned public opinion against workers</li>
+<li>Violent/&ldquo;anarchist&rdquo;</li>
+<li>Radical
+<ul class="org-ul">
+<li>People don&rsquo;t like radical</li>
+<li>Bolshevik Revolution - 1917</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2ff8ed7" class="outline-3">
+<h3 id="org2ff8ed7"><span class="section-number-3">3.5</span> General Union Notes</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>Some states make it hard for unions to organize</li>
+<li>Union workers do better
+<ul class="org-ul">
+<li>Better pay, better hours, better everything</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgf0b84a7" class="outline-4">
+<h4 id="orgf0b84a7"><span class="section-number-4">3.5.1</span> Unions vs Top 1%</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<ul class="org-ul">
+<li>Reagan - anti-Union</li>
+<li>More union - 1% has less wealth</li>
+<li>Less union - 1% has more wealth</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcb6c56c" class="outline-3">
+<h3 id="orgcb6c56c"><span class="section-number-3">3.6</span> National Labor Relations Act</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+<i>Wagner Act 1935</i>
+</p>
+</div>
+
+<div id="outline-container-org896e6ee" class="outline-4">
+<h4 id="org896e6ee"><span class="section-number-4">3.6.1</span> Changes</h4>
+<div class="outline-text-4" id="text-3-6-1">
+<ul class="org-ul">
+<li>Made it totally legal to:
+<ul class="org-ul">
+<li>Join a union</li>
+<li>Have collective bargaining</li>
+</ul></li>
+<li>If union is formed, you can&rsquo;t lose your job</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb5ff38" class="outline-4">
+<h4 id="orgdb5ff38"><span class="section-number-4">3.6.2</span> Right to Work States</h4>
+<div class="outline-text-4" id="text-3-6-2">
+<p>
+Right to work: anti-Union
+</p>
+<ul class="org-ul">
+<li>&ldquo;In the context of U.S. labor politics, &rdquo;right-to-work laws&ldquo; refers to state laws that prohibit union security agreements between employers and labor unions.&rdquo;</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org562bde7" class="outline-2">
+<h2 id="org562bde7"><span class="section-number-2">4</span> Populism</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">Monday, March 08, 2021</span></span>
+</p>
+
+<p>
+<i>Populism</i> - a political approach that strives to appeal to ordinary people who feel that their concerns are disregarded by established elite groups
+</p>
+</div>
+
+<div id="outline-container-orgfc92cc3" class="outline-3">
+<h3 id="orgfc92cc3"><span class="section-number-3">4.1</span> Omaha Platform</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Statement by Populist Party (their platform)</li>
+<li>Highly radical</li>
+<li>Many people doubted they could acheive what was on the platform (too radical)</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///Users/jake/Dropbox/Files/Documents/School/2021-03-08 at 3.05.08 PM_Omaha Platform of 1892.png" alt="2021-03-08 at 3.05.08 PM_Omaha Platform of 1892.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgada69e2" class="outline-4">
+<h4 id="orgada69e2"><span class="section-number-4">4.1.1</span> Sub-treasuries</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<ul class="org-ul">
+<li>Government would buy up crops/resources and slowly sell them</li>
+<li>Prevented an increase in supply but stable demand (prices drop in this case)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org934a66d" class="outline-3">
+<h3 id="org934a66d"><span class="section-number-3">4.2</span> Farmers Discontent in the 1890s</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Debt</li>
+<li>Not enough farmer representation</li>
+<li>Deflation (paying more for purchases than they recieve for their products)
+<ul class="org-ul">
+<li>Prices drop</li>
+</ul></li>
+<li>Farmers</li>
+</ul>
+</div>
+<div id="outline-container-orgac5c48f" class="outline-4">
+<h4 id="orgac5c48f"><span class="section-number-4">4.2.1</span> Natural Debtors</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<p>
+Farmers are natural debtors
+</p>
+<ul class="org-ul">
+<li>Beginning of growing season, take out loans:
+<ul class="org-ul">
+<li>Seeds</li>
+<li>Fertilizers</li>
+<li>Materials</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org34b3384"></a>Example<br />
+<div class="outline-text-5" id="text-4-2-1-1">
+<ul class="org-ul">
+<li>Deflation of 10%
+<ul class="org-ul">
+<li>$100 loan</li>
+<li>Sell crops for $135</li>
+<li>Pay off debts $100</li>
+<li><b>Profit $25</b></li>
+</ul></li>
+<li>Inflation of 10%
+<ul class="org-ul">
+<li>$100 loan</li>
+<li>Sell crops for $165</li>
+<li>Pay off debts $110</li>
+<li><b>Profit $55</b></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb109d8e" class="outline-3">
+<h3 id="orgb109d8e"><span class="section-number-3">4.3</span> Metals</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+<div id="outline-container-orgc07e1e0" class="outline-4">
+<h4 id="orgc07e1e0"><span class="section-number-4">4.3.1</span> Goldbugs</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<ul class="org-ul">
+<li>Bankers and businessmen</li>
+<li>Wanted gold standard
+<ul class="org-ul">
+<li>Tight money (less $ in circulation)</li>
+</ul></li>
+<li>Why: loans repaid in stable money</li>
+<li>Deffects
+<ul class="org-ul">
+<li>Deflation</li>
+<li>Prices fall</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3b54c18" class="outline-4">
+<h4 id="org3b54c18"><span class="section-number-4">4.3.2</span> Silverites (bimetallism)</h4>
+<div class="outline-text-4" id="text-4-3-2">
+<ul class="org-ul">
+<li>Wanted gold &amp; silver
+<ul class="org-ul">
+<li>More $ in circulation</li>
+</ul></li>
+<li>Less stable</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1d0cab2" class="outline-3">
+<h3 id="org1d0cab2"><span class="section-number-3">4.4</span> Election of 1896</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Victory of Republican McKinley</li>
+<li>RIP Populists</li>
+<li>Big deal over bi-metalism</li>
+<li>Adding silver to the gold standard</li>
+<li>More people less gold would mean deflation</li>
+<li>More money in circulation = onflation</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd9e62aa" class="outline-3">
+<h3 id="orgd9e62aa"><span class="section-number-3">4.5</span> Populists of 1890s vs Populists Today</h3>
+<div class="outline-text-3" id="text-4-5">
+</div>
+<div id="outline-container-orgc312401" class="outline-4">
+<h4 id="orgc312401"><span class="section-number-4">4.5.1</span> Religion</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ul class="org-ul">
+<li>Religious imagery used heavily</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46d962c" class="outline-4">
+<h4 id="org46d962c"><span class="section-number-4">4.5.2</span> Anti-Immigrant</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<ul class="org-ul">
+<li>Associated with:
+<ul class="org-ul">
+<li>Disease</li>
+<li>Poverty</li>
+</ul></li>
+<li>Most immigrants in 1890s were Eastern European
+<ul class="org-ul">
+<li>Different religion — Catholic or Jewish</li>
+</ul></li>
+<li>Now - &ldquo;Mexicans are rapists&rdquo;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org775adec" class="outline-4">
+<h4 id="org775adec"><span class="section-number-4">4.5.3</span> Anti-Elite</h4>
+<div class="outline-text-4" id="text-4-5-3">
+<ul class="org-ul">
+<li>Now - &ldquo;Drain the swamp&rdquo;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgffd71bb" class="outline-4">
+<h4 id="orgffd71bb"><span class="section-number-4">4.5.4</span> Agrarian Interests</h4>
+<div class="outline-text-4" id="text-4-5-4">
+<ul class="org-ul">
+<li>Populists grew out of <a href="https://www.britannica.com/event/Granger-movement">Granger Movement</a></li>
+<li>Ultimately became Populist Party</li>
+<li>Now - Trump appeal to farmers</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge6df2fe" class="outline-2">
+<h2 id="orge6df2fe"><span class="section-number-2">5</span> The Progressives</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">Monday, March 08, 2021</span></span>
+</p>
+
+<p>
+<i>Why were the Progressives so successful?</i>
+</p>
+<ul class="org-ul">
+<li>Pursuing Hamiltonian means to achieve Jeffersonian ends
+<ul class="org-ul">
+<li>Big government for personal liberty/protection</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org750573b" class="outline-3">
+<h3 id="org750573b"><span class="section-number-3">5.1</span> Progressive Presidents 1901-1912</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-orgf005271" class="outline-4">
+<h4 id="orgf005271"><span class="section-number-4">5.1.1</span> Theodore Roosevelt</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+Republican
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org24ce038"></a>Square Deal Election of 1904<br />
+<div class="outline-text-5" id="text-5-1-1-1">
+<ul class="org-ul">
+<li>The Three C&rsquo;s
+<ul class="org-ul">
+<li>Protection for Consumers
+<ul class="org-ul">
+<li>Pure Food and Drug Act</li>
+<li>Federal regulators that go into food &amp; drug companies and inspect for sanitation</li>
+</ul></li>
+<li>Corporations
+<ul class="org-ul">
+<li>Bring suit against monopolies to break them up</li>
+</ul></li>
+<li>Conservation
+<ul class="org-ul">
+<li>Expanded National Parks system</li>
+<li>Put more land under federal control</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgac0cb24" class="outline-4">
+<h4 id="orgac0cb24"><span class="section-number-4">5.1.2</span> William Howard Taft</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<p>
+Republican
+</p>
+<ul class="org-ul">
+<li>&ldquo;Designated successor&rdquo; for Roosevelt</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbd717de" class="outline-4">
+<h4 id="orgbd717de"><span class="section-number-4">5.1.3</span> Woodrow Wilson</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<p>
+Democrat, from Virginia
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org72eb486" class="outline-3">
+<h3 id="org72eb486"><span class="section-number-3">5.2</span> Election of 1912</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Roosevelt wanted to run again, wanted Republican nomination but they wouldn&rsquo;t give it</li>
+<li>Roosevelt founded new party
+<ul class="org-ul">
+<li>Progressive/populist, called Bull Moose</li>
+</ul></li>
+<li>Split Republican vote between Roosevelt and Taft, opened door to Democrats (Wilson) to win</li>
+<li>Fun thing, socialist got ~7% of vote (Debs)
+<ul class="org-ul">
+<li>Before Red Scare of the 1920s, so there was decent support</li>
+</ul></li>
+<li>Roosevelt shot at a speech
+<ul class="org-ul">
+<li>He kept going!</li>
+<li><a href="https://www.wikiwand.com/en/Attempted_assassination_of_Theodore_Roosevelt">Wiki</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7fee042" class="outline-3">
+<h3 id="org7fee042"><span class="section-number-3">5.3</span> Wilson&rsquo;s New Freedom</h3>
+<div class="outline-text-3" id="text-5-3">
+</div>
+<div id="outline-container-org2786a47" class="outline-4">
+<h4 id="org2786a47"><span class="section-number-4">5.3.1</span> Tarrif Reform</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<p>
+<i>Underwood Simmons Tariff</i>
+</p>
+<ul class="org-ul">
+<li>Lowered tarriff for first time in 65 years
+<ul class="org-ul">
+<li>Important for hurting big business (?)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org29c324b" class="outline-4">
+<h4 id="org29c324b"><span class="section-number-4">5.3.2</span> Trust Freedom</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<p>
+<i>Clayton Anti-Trust Act</i>
+</p>
+<ul class="org-ul">
+<li>Very effective at breaking up the monopolies
+<ul class="org-ul">
+<li>More so than any act before then</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc451e0a" class="outline-4">
+<h4 id="orgc451e0a"><span class="section-number-4">5.3.3</span> The Bank - Federal Reserve System</h4>
+<div class="outline-text-4" id="text-5-3-3">
+<ul class="org-ul">
+<li>Two functions that can &ldquo;push levers of economy&rdquo;
+<ul class="org-ul">
+<li>Control how much money is in circulation
+<ul class="org-ul">
+<li>They give money to banks</li>
+<li>Can send money to places in need (pull money from one place send to other)</li>
+</ul></li>
+<li>Set interest rates
+<ul class="org-ul">
+<li>If economy is slowing down they can lower interest rate so more people can/will take out loans</li>
+<li>If economy is going too high they can raise rataes to pull economy down</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb996579" class="outline-3">
+<h3 id="orgb996579"><span class="section-number-3">5.4</span> Roosevelt&rsquo;s New Nationalism</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+<i>The losing campaign. A socially progressive campaign.</i>
+</p>
+<ul class="org-ul">
+<li>Social insurance
+<ul class="org-ul">
+<li>Helps people laid off</li>
+<li>Unemployment insurance</li>
+<li>Husband dies, you have no job, you can get social insurance</li>
+</ul></li>
+<li>8 hour workday</li>
+<li>Worker&rsquo;s compensation
+<ul class="org-ul">
+<li>Payment from government</li>
+</ul></li>
+<li>Women&rsquo;s suffrage
+<ul class="org-ul">
+<li>First candidate to mkae it part of their platform</li>
+</ul></li>
+<li>Direct election of senators
+<ul class="org-ul">
+<li>Eventually became 17th Amendment</li>
+</ul></li>
+<li>Primary elections
+<ul class="org-ul">
+<li>Would narrow down choices</li>
+<li>Roosevelt wasn&rsquo;t chosen, party leaders didn&rsquo;t choose him
+<ul class="org-ul">
+<li>He didn&rsquo;t like that</li>
+</ul></li>
+<li>Voters would have say on candidates</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org7625b50" class="outline-4">
+<h4 id="org7625b50"><span class="section-number-4">5.4.1</span> Progressive Accomplishments</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<ul class="org-ul">
+<li>16th Amendment - Gratuated Income Tax</li>
+<li>17th Amendment - Direct Election of Senators</li>
+<li>18th Amendment - Prohibition
+<ul class="org-ul">
+<li>Didn&rsquo;t succeed</li>
+</ul></li>
+<li>19th Amendment - Women&rsquo;s Right to Vote</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1d7bfb2" class="outline-2">
+<h2 id="org1d7bfb2"><span class="section-number-2">6</span> World War 1</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Reliance on Women and African AMericans</li>
+<li>Corporations were celebrated
+<ul class="org-ul">
+<li>Contribute to war effort</li>
+<li>Maybe similar to now</li>
+</ul></li>
+<li>Farmers surplus
+<ul class="org-ul">
+<li>Better techonology
+<ul class="org-ul">
+<li>More surplus, less fertilizer, less seed</li>
+</ul></li>
+</ul></li>
+<li>Technology</li>
+<li>Propaganda
+<ul class="org-ul">
+<li>Advertising</li>
+</ul></li>
+<li>Isolationism &amp; Treaty of Versailles
+<ul class="org-ul">
+<li>USA Isolationism</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org93560cb" class="outline-2">
+<h2 id="org93560cb"><span class="section-number-2">7</span> The Great Depression</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<i>Was it inevitable? Did it grow out of the Pandemic, and if so how much should we expect a similar course of history as the 1920s in the 2020s?</i>
+</p>
+<ul class="org-ul">
+<li>Obama years similar to Progressive Era - reforms</li>
+</ul>
+</div>
+<div id="outline-container-orgf7b7957" class="outline-3">
+<h3 id="orgf7b7957"><span class="section-number-3">7.1</span> Bank Failures</h3>
+<div class="outline-text-3" id="text-7-1">
+</div>
+<div id="outline-container-orga1c0f7d" class="outline-4">
+<h4 id="orga1c0f7d"><span class="section-number-4">7.1.1</span> Run on the bank</h4>
+<div class="outline-text-4" id="text-7-1-1">
+<ul class="org-ul">
+<li>Everyone went to banks to try to take out their savings at the same time</li>
+<li>Once bank ran out of money, you lost whatever you &ldquo;had&rdquo; in the bank</li>
+<li>Many lost savings due to this</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org390c76f" class="outline-3">
+<h3 id="org390c76f"><span class="section-number-3">7.2</span> Minorities</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>Few places to turn to for help</li>
+</ul>
+</div>
+<div id="outline-container-org5b72dc2" class="outline-4">
+<h4 id="org5b72dc2"><span class="section-number-4">7.2.1</span> Latinx people deported</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<ul class="org-ul">
+<li>40% US citizens but couldn&rsquo;t prove</li>
+<li>Anyone of Latino ancestry deported from US</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge47e3c9" class="outline-4">
+<h4 id="orge47e3c9"><span class="section-number-4">7.2.2</span> Women</h4>
+<div class="outline-text-4" id="text-7-2-2">
+<ul class="org-ul">
+<li>&ldquo;Migrant Mother&rdquo;</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge2b6405" class="outline-3">
+<h3 id="orge2b6405"><span class="section-number-3">7.3</span> Housing &amp; Hoovervilles</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>People lost their housing b/c couldn&rsquo;t pay</li>
+<li>People also lost because of <a href="https://en.wikipedia.org/wiki/Dust_Bowl">Dust Bowl</a></li>
+<li>Named a</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org657c627" class="outline-3">
+<h3 id="org657c627"><span class="section-number-3">7.4</span> Philosophies of Government Stimulation</h3>
+<div class="outline-text-3" id="text-7-4">
+</div>
+<div id="outline-container-orge2d6a1f" class="outline-4">
+<h4 id="orge2d6a1f"><span class="section-number-4">7.4.1</span> Hoover</h4>
+<div class="outline-text-4" id="text-7-4-1">
+<ul class="org-ul">
+<li><b>Trickle Down</b>
+<ul class="org-ul">
+<li>Best place to concentrate help was to the top - companies, business, etc</li>
+<li>That help would trickle down</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdd74110" class="outline-3">
+<h3 id="orgdd74110"><span class="section-number-3">7.5</span> FDR</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li><b>Pump-Priming</b>
+<ul class="org-ul">
+<li>Relief paymenets &amp; temporary jobs on government projects</li>
+</ul></li>
+</ul>
+
+<div class="figure">
+<p><img src="file:///Users/jake/Dropbox/Files/Documents/School/2021-03-16 at 10.43.19 AM.png" alt="2021-03-16 at 10.43.19 AM.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1cd5e18" class="outline-3">
+<h3 id="org1cd5e18"><span class="section-number-3">7.6</span> Keynesian Economics</h3>
+<div class="outline-text-3" id="text-7-6">
+<p>
+<i>Method for when you have inflation/deflation</i>
+</p>
+<ul class="org-ul">
+<li>During Great Depression there was deflation</li>
+<li>Method to solve deflation (prices down):
+<ul class="org-ul">
+<li>Put more money into circulation
+<ul class="org-ul">
+<li>Get hands on more gold so you can print more money, or lower ratio of gold to dollar</li>
+</ul></li>
+<li>Taxes down</li>
+<li>Increase spending
+<ul class="org-ul">
+<li>Public works and workers, for example</li>
+</ul></li>
+<li><b>better public image</b>
+<ul class="org-ul">
+<li>Treating deflation would make you more popular</li>
+</ul></li>
+</ul></li>
+<li>Method to solve inflation (prices up):
+<ul class="org-ul">
+<li>Pull money away from people and put it into treasury (using taxes)</li>
+<li>Taxes up</li>
+<li>Decrease spending</li>
+<li><b>worse public image</b>
+<ul class="org-ul">
+<li>Treating inflation would make you unpopular</li>
+<li>In America since 1945 - we don&rsquo;t treat inflation (because it&rsquo;s so unpopular) (between 3% and 5% each year)</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga6ef7e6" class="outline-2">
+<h2 id="orga6ef7e6"><span class="section-number-2">8</span> New Advances &amp; Industries</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-orgaaed92c" class="outline-3">
+<h3 id="orgaaed92c"><span class="section-number-3">8.1</span> Advertising</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>Expenditured went up by a ton</li>
+<li>Newspapers, radio,</li>
+<li>Start convincing people they need things they don&rsquo;t really need</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org24fd847" class="outline-3">
+<h3 id="org24fd847"><span class="section-number-3">8.2</span> Cars</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>Ford Model T for $2,100 (constant dollars)</li>
+<li>Pretty much everyone in middle class could buy car</li>
+<li>&ldquo;Completely transformed society&rdquo;</li>
+<li>Transformed American demographics</li>
+</ul>
+</div>
+<div id="outline-container-org39c30a6" class="outline-4">
+<h4 id="org39c30a6"><span class="section-number-4">8.2.1</span> Transformed American demographics</h4>
+<div class="outline-text-4" id="text-8-2-1">
+<ul class="org-ul">
+<li>Substantially reduced travel time</li>
+<li>Suburbs took off because:
+<ul class="org-ul">
+<li>Live in suburb, commute to city
+<ul class="org-ul">
+<li>See:</li>
+</ul></li>
+<li>Meant lots of development
+<ul class="org-ul">
+<li>Schools, hospitals, etc</li>
+<li>Car-related industry: gas</li>
+<li>Tourism takes off (easy to travel)
+<ul class="org-ul">
+<li>Hotels</li>
+<li>New major destinations - Niagra Falls, Grand Canyon, for example</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org86e13ff" class="outline-3">
+<h3 id="org86e13ff"><span class="section-number-3">8.3</span> Radio</h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
+<li>Houses transformed for place for people to sit to listen to radio</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad85791" class="outline-3">
+<h3 id="orgad85791"><span class="section-number-3">8.4</span> Electrificaiton</h3>
+<div class="outline-text-3" id="text-8-4">
+<ul class="org-ul">
+<li>Big cities became electrified</li>
+<li>Appliance companies &ldquo;went nutzo&rdquo;</li>
+<li>Appliances take off</li>
+<li>Helped ease burden of work on women at home in the 1920s
+<ul class="org-ul">
+<li>Contested whether this helped women be more educated or not</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org241dc07" class="outline-3">
+<h3 id="org241dc07"><span class="section-number-3">8.5</span> Theater/Movies</h3>
+<div class="outline-text-3" id="text-8-5">
+<ul class="org-ul">
+<li>Movie theaters got huge</li>
+<li>Popcorn, soda, restaurants</li>
+<li>Transformation of American society</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6b60546" class="outline-3">
+<h3 id="org6b60546"><span class="section-number-3">8.6</span> Fashion industry</h3>
+<div class="outline-text-3" id="text-8-6">
+<ul class="org-ul">
+<li>Prior to the 1920s most people cut their own hair and sewed their own clothes</li>
+<li>Not anymore</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgad9546a" class="outline-2">
+<h2 id="orgad9546a"><span class="section-number-2">9</span> The New Deal</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+<i>FDR&rsquo;s New Deal</i>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgadffa36" class="outline-2">
+<h2 id="orgadffa36"><span class="section-number-2">10</span> Democrats &amp; Republicans</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<i>How much government is too much?</i>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org71458dc" class="outline-2">
+<h2 id="org71458dc"><span class="section-number-2">11</span> 1950s</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+<i>Why did people have so much money in the 1950s?</i> - greatest economic expansion we had ever experienced
+</p>
+</div>
+<div id="outline-container-org2fe4fb6" class="outline-3">
+<h3 id="org2fe4fb6"><span class="section-number-3">11.1</span> Pre-50s - the setup (WWII)</h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>WWII there was rationing, you couldn&rsquo;t really buy stuff
+<ul class="org-ul">
+<li>No movie theaters, no car production, etc</li>
+</ul></li>
+<li>Therefore everyone was working during the war and saving all that money</li>
+<li><b>Once the war ended everyone went out and spent a ton</b></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga4e9165" class="outline-3">
+<h3 id="orga4e9165"><span class="section-number-3">11.2</span> Baby Boom</h3>
+<div class="outline-text-3" id="text-11-2">
+<ul class="org-ul">
+<li>Births between 1946 and 1960 went up a lot</li>
+<li>Big group of people doing stuff around the same time
+<ul class="org-ul">
+<li>School, college, etc</li>
+</ul></li>
+<li>Caused housing shortage
+<ul class="org-ul">
+<li>Solved by Levittowns (went up fast and easy)</li>
+</ul></li>
+<li>Always been a very big group</li>
+<li>Fun issue: Baby Boomers will cause/do cause issue on SSA because they&rsquo;re so big</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb90614c" class="outline-3">
+<h3 id="orgb90614c"><span class="section-number-3">11.3</span> Great Society</h3>
+<div class="outline-text-3" id="text-11-3">
+<ul class="org-ul">
+<li>Wage war against poverty
+<ul class="org-ul">
+<li>Even though middle class was doing well there was still a huge swath of people who were not</li>
+</ul></li>
+<li>LBJ</li>
+<li>Great inequality</li>
+<li>Stuff done by LBJ at the time stayed, they weren&rsquo;t temporary measures</li>
+</ul>
+</div>
+<div id="outline-container-org504a4bd" class="outline-4">
+<h4 id="org504a4bd"><span class="section-number-4">11.3.1</span> Reforms &amp; Acts</h4>
+<div class="outline-text-4" id="text-11-3-1">
+<p>
+<i>Expanded the government&rsquo;s role</i>. However, many Republicans thought it was way too much money being spent by the government which means higher taxes.
+</p>
+<ul class="org-ul">
+<li>Voting Rights Act 1965</li>
+<li>Immigration Act of 1965</li>
+<li>Job Corps and VISTA</li>
+<li>Food Stamp Act of 1964</li>
+<li>Social Security Reforms
+<ul class="org-ul">
+<li>Anti-discriminatory</li>
+</ul></li>
+<li>Elementary and Secondary Education Act
+<ul class="org-ul">
+<li>Food in schools</li>
+</ul></li>
+<li>Medicare
+<ul class="org-ul">
+<li>Anyone over age of 65</li>
+<li>Works same way as SSA - employee &amp; employer pay into it</li>
+</ul></li>
+<li>Medicaid
+<ul class="org-ul">
+<li>Based on income</li>
+<li>Below certain level government pays for medical care</li>
+<li>Comes from taxpayer dollars</li>
+</ul></li>
+<li>Welfare</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd4daa5c" class="outline-4">
+<h4 id="orgd4daa5c"><span class="section-number-4">11.3.2</span> Problems</h4>
+<div class="outline-text-4" id="text-11-3-2">
+<ul class="org-ul">
+<li>LBJ was throwing all money into Vietnam war so there really wasn&rsquo;t enough for domestic use
+<ul class="org-ul">
+<li>Armaments, troop pay, etc</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: March 2021</p>
+<p class="author">Author: Jake Boxerman</p>
+<p class="date">Created: 2021-03-22 Mon 18:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
