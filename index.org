@@ -1,0 +1,22 @@
+#+TITLE: Home - jakebox.github.io
+#+OPTIONS: toc:nil date:nil author:nil num:nil title:nil
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:nil html-scripts:nil html-style:nil html5-fancy:nil tex:t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css"/>
+
+* Home
+
+** Links
++ [[https://github.com/jakebox/][github]], [[https://gist.github.com/jakebox][gists]]
++ [[https://www.youtube.com/channel/UCBMMB7Yi0eyFuY95Qn2o0Yg/featured][youtube]]
+  
+** Projects
++ [[https://www.breadsched.com/][breadsched]]
+  * schedule your bread
++ [[https://github.com/jakebox/jake-emacs][emacs configuration]]
+  * emacs
++ [[https://github.com/jakebox/preview-org-html-mode][preview-org-html-mode]]
+  * emacs minor mode i wrote
++ [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][common-app-hightlight-web]]
+  * tool to help character count for the common app
++ [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][jb3x3]]
+  * budget macropad i designed
