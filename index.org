@@ -7,14 +7,13 @@
 
 ** Links
 + [[https://github.com/jakebox/][github]], [[https://gist.github.com/jakebox][gists]]
-+ [[https://www.youtube.com/channel/UCBMMB7Yi0eyFuY95Qn2o0Yg/featured][youtube]]
   
 ** Projects
 + [[https://www.breadsched.com/][breadsched]]
   * schedule your bread
 + [[https://github.com/jakebox/jake-emacs][emacs configuration]]
   * emacs
-+ [[https://github.com/jakebox/preview-org-html-mode][preview-org-html-mode]]
++ [[https://github.com/jakebox/org-preview-html][org-preview-html]]
   * emacs minor mode i wrote
 + [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][common-app-hightlight-web]]
   * tool to help character count for the common app
