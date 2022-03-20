@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-02-20 Sat 20:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Org LaTeX Export</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jake B" />
+<style type="text/css">
+<!--/*--><![CDATA[/*><!--*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body {
+    color: #1a1a1a;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    /*Inspired by github markdown*/
+	box-sizing: border-box;
+	min-width: 200px;
+	max-width: 980px;
+	margin: 0 auto;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.title  { text-align: center;
+          margin-bottom: .5em;
+          font-family: 'Roboto Bold', sans-serif;
+        }
+
+.subtitle { text-align: center;
+            font-size: large;
+            font-style: italic;
+            font-weight: normal;
+            margin-top:0; }
+
+h1 {font-family: 'Roboto Bold', sans-serif;
+   }
+
+/*2*/
+h2 {font-family: 'Roboto', sans-serif;
+    margin-top: 0.3em;
+    margin-left: 0.8%;
+    font-size: 180%;
+   }
+
+/*Can't get the alignment right on this*/
+/*h2:before {*/
+/*    font-size: 50%;*/
+/*    content: "◉";*/
+/*}*/
+
+.outline-text-2 {
+    font-family: 'Roboto', sans-serif;
+    margin-top: -0.8em;
+    margin-left: 0.9%;
+}
+
+.outline-2 {
+    background-color: #f6f6fa;
+    border-width: 2px;
+    border-radius: 15px;
+    border-color: #171200;
+    border-style: solid;
+    padding: 7px;
+    margin-bottom: 30px;
+}
+
+/*3*/
+h3 {font-family: 'Roboto', sans-serif;
+    margin-top: 0.7em;
+    margin-left: 2.0%;
+    font-size: 130%;
+    margin-bottom: 1.0em;
+   }
+
+.outline-text-3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-top: -0.8em;
+    margin-left: 3.5%;
+    margin-right: 2.5%;
+}
+
+.org-ul {
+    margin-left: 5px;
+}
+
+.outline-3 {
+    /* background-color: #dedee0; */
+    background-color: #e8e8ed;
+    margin-top: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 1.0em;
+    padding: 1px;
+    border-radius: 10px;
+}
+
+
+/*4*/
+h4 {font-family: 'Roboto', sans-serif;
+    margin-left: 4.5%;
+   }
+
+.outline-text-4 {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 6.0%;
+    margin-right: 5%;
+    margin-top: -8px;
+}
+
+
+.todo   { font-family: 'Source Code Pro', monospace; color: #d8661e; font-size: 80%}
+.done   { font-family: 'Source Code Pro', monospace; color: #1cf826; font-size: 80%}
+
+.priority { font-family: monospace; color: orange; }
+.tag    { background-color: #eee; font-family: monospace;
+          padding: 2px; font-size: 80%; font-weight: normal; }
+
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+
+.org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+.org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+.org-center { margin-left: auto; margin-right: auto; text-align: center; }
+
+.underline { text-decoration: underline; }
+
+blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: .35em solid #cfd2d4;
+}
+
+code {
+    font-family :'Source Code Pro', monospace;
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+}
+
+org-src-container {
+    font-family :'Source Code Pro', monospace;
+}
+
+pre {
+    background-color: #ffffff;
+}
+
+pre.src{
+    margin:10px 0px 24px 2px;
+    overflow:auto;
+    padding:10px;
+    white-space:pre;
+    font-size: 14px;
+    font-family :'Source Code Pro Medium', monospace;
+}
+
+/*that bit at the bottom (saying your name, created, etc)*/
+#postamble p, #preamble p { font-size: 80%; margin: .0em; }
+/*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Org LaTeX Export
+<br />
+<span class="subtitle"><i>Straightforward Emacs</i></span>
+</h1>
+
+<div id="outline-container-org5ac43a1" class="outline-2">
+<h2 id="org5ac43a1">Prerequisites</h2>
+<div class="outline-text-2" id="text-org5ac43a1">
+<p>
+Things you&rsquo;ll need before following through with this video.
+</p>
+<ul class="org-ul">
+<li>Decent Org Mode knowledge</li>
+<li>Decent LaTeX Knowledge</li>
+<li>Locally installed LaTeX compiler</li>
+</ul>
+</div>
+<div id="outline-container-org869469c" class="outline-4">
+<h4 id="org869469c">LaTeX Compiler</h4>
+<div class="outline-text-4" id="text-org869469c">
+<p>
+This has links for all operating systems.
+<a href="https://www.latex-project.org/get/">https://www.latex-project.org/get/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org724b170" class="outline-2">
+<h2 id="org724b170">Most basic LaTeX Export</h2>
+<div class="outline-text-2" id="text-org724b170">
+<p>
+The most basic one possible. We only choose the document class and paper size. And, disable the table of contents.
+</p>
+</div>
+<div id="outline-container-org33812e8" class="outline-3">
+<h3 id="org33812e8">Options</h3>
+<div class="outline-text-3" id="text-org33812e8">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Org Mode header for a basic LaTeX export</label><pre class="src src-latex">#+LaTeX_CLASS: article
+#+LaTeX_CLASS_OPTIONS: [letterpaper]
+#+OPTIONS: toc:nil
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org941e218" class="outline-2">
+<h2 id="org941e218">Using your own LaTeX setup</h2>
+<div class="outline-text-2" id="text-org941e218">
+</div>
+<div id="outline-container-orgbcb4b75" class="outline-3">
+<h3 id="orgbcb4b75">Set up a plain LaTeX class for yourself</h3>
+<div class="outline-text-3" id="text-orgbcb4b75">
+<p>
+This will give us a class that <i>won&rsquo;t</i> include all the default packages in the generated LaTeX file. Put this in your <code>init</code> file. You can then use it with <code>#+LATEX_CLASS: org-plain-latex</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(with-eval-after-load 'ox-latex
+(add-to-list 'org-latex-classes
+             '("org-plain-latex"
+               "\\documentclass{article}
+           [NO-DEFAULT-PACKAGES]
+           [PACKAGES]
+           [EXTRA]"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0144c88" class="outline-3">
+<h3 id="org0144c88">Create &amp; include a <code>SETUPFILE</code></h3>
+<div class="outline-text-3" id="text-org0144c88">
+<p>
+A <code>SETUPFILE</code> is simply a file that contains some sort of org mode configuration. For example, the <code>#+LATEX_CLASS:</code> we saw earlier. Or, maybe <code>#+LATEX_HEADER:</code>. It could even be as simple as <code>#+TITLE:</code>. In this <code>SETUPFILE</code> we can place all of our lines of LaTeX code we want included in the final generated document. <b>This is a very powerful and easy method of perfectly customizing our export.</b>
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>Linking to a <code>SETUPFILE</code></label><pre class="src src-latex">#+SETUPFILE: ~/Dropbox/Mackup/emacs-stuff/org/jake-standard-latex-export.org
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2b0d23" class="outline-3">
+<h3 id="orgc2b0d23">Structure the <code>SETUPFILE</code></h3>
+<div class="outline-text-3" id="text-orgc2b0d23">
+<p>
+Now, in that <code>SETUPFILE</code>, we place the LaTeX lines we normally would put in a <code>.tex</code> file. For example, <code>\usepackage{amsmath}</code>. Hopefully you have your own favorite <code>.tex</code> file setup, but if not I suggest learning LaTeX and/or finding a template online.
+</p>
+
+<p>
+I suggest using a macro to add <code>#+LATEX_CLASS: to each line</code>, rather than typing it manually of course! Notice the <code>LaTeX_CLASS:</code> - the custom one we just created.
+</p>
+<div class="org-src-container">
+<pre class="src src-latex">#+LaTeX_CLASS: org-plain-latex
+#+LaTeX_CLASS_OPTIONS: [letter]
+#+LATEX_HEADER: \usepackage{lmodern} % Ensures we have the right font
+
+#+LATEX_HEADER: \usepackage[AUTO]{inputenc}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{amsmath, amsthm, amssymb}
+#+LATEX_HEADER: \usepackage[table, xcdraw]{xcolor}
+
+% and so on...
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeedf581" class="outline-3">
+<h3 id="orgeedf581">Extra Notes</h3>
+<div class="outline-text-3" id="text-orgeedf581">
+<p>
+Some notes not covered in the video.
+</p>
+</div>
+<div id="outline-container-orgbd8b981" class="outline-4">
+<h4 id="orgbd8b981">Code</h4>
+<div class="outline-text-4" id="text-orgbd8b981">
+<p>
+Enable using <code>listings</code> for code highlighting
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq org-latex-listings 't)
+</pre>
+</div>
+
+<p>
+In your <code>SETUPFILE:</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-latex">#+LATEX_HEADER: \usepackage{listings}
+</pre>
+</div>
+
+<p>
+If you enable <code>org-latex-listings</code> but don&rsquo;t include the <code>listings</code> package in your TeX file, it will likely not compile (if you are exporting an org file with code blocks).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7efa961" class="outline-4">
+<h4 id="org7efa961">Useful commands</h4>
+<div class="outline-text-4" id="text-org7efa961">
+<ul class="org-ul">
+<li><code>org-latex-preview</code> - toggles preview LaTeX math at point</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org309e019" class="outline-2">
+<h2 id="org309e019">Resources</h2>
+<div class="outline-text-2" id="text-org309e019">
+<ul class="org-ul">
+<li><a href="https://orgmode.org/manual/LaTeX-Export.html#LaTeX-Export">https://orgmode.org/manual/LaTeX-Export.html#LaTeX-Export</a></li>
+<li><a href="https://orgmode.org/worg/org-tutorials/org-latex-export.html">Orgmode LaTeX Export Official Docs</a></li>
+<li><a href="https://orgmode.org/manual/LaTeX-fragments.html">https://orgmode.org/manual/LaTeX-fragments.html</a></li>
+<li><a href="https://orgmode.org/manual/Quoting-LaTeX-code.html">https://orgmode.org/manual/Quoting-LaTeX-code.html</a></li>
+<li><a href="https://www.youtube.com/watch?v=S9lqMjNPjHc&amp;list=WL&amp;index=1">Never write plain LaTeX Again</a></li>
+<li><a href="https://orgmode.org/guide/Tables.html">https://orgmode.org/guide/Tables.html</a>
+<ul class="org-ul">
+<li><a href="https://orgmode.org/manual/Built_002din-Table-Editor.html">https://orgmode.org/manual/Built_002din-Table-Editor.html</a></li>
+<li><a href="https://orgmode.org/manual/Column-Groups.html#Column-groups">https://orgmode.org/manual/Column-Groups.html#Column-groups</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jake B</p>
+<p class="date">Created: 2021-02-20 Sat 20:40</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
