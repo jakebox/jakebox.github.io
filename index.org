@@ -1,21 +1,27 @@
-#+TITLE: Home - jakebox.github.io
-#+OPTIONS: toc:nil date:nil author:nil num:nil title:nil
+#+TITLE: Home — jakebox.github.io
+#+OPTIONS: toc:nil date:nil author:nil num:nil title:t
 #+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:nil html-scripts:nil html-style:nil html5-fancy:nil tex:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css"/>
 
-* Home
+* 
 
-** Links
+** Personal Links
 + [[https://github.com/jakebox/][github]], [[https://gist.github.com/jakebox][gists]]
   
-** Projects
-+ [[https://www.breadsched.com/][breadsched]]
-  * schedule your bread
+** Highlighted Projects
++ [[https://breadsched.herokuapp.com/][breadsched]]
+  * create a bread baking schedule
 + [[https://github.com/jakebox/jake-emacs][emacs configuration]]
-  * emacs
+  * my personal emacs configuration
++ [[https://github.com/jakebox/jakemacs][jakemacs]]
+  * basic emacs configs (with and without evil)
 + [[https://github.com/jakebox/org-preview-html][org-preview-html]]
-  * emacs minor mode i wrote
-+ [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][common-app-hightlight-web]]
+  * emacs minor mode to preview org-exported html
++ [[https://jakebox.github.io/common-app-highlight-web/index.html][common-app-hightlight-web]]
   * tool to help character count for the common app
 + [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][jb3x3]]
-  * budget macropad i designed
+  * ultra-budget macropad
+    
+** Talks/Publications
++ [[https://www.youtube.com/watch?v=7wKwPAWvPQs][~(concat "Remote High School" "Emacs")~]]
+  * EmacsNYC Lightning Talk on my experience using Emacs in remote high school, January 2021
