@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>orgmode on jakebox — blog</title>
+    <link>https://jakebox.github.io/blog/tags/orgmode/</link>
+    <description>Recent content in orgmode on jakebox — blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© jakebox</copyright>
+    <lastBuildDate>Wed, 17 Aug 2022 00:00:00 -0500</lastBuildDate><atom:link href="https://jakebox.github.io/blog/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Straightforward Emacs: Show all unchecked Org Mode checkboxes</title>
+      <link>https://jakebox.github.io/blog/posts/checkboxes/</link>
+      <pubDate>Wed, 17 Aug 2022 00:00:00 -0500</pubDate>
+      
+      <guid>https://jakebox.github.io/blog/posts/checkboxes/</guid>
+      <description>This is my first Straightforward Emacs blog post. Inspired by my video series, these posts will contain brief, descriptive write-ups of my favorite Emacs functions and features, problems I’ve solved, and short instructional guides. Many posts center on solving real world problems, especially with Org Mode, which I use to organize much of my work and personal life. I hope these posts will help you create and find solutions to your own problems.</description>
+    </item>
+    
+  </channel>
+</rss>

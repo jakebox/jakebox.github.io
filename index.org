@@ -2,11 +2,17 @@
 #+OPTIONS: toc:nil date:nil author:nil num:nil title:t
 #+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:nil html-scripts:nil html-style:nil html5-fancy:nil tex:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css"/>
+------------------------
+
+#+BEGIN_EXPORT html
+<blog>visit <a href="https://jakebox.github.io/blog/" style="text-decoration: underline;">blog</a></blog>
+#+END_EXPORT
+
 
 * 
-
 ** Personal Links
 + [[https://github.com/jakebox/][github]], [[https://gist.github.com/jakebox][gists]]
++ [[https://jakebox.github.io/blog/][blog]] --- mostly Emacs-related posts
   
 ** Highlighted Projects
 + [[https://breadsched.herokuapp.com/][breadsched]]
@@ -16,7 +22,7 @@
 + [[https://github.com/jakebox/jakemacs][jakemacs]]
   * basic emacs configs (with and without evil)
 + [[https://github.com/jakebox/org-preview-html][org-preview-html]]
-  * emacs minor mode to preview org-exported html
+  * emacs minor mode to preview org-exported html (26,000+ downloads)
 + [[https://jakebox.github.io/common-app-highlight-web/index.html][common-app-hightlight-web]]
   * tool to help character count for the common app
 + [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][jb3x3]]
