@@ -17,15 +17,12 @@ body {
 	margin: 0em auto;
 }
 
-a {
-	text-decoration: none;
-}
+a { text-decoration: none; }
 
-a:visited, a:link {
-	color: #4389f7;
-}
+a:visited, a:link { color: #4389f7; }
+
 blog {
-	font-size: 2.3em;
+	font-size: 1.7em;
 	font-weight: 500;
 	display: table;
 	margin: 0 auto;
@@ -33,34 +30,23 @@ blog {
 	margin-top: 1.2em;
 	margin-bottom: -0.3em;
 }
+
 .title {
 	text-align: left;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 1.8em;
 	line-height: 120%;
 }
 
-h2 {
-	font-weight: 500;
-	font-size: 2.0em;
-	margin-top: 1.3em;
-	margin-bottom: 1.8em;
+h2,
+h3 {
 	font-family: 'Fira Code', monospace;
-	text-align: center;
-	letter-spacing: -2px;
+	font-weight: 500;
+	margin-top: 1.3em;
+	margin-bottom: 0.3em;
+	letter-spacing: -0.5px;
 }
 
 h3 {
-	font-weight: 600;
 	font-size: 1.4em;
-	margin-top: 1.5em;
-	margin-bottom: 0.3em;
-	font-family: 'Fira Code', monospace;
-	letter-spacing: -0.5px;
-}
-h4 {
-	font-size: 1.25em;
-	margin-top: 1.25em;
-	margin-bottom: 0.3em;
-	font-family: 'Fira Code', monospace;
 }

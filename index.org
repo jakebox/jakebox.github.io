@@ -4,30 +4,50 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css"/>
 ------------------------
 
-#+BEGIN_EXPORT html
+#+BEGIN_EXPORT html :noexport
 <blog>visit <a href="https://jakebox.github.io/blog/" style="text-decoration: underline;">blog</a></blog>
 #+END_EXPORT
 
 
 * 
+** Note from Jacob:
+Welcome to my personal website! Here you can find personal links as well as a some of what I've done in the past.
+
+I'm an undergraduate student at Columbia University studying computer science. I enjoy putting my skills to use while learning new things. For up-to-date goings-on, visit my [[https://github.com/jakebox/][GitHub]] or [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]]. Feel free to reach out, you can find my contact info there.
+
 ** Personal Links
-+ [[https://github.com/jakebox/][github]], [[https://gist.github.com/jakebox][gists]]
++ [[https://github.com/jakebox/][github]]
++ [[https://www.linkedin.com/in/jacob-boxerman/][linkedin]]
++ [[https://www.youtube.com/c/JakeBox0][YouTube]] (just passed 200,000 views!!)
 + [[https://jakebox.github.io/blog/][blog]] --- mostly Emacs-related posts
   
 ** Highlighted Projects
-+ [[https://breadsched.herokuapp.com/][breadsched]]
-  * create a bread baking schedule
+A selection of previous projects. May not be completely up-to-date.
+
++ HTTP/1.0 server written in C
+  * class project, code available upon request
++ [[https://github.com/jakebox/breadsched][breadsched]]
+  * create a bread baking schedule /(server down due to Heroku)/
 + [[https://github.com/jakebox/jake-emacs][emacs configuration]]
-  * my personal emacs configuration
-+ [[https://github.com/jakebox/jakemacs][jakemacs]]
-  * basic emacs configs (with and without evil)
+  * my personal emacs configuration (70+ stars on GitHub)
+  * [[https://github.com/jakebox/jake-emacs/blob/main/jake-emacs/jib-funcs.el][custom functions file]]
 + [[https://github.com/jakebox/org-preview-html][org-preview-html]]
-  * emacs minor mode to preview org-exported html (26,000+ downloads)
+  * emacs minor mode to preview org-exported html (33,000+ downloads from MELPA)
++ [[https://github.com/jakebox/jakemacs][jakemacs]]
+  * experiments with basic emacs configs
++ [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][jb3x3]]
+  * ultra-budget macropad I designed to address pandemic need and as a first foray into PCB design
++ [[https://github.com/jakebox/jake-lectorg][jake-lectorg]]
+  * my take on an Emacs-based academic organizer/command central
 + [[https://jakebox.github.io/common-app-highlight-web/index.html][common-app-hightlight-web]]
   * tool to help character count for the common app
-+ [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][jb3x3]]
-  * ultra-budget macropad
-    
+
+
 ** Talks/Publications
++ [[https://youtu.be/L897BU3BT6g?si=2juEOZcsMG8bLZ8Z&t=1262][Sharing Emacs Is Caring Emacs | EmacsConf 2023 Closing Keynote]]
+  * Had the honor of delivering the last talk at EmacsConf 2023. I spoke about my journey from learning Emacs to sharing Emacs, and how we can all work to strengthen our community. December 2023.
 + [[https://www.youtube.com/watch?v=7wKwPAWvPQs][~(concat "Remote High School" "Emacs")~]]
-  * EmacsNYC Lightning Talk on my experience using Emacs in remote high school, January 2021
+  * EmacsNYC Lightning Talk on my experience using Emacs in remote high school. January 2021.
+
+** This Page
+This page was generated from an ~org-mode~ with ~Emacs~ my +operating system+ text editor of choice. I appreciate the simpliciy and straightforward nature of building a website like this. Nonetheless I am currently teaching myself some modern JavaScript frameworks to build out some project ideas.
