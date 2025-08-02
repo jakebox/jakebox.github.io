@@ -19,3 +19,5 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(updateEmacsUptime, 1000);
   updateEmacsUptime(); // Initial call
 });
+
+function toggleTheme() {const body = document.body;body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";}

@@ -16,8 +16,10 @@ Building software, hardware, and tools. Solving problems quickly.
 ** Links
 + [[https://github.com/jakebox/][GitHub]]
 + [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]]
+  
 + [[https://www.youtube.com/c/JakeBox0][YouTube]]
   
+@@html:<button onclick="toggleTheme()">Toggle Theme</button>@@
 
 * 
 :PROPERTIES:
@@ -61,4 +63,5 @@ Inferred type: (function (&optional t t) t)
 Probably introduced at or before Emacs version 23.1.
 #+BEGIN_EXPORT html
 <span class="emacs-uptime" id="emacs-uptime">Uptime: Loading...</span>
+
 #+END_EXPORT
