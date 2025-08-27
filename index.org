@@ -9,7 +9,7 @@
 :PROPERTIES:
 :CUSTOM_ID: sidebar
 :END:
-CS @ Columbia Univeristy. 
+CS @ Columbia University.
 
 Building software, hardware, and tools. Solving problems quickly.
 
@@ -28,12 +28,12 @@ Building software, hardware, and tools. Solving problems quickly.
 
 Welcome to my personal site. Here you can find personal links and some of my work and interests. I'm an undergraduate student at Columbia University studying computer science. For up-to-date goings-on or professional information, visit my [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]].
 -----
+
 ** Selected projects
 + [[https://withixion.com/][ixion]] (Agentic AI purchasing and inventory management platform)
 + [[https://github.com/jakebox/jake-emacs][emacs configuration]] (My personal config, 100+ GitHub stars)
 + [[https://github.com/jakebox/org-preview-html][org-preview-html]] (Emacs minor mode, 40,000+ downloads)
-+ [[http://jakebox.s3.us-east-2.amazonaws.com/common-app-highlight-web/index.html][jb3x3]] (Utra-budget PCB design project)
-+ [[https://github.com/jakebox/jake-lectorg][jake-lectorg]] (my take on an Emacs-based academic organizer/command central)
++ [[https://github.com/jakebox/finance][finance]] (TUI budget / finance tracker in Haskell)
   
 ** Things I've done and enjoy doing
 + Woodworking. I teach woodshop tools at our Makerspace. Made a bunch of cutting boards, tables, other stuff. Also use a CNC Router.
