@@ -16,7 +16,6 @@ Building software, hardware, and tools. Solving problems quickly.
 ** Links
 + [[https://github.com/jakebox/][GitHub]]
 + [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]]
-  
 + [[https://www.youtube.com/c/JakeBox0][YouTube]]
   
 @@html:<button onclick="toggleTheme()">Toggle Theme</button>@@
@@ -46,11 +45,13 @@ Welcome to my personal site. Here you can find personal links and some of my wor
 + Fountain pens and stationery.
 
 ** Talks/publications
-+ [[https://youtu.be/L897BU3BT6g?si=2juEOZcsMG8bLZ8Z&t=1262][Sharing Emacs Is Caring Emacs | EmacsConf 2023 Closing Keynote]]
-+ [[https://www.youtube.com/watch?v=7wKwPAWvPQs][~(concat "Remote High School" "Emacs")~]]
++ [[https://www.youtube.com/watch?v=6bAvPhhRbyM&list=UUmIe9q2LiRcDk0swxNGfw6A][Amateur Radio at Columbia University - History to Present Day]] ([[https://www.paara.org][Palo Alto Amateur Radio Association]] August 2025 meeting)
++ [[https://youtu.be/L897BU3BT6g?si=2juEOZcsMG8bLZ8Z&t=1262][Sharing Emacs Is Caring Emacs | EmacsConf 2023 Closing Keynote]] (EmacsConf 2023)
++ [[https://www.youtube.com/watch?v=7wKwPAWvPQs][~(concat "Remote High School" "Emacs")~]] (EmacsNYC February 2021)
 
+  
 ** This page
-This page was generated from an ~org-mode~ document using ~Emacs~. I appreciate the simplicity of this approach. I asked Claude for help with the CSS.
+This page was generated from an ~org-mode~ document using ~Emacs~. I appreciate the simplicity of this approach.
 
 ------
 
