@@ -1,0 +1,19 @@
+---
+layout: base.njk
+---
+
+<h1 class="title">{{ title }}</h1>
+
+{% if date %}
+<p class="post-meta">
+  {{ date | dateFormat }}
+</p>
+{% endif %}
+
+{{ content | safe }}
+
+<hr>
+
+<nav style="margin-top: 2em;">
+  <a href="/">← Back to Home</a>
+</nav>
