@@ -1,0 +1,27 @@
+h1 {
+    font-size: 12px;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.5rem 2rem;
+  border-left: 4px solid #3b82f6;
+  background: #f8fafc;
+  font-style: italic;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 2rem 0;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}

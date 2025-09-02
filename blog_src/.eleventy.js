@@ -1,14 +1,15 @@
 module.exports = function(eleventyConfig) {
-  // Copy CSS files to output
-  eleventyConfig.addPassthroughCopy("css");
 
-  // Copy original CSS from two directories up
-  eleventyConfig.addPassthroughCopy({"../style.css": "css/style.css"});
-  
   // Copy any assets
-  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy({"./_assets": "assets"});
+
+  // Copy toplevel CSS from two directories up
+  eleventyConfig.addPassthroughCopy({"../style.css": "assets/style.css"});
+
+  eleventyConfig.addCollection("pages", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("pages/*").reverse();
+  });
   
-  // Add a collection for blog posts
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("posts/*.md").reverse();
   });
@@ -29,15 +30,20 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addGlobalData("site", {
-    title: "Jacob Boxerman"
+    title: "Jacob Boxerman's Blog"
+  });
+
+  eleventyConfig.addShortcode("image", function(src, alt, className = "") {
+    return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy">`;
   });
 
   return {
     dir: {
       input: ".",
       includes: "_includes",
-      output: "_site"
+      output: "../blog"
     },
+    pathPrefix: "/blog/",
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     templateFormats: ["md", "njk", "html"]

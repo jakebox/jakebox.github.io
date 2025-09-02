@@ -3,24 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} | {% endif %}{{ site.title or "My Blog" }}</title>
-  <link rel="stylesheet" href="/css/homepage.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/blog.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
 </head>
 <body data-theme="light">
   <div id="content">
-    <div id="outline-container-sidebar">
+    <div id="outline-container-sidebar" class="outline-2">
       <h2 id="sidebar">{{ site.title }}</h2>
-      
-      <h3>Recent Posts</h3>
-      <ul>
-        {% for post in collections.posts %}
-        <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-        {% endfor %}
-      </ul>
-      
-      <button onclick="toggleTheme()">Toggle Theme</button>
+      <a href="/blog">Return to blog home</a>
+      <a href="/">Return to homepage</a>
     </div>
     
     <div id="outline-container-main_content">
