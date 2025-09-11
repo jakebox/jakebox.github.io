@@ -1,6 +1,0 @@
-[submodule "org-html-theme-lightsun"]
-	path = org-html-theme-lightsun
-	url = https://github.com/jakebox/org-html-theme-lightsun
-[submodule "common-app-highlight-web"]
-	path = common-app-highlight-web
-	url = https://github.com/jakebox/common-app-highlight-web
