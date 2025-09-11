@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jacob Boxerman - Org LaTeX Export</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/default.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <script src="../assets/script.js"></script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Org LaTeX Export</h1> -->
+            <article>
+    <section class="header">
+        <h1>Org LaTeX Export</h1>
+        Posted on March 20, 2021
+        
+    </section>
+    <section>
+        <h2 id="prerequisites">Prerequisites</h2>
+<p>Things you’ll need before following through with this video.</p>
+<ul>
+<li>Decent Org Mode knowledge</li>
+<li>Decent LaTeX Knowledge</li>
+<li>Locally installed LaTeX compiler</li>
+</ul>
+<h4 id="latex-compiler">LaTeX Compiler</h4>
+<p>This has links for all operating systems.
+<a href="https://www.latex-project.org/get/">https://www.latex-project.org/get/</a></p>
+<h2 id="most-basic-latex-export">Most basic LaTeX Export</h2>
+<p>The most basic one possible. We only choose the document class and paper size. And, disable the table of contents.</p>
+<h3 id="options">Options</h3>
+<div class="captioned-content">
+<div class="caption">
+Org Mode header for a basic LaTeX export
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>#+LaTeX_CLASS: article</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>#+LaTeX_CLASS_OPTIONS: [letterpaper]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>#+OPTIONS: toc:nil</span></code></pre></div>
+</div>
+<h2 id="using-your-own-latex-setup">Using your own LaTeX setup</h2>
+<h3 id="set-up-a-plain-latex-class-for-yourself">Set up a plain LaTeX class for yourself</h3>
+<p>This will give us a class that <em>won’t</em> include all the default packages in the generated LaTeX file. Put this in your <code>init</code> file. You can then use it with <code>#+LATEX_CLASS: org-plain-latex</code>.</p>
+<div class="sourceCode" id="cb2" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(with-eval-after-load <span class="dt">'ox-latex</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>(add-to-list <span class="dt">'org-latex-classes</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>             '(<span class="st">&quot;org-plain-latex&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;</span><span class="sc">\\</span><span class="st">documentclass{article}</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">           [NO-DEFAULT-PACKAGES]</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">           [PACKAGES]</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">           [EXTRA]&quot;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>               (<span class="st">&quot;</span><span class="sc">\\</span><span class="st">section{%s}&quot;</span> . <span class="st">&quot;</span><span class="sc">\\</span><span class="st">section*{%s}&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>               (<span class="st">&quot;</span><span class="sc">\\</span><span class="st">subsection{%s}&quot;</span> . <span class="st">&quot;</span><span class="sc">\\</span><span class="st">subsection*{%s}&quot;</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>               (<span class="st">&quot;</span><span class="sc">\\</span><span class="st">subsubsection{%s}&quot;</span> . <span class="st">&quot;</span><span class="sc">\\</span><span class="st">subsubsection*{%s}&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>               (<span class="st">&quot;</span><span class="sc">\\</span><span class="st">paragraph{%s}&quot;</span> . <span class="st">&quot;</span><span class="sc">\\</span><span class="st">paragraph*{%s}&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>               (<span class="st">&quot;</span><span class="sc">\\</span><span class="st">subparagraph{%s}&quot;</span> . <span class="st">&quot;</span><span class="sc">\\</span><span class="st">subparagraph*{%s}&quot;</span>))))</span></code></pre></div>
+<h3 id="create-include-a-setupfile">Create &amp; include a <code>SETUPFILE</code></h3>
+<p>A <code>SETUPFILE</code> is simply a file that contains some sort of org mode configuration. For example, the <code>#+LATEX_CLASS:</code> we saw earlier. Or, maybe <code class="verbatim">#+LATEX_HEADER:</code>. It could even be as simple as <code class="verbatim">#+TITLE:</code>. In this <code class="verbatim">SETUPFILE</code> we can place all of our lines of LaTeX code we want included in the final generated document. <strong>This is a very powerful and easy method of perfectly customizing our export.</strong></p>
+<div class="captioned-content">
+<div class="caption">
+Linking to a <code>SETUPFILE</code>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>#+SETUPFILE: ~/Dropbox/Mackup/emacs-stuff/org/jake-standard-latex-export.org</span></code></pre></div>
+</div>
+<h3 id="structure-the-setupfile">Structure the <code>SETUPFILE</code></h3>
+<p>Now, in that <code>SETUPFILE</code>, we place the LaTeX lines we normally would put in a <code>.tex</code> file. For example, <code>\usepackage{amsmath}</code>. Hopefully you have your own favorite <code>.tex</code> file setup, but if not I suggest learning LaTeX and/or finding a template online.</p>
+<p>I suggest using a macro to add <code>#+LATEX_CLASS: to each line</code>, rather than typing it manually of course! Notice the <code>LaTeX_CLASS:</code> - the custom one we just created.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>#+LaTeX_CLASS: org-plain-latex</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>#+LaTeX_CLASS_OPTIONS: [letter]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>#+LATEX_HEADER: <span class="bu">\usepackage</span>{<span class="ex">lmodern</span>} <span class="co">% Ensures we have the right font</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>#+LATEX_HEADER: <span class="bu">\usepackage</span>[AUTO]{<span class="ex">inputenc</span>}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>#+LATEX_HEADER: <span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>#+LATEX_HEADER: <span class="bu">\usepackage</span>{<span class="ex">amsmath, amsthm, amssymb</span>}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>#+LATEX_HEADER: <span class="bu">\usepackage</span>[table, xcdraw]{<span class="ex">xcolor</span>}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">% and so on...</span></span></code></pre></div>
+<h3 id="extra-notes">Extra Notes</h3>
+<p>Some notes not covered in the video.</p>
+<h4 id="code">Code</h4>
+<p>Enable using <code>listings</code> for code highlighting</p>
+<div class="sourceCode" id="cb5" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> org-latex-listings <span class="dt">'t</span>)</span></code></pre></div>
+<p>In your <code>SETUPFILE:</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>#+LATEX_HEADER: <span class="bu">\usepackage</span>{<span class="ex">listings</span>}</span></code></pre></div>
+<p>If you enable <code>org-latex-listings</code> but don’t include the <code class="verbatim">listings</code> package in your TeX file, it will likely not compile (if you are exporting an org file with code blocks).</p>
+<h4 id="useful-commands">Useful commands</h4>
+<ul>
+<li><code>org-latex-preview</code> - toggles preview LaTeX math at point</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://orgmode.org/manual/LaTeX-Export.html#LaTeX-Export">https://orgmode.org/manual/LaTeX-Export.html#LaTeX-Export</a></li>
+<li><a href="https://orgmode.org/worg/org-tutorials/org-latex-export.html">Orgmode LaTeX Export Official Docs</a></li>
+<li><a href="https://orgmode.org/manual/LaTeX-fragments.html">https://orgmode.org/manual/LaTeX-fragments.html</a></li>
+<li><a href="https://orgmode.org/manual/Quoting-LaTeX-code.html">https://orgmode.org/manual/Quoting-LaTeX-code.html</a></li>
+<li><a href="https://www.youtube.com/watch?v=S9lqMjNPjHc&amp;list=WL&amp;index=1">Never write plain LaTeX Again</a></li>
+<li><a href="https://orgmode.org/guide/Tables.html">https://orgmode.org/guide/Tables.html</a>
+<ul>
+<li><a href="https://orgmode.org/manual/Built_002din-Table-Editor.html">https://orgmode.org/manual/Built_002din-Table-Editor.html</a></li>
+<li><a href="https://orgmode.org/manual/Column-Groups.html#Column-groups">https://orgmode.org/manual/Column-Groups.html#Column-groups</a></li>
+</ul></li>
+</ul>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>

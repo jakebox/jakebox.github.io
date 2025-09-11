@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jacob Boxerman - Emacs in the terminal doesn't suck, you just don't know how to use it</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/default.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <script src="../assets/script.js"></script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Emacs in the terminal doesn't suck, you just don't know how to use it</h1> -->
+            <article>
+    <section class="header">
+        <h1>Emacs in the terminal doesn't suck, you just don't know how to use it</h1>
+        Posted on July  7, 2025
+        
+    </section>
+    <section>
+        <p>Associated YouTube video: <a href="https://www.youtube.com/watch?v=2_6OxZDoWvw">https://www.youtube.com/watch?v=2_6OxZDoWvw</a></p>
+<h2 id="emacs-in-the-terminal-doesnt-suck-you-just-dont-know-how-to-use-it">Emacs in the terminal doesn’t suck, you just don’t know how to use it</h2>
+<p>Hi everyone, Jake here from Straightforward Emacs. Today I’ll be giving my thoughts on using Emacs in the terminal. If you do a little online research on the topic, what you’ll likely encounter is people telling you that you should avoid using Emacs in the terminal, just use the GUI, TRAMP mode is awesome, and so on. I’m here today to tell you — they are wrong, you <em>should</em> give terminal Emacs a try.</p>
+<h2 id="what-we-lose">What we lose</h2>
+<p>First, let’s discuss why people are against using Emacs in the terminal. Because, yes, we do miss out on benefits that come with a GUI. The main loss can be summed up as, we lose anything that is not text. That includes viewing PDFs, anything using xwidgets support, or images in orgmode. If you don’t use these heavily then you will be fine.</p>
+<p>Keybindings can also be more challenging in the terminal. Terminal emulators tend to swallow certain keybindings. For example, I can’t really use the command key on my Mac in terminal Emacs because iTerm uses it for commands. But if you can get past these two slight inconveniences, you can unlock a new world.</p>
+<h2 id="what-we-gain">What we gain</h2>
+<p>I use Emacs in the terminal for three a few main reasons.</p>
+<p>The primary reason I started using Emacs in the terminal is for the integration with the rest of my workflow. Being able to stay in my terminal emulator is a beautiful thing. I have experimented with many Emacs terminal emulators, and none have quite been able to replace something like iTerm for me, so with terminal Emacs inside iTerm, along with a bunch of other tabs, I can navigate like never before and feel like I’m at home on my system.</p>
+<p>Another reaosn is for remote editing. Emacs does include a remote file editing package called TRAMP. But as great as it is, it rarely works <em>perfectly</em> for me. Editing a few files on a remote machine is usually not a problem, but latency can be an issue, especially when working on large projects with LSP. I have far fewer problems when I work without TRAMP.</p>
+<p>A related nicety that comes with terminal Emacs is the simplicity. I’ve been leaning more into simplicity lately, and using Emacs in the terminal forces you to evaluate what is important.</p>
+<p>Check out my modeline — it’s a character tall, without any logos or graphics or icons. Using Emacs in the terminal makes me reevaluate Emacs as a tool, just like the rest of my tools. Understand what I really need out of it. Yes, it’s fun to obsess over our tools, that’s why we’re here. But there needs to be a limit.</p>
+<p>This works well with my new Emacs philosophy, which I’ll be discussing in another video, but boils down to — use tools that are great at what they do, only for what they are great at. I’ll pop open a new tab and open lazygit because I like using lazygit, and then switch back to Emacs because I like using Emacs. But that’s for another video.</p>
+<h2 id="steps-you-can-take">Steps you can take</h2>
+<p>I suggest you give Emacs a try in the terminal. Use it as motivation to evaluate what is really important to you, and what of your configuration sits idle, slowing things down and complicating your life.</p>
+<p>First, choose a good terminal emulator for your machine. On Mac, iTerm2 is classic, but if you want to try the new hip thing I hear Ghostty is good and also supports Linux. Boot up into Emacs with the <code>-nw</code> flags to start without GUI. Make a fresh <code>init.el</code> and start slowly transferring over what works and dropping what doesn’t.</p>
+<p>You’ll be surprised with how little you need to get by in the terminal. Accepting the bounds of the terminal might feel limiting at first, but I think you’ll quickly appreciate what it can do for us. It’s funny, we still haven’t found a better way to interact with our machines. All this new AI, LLM stuff, and here we are listing directories with <code>ls</code>. My Emacs configuration, which I detailed in a 30+ minute long video, clocked in at over 2000 lines. Now, I’m daily driving a config that’s just over 150 lines excluding whitespace and comments.</p>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>

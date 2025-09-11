@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jacob Boxerman - Show all unchecked Org Mode checkboxes</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/default.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <script src="../assets/script.js"></script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Show all unchecked Org Mode checkboxes</h1> -->
+            <article>
+    <section class="header">
+        <h1>Show all unchecked Org Mode checkboxes</h1>
+        Posted on August 17, 2022
+        
+    </section>
+    <section>
+        <blockquote>
+<p>This is my first Straightforward Emacs blog post. Inspired by my video series, these posts will contain brief, descriptive write-ups of my favorite Emacs functions and features, problems I’ve solved, and short instructional guides. Many posts center on solving real world problems, especially with Org Mode, which I use to organize much of my work and personal life. I hope these posts will help you create and find solutions to your own problems.</p>
+</blockquote>
+<p>Recently I was creating a packing list using Emacs’ Org Mode. I had multiple headings for each item category (clothing, toiletries, etc), with lists under each heading.</p>
+<figure>
+<img src="../assets/images/checkboxes_1.png" />
+<figcaption>Part of my packing list.</figcaption>
+</figure>
+<p>Org sparse tree features are one way to make this search. But I decided to write a very small function using <code>occur</code>, allowing me to quickly generate an interactive list of all the unchecked checkboxes in a given Org file.</p>
+<blockquote>
+<p>From EmacsWiki: Occur lists all lines of the current buffer that match a regexp that you give it.</p>
+</blockquote>
+<p>Using <code>occur</code>, we can get something that looks like this:</p>
+<figure>
+<img src="../assets/images/checkboxes_2.png" />
+<figcaption>Left pane: original packing list. Right pane: <code>Occur</code> buffer matching unchecked boxes.</figcaption>
+</figure>
+<p>What’s nice about <code>Occur</code> is that it’s interactive — you can easily jump to a line and make modifications.</p>
+<p>You can manually achieve this result by running <code>M-x occur</code> and typing in the regex, but I wanted to bind this search to a key, so I wrote a very small function:</p>
+<div class="sourceCode" id="cb1" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> jakebox/org-occur-unchecked-boxes </span>()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  (occur <span class="st">&quot;</span><span class="sc">\\</span><span class="st">[ </span><span class="sc">\\</span><span class="st">]&quot;</span>)) <span class="co">;; Match [ ]</span></span></code></pre></div>
+<p>Sure, there are more complex and comprehensive ways of doing things, but I like this function as an example of how a problem can be solved quickly and easily with Emacs. Someone with little programming knowledge could work their way around to a solution like this.</p>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>

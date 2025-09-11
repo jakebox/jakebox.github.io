@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jacob Boxerman - Automatically Highlight Emacs Buffer Text</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/default.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <script src="../assets/script.js"></script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Automatically Highlight Emacs Buffer Text</h1> -->
+            <article>
+    <section class="header">
+        <h1>Automatically Highlight Emacs Buffer Text</h1>
+        Posted on August 24, 2022
+        
+    </section>
+    <section>
+        <p>A habit I’ve picked up from my time writing journalism is using the letters <code>TK</code> to signify material that is not yet filled in. Many journalists use TK in place of underscores (<code>_________</code>), or a block of Xs (XXXXXXXXXX). TK, short for “to come,” is easy to search for, as few English words contain a T followed by a K, and stands out visually.</p>
+<p>Regardless of its origin and utility, I use TKTKTKTK in my writing, much of which I do in <strong>Emacs’ Org Mode</strong>. The letters alone stand out enough, but I wanted to make it even more eye-catching in my Emacs buffer.</p>
+<p>After some searching and trial and error, I worked out a great solution using the <a href="https://codeberg.org/ideasman42/emacs-hl-prog-extra">hl-prog-extra</a> package, available on <a href="https://melpa.org/#/hl-prog-extra">MELPA</a>.</p>
+<p>Here is the result:</p>
+<figure>
+<img src="../assets/images/highlight_tktktk.png" />
+<figcaption>Draft of this post. Each TK is highlighted automaticlly</figcaption>
+</figure>
+<p>From <code>hl-prog-extra</code>’s source code:</p>
+<blockquote>
+<p>This package provides an easy way to highlight words in programming modes,
+where terms can be highlighted on code, comments or strings.</p>
+</blockquote>
+<hr />
+<p>Though designed for use with programming modes, the package works well for <strong>highlighting any arbitrary text in an Emacs buffer</strong>. I wanted to highlight any number of TKs in a row when I write in Org Mode. To do this, I first wrote a <strong>regular expression</strong>:</p>
+<div class="sourceCode" id="cb1" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span><span class="sc">\\</span><span class="st">(TK</span><span class="sc">\\</span><span class="st">)+&quot;</span></span></code></pre></div>
+<p>The parenthesis define a character group, so a T and a K together. The <code>\</code> are escape characters. And the <code>+</code> means, any number of this group. Pretty simple.</p>
+<p>After that, I installed <code>M-x package-install &lt;RET&gt; hl-prog-extra &lt;RET&gt;</code> and configured <code>hl-prog-extra</code>. To specify what strings I’d like highlighted, I modify the <code>hl-prog-extra-list</code> variable. It should be set to a list of lists with configuration properties. Sounds like a lot, but after seeing how mine is set up you should be able to make your own easily.</p>
+<div class="sourceCode" id="cb2" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> hl-prog-extra-list</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">list</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       <span class="co">;; Match TKs in quotation marks (hl-prog-extra sees them as strings)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>       '(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(TK</span><span class="sc">\\</span><span class="st">)+&quot;</span> <span class="dv">0</span> <span class="kw">string</span> '(:weight bold :inherit font-lock-warning-face))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>       <span class="co">;; Match TKs not in quotation marks</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>       '(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(TK</span><span class="sc">\\</span><span class="st">)+&quot;</span> <span class="dv">0</span> <span class="kw">nil</span> '(:weight bold :inherit font-lock-warning-face)))))</span></code></pre></div>
+<p>In each sub-list, as I think of it, first comes the <em>regular expression</em> (regex). Then comes the regex <em>subexpression</em> — 0 means use the whole thing. Next is the <em>context</em>.</p>
+<p>To match the TK in any situation, I need to use two highlight contexts — one for strings (<code>string</code>), which will match TKs in quotes (“TKTKTK”), and one for TKs not in quotation marks (<code>nil</code>). This repetition is needed because, as I mentioned, <code>hl-prog-extra</code> is designed for writing code. Not ideal but it’s fine.</p>
+<p>Finally is the <em>face</em> configuration, another list with arguments/attributes. For more information on face attributes, see <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Face-Attributes.html">GNU Emacs Manual Face Attributes</a>. <code>:inherit</code> is an easy way to define your face here, it will just make your highlight take on another face’s properties (foreground color, underline, etc). In the above example I highlight TK with whatever my current theme makes the warning face look like. Warning should stand out nicely with any theme.</p>
+<p>With that done, I just needed to <strong>automatically activate <code>hl-prog-extra-mode</code> in Org Mode</strong>. This is done with a simple hook:</p>
+<div class="sourceCode" id="cb3" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; Using `add-hook'</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>(add-hook <span class="dt">'org-mode-hook</span> <span class="op">#'</span>hl-prog-extra-mode)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">;; Or for `use-package' users:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>:hook (org-mode . hl-prog-extra-mode)</span></code></pre></div>
+<p>And with that, everything is configured! For those who are interested, here is my full configuration using <code>use-package</code>.</p>
+<div class="sourceCode" id="cb4" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">use-package</span> hl-prog-extra</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  :commands (hl-prog-extra-mode)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  :config</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">setq</span> hl-prog-extra-list</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">list</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="co">;; Match TKs in quotation marks (hl-prog-extra sees them as strings)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         '(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(TK</span><span class="sc">\\</span><span class="st">)+&quot;</span> <span class="dv">0</span> <span class="kw">string</span> '(:weight bold :inherit font-lock-warning-face))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         <span class="co">;; Match TKs not in quotation marks</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         '(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(TK</span><span class="sc">\\</span><span class="st">)+&quot;</span> <span class="dv">0</span> <span class="kw">nil</span> '(:weight bold :inherit font-lock-warning-face)))))</span></code></pre></div>
+<p>This simple setup is <strong>lightweight and has tons of potential uses</strong>. Want to highlight every instance of a certain name when writing a script? Want to highlight a specific variable when explaining some code? It’s all easy to do with <code>hl-prog-extra</code>.</p>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>

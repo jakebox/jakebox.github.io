@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jacob Boxerman - Export Org Mode to HTML</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/default.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <script src="../assets/script.js"></script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Export Org Mode to HTML</h1> -->
+            <article>
+    <section class="header">
+        <h1>Export Org Mode to HTML</h1>
+        Posted on March 17, 2021
+        
+    </section>
+    <section>
+        <h2 id="in-this-video">In This Video</h2>
+<h3 id="most-basic-org-mode-html-export">Most basic org mode HTML export</h3>
+<ul>
+<li><code>org-export-dispatch</code></li>
+<li><code>h</code> for HTML
+<ul>
+<li><code>o</code> for open</li>
+</ul></li>
+</ul>
+<h3 id="basic-options-to-customize-the-export">Basic options to customize the export</h3>
+<ul>
+<li>Configure options by adding: <code class="verbatim">#+OPTIONS:</code></li>
+</ul>
+<h4 id="numbering">Numbering</h4>
+<ul>
+<li><code>num:nil</code></li>
+</ul>
+<h4 id="table-of-contents">Table of Contents</h4>
+<ul>
+<li><code>toc:nil</code></li>
+</ul>
+<h4 id="advanced-options">Advanced options</h4>
+<ul>
+<li><a href="https://orgmode.org/manual/Export-Settings.html">https://orgmode.org/manual/Export-Settings.html</a></li>
+</ul>
+<h3 id="further-customizing-the-exported-html">Further customizing the exported HTML</h3>
+<p>Make it look better!</p>
+<h4 id="setupfiles">SETUPFILES</h4>
+<ul>
+<li>readtheorg &amp; bigblow themes
+<ul>
+<li><a href="https://github.com/fniessen/org-html-themes">https://github.com/fniessen/org-html-themes</a></li>
+<li><code class="verbatim">#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-NAME.setup</code></li>
+</ul></li>
+</ul>
+<h4 id="custom-css">Custom CSS</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode org"><code class="sourceCode orgmode"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>#+HTML_HEAD: &lt;link rel<span class="ex">=&quot;stylesheet&quot; type=</span>&quot;text/css&quot; href&quot;styles.css&quot;/&gt;</span></code></pre></div>
+<h2 id="themes-to-try">Themes To Try</h2>
+<p>I have not tried/like all of these, just some options you could give a go. You may need to download the CSS file directly for some of these as well as they may not be hosted online.</p>
+<h3 id="org-min">Org-Min</h3>
+<p><code>#+HTML_HEAD: &lt;link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css"&gt;</code></p>
+<h3 id="rethink">Rethink</h3>
+<p><a href="https://github.com/jessekelly881/Rethink">https://github.com/jessekelly881/Rethink</a></p>
+<h3 id="imagine">Imagine</h3>
+<p><a href="https://github.com/jessekelly881/Imagine">https://github.com/jessekelly881/Imagine</a></p>
+<h3 id="alphapapas-darksun">Alphapapa’s Darksun</h3>
+<p><a href="https://github.com/alphapapa/org-html-theme-darksun">https://github.com/alphapapa/org-html-theme-darksun</a></p>
+<h3 id="bigblow">Bigblow</h3>
+<p><code>#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup</code></p>
+<h3 id="readtheorg">Readtheorg</h3>
+<p><code>#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup</code></p>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>
