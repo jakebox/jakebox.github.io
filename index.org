@@ -1,57 +1,35 @@
-#+TITLE: Jacob Boxerman's Website
-#+OPTIONS: toc:nil date:nil author:nil num:nil title:nil
-#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:nil html-scripts:nil html-style:nil html5-fancy:nil tex:t
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css"/>
-#+HTML_HEAD: <script src="script.js"></script>
-
-
-* Jacob Boxerman
-:PROPERTIES:
-:CUSTOM_ID: sidebar
-:END:
-CS @ Columbia University.
-
-Building software, hardware, and tools. Solving problems quickly.
-
-** Links
-+ [[https://github.com/jakebox/][GitHub]]
-+ [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]]
-+ [[https://www.youtube.com/c/JakeBox0][YouTube]]
-  
-@@html:<button onclick="toggleTheme()">Toggle Theme</button>@@
-
-* 
-:PROPERTIES:
-:CUSTOM_ID: main_content
-:END:
+#+TITLE: Home
 
 Welcome to my personal site. Here you can find personal links and some of my work and interests. I'm an undergraduate student at Columbia University studying computer science. For up-to-date goings-on or professional information, visit my [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]].
+
 -----
 
-** Selected projects
+* Recent blog posts
+$partial("templates/post-list.html")$
+
+* Selected projects
 + [[https://withixion.com/][ixion]] (Agentic AI purchasing and inventory management platform)
 + [[https://github.com/jakebox/jake-emacs][emacs configuration]] (My personal config, 100+ GitHub stars)
 + [[https://github.com/jakebox/org-preview-html][org-preview-html]] (Emacs minor mode, 40,000+ downloads)
 + [[https://github.com/jakebox/finance][finance]] (TUI budget / finance tracker in Haskell)
-  
-** Things I've done and enjoy doing
+
+* Things I've done and enjoy doing
 + Woodworking. I teach woodshop tools at our Makerspace. Made a bunch of cutting boards, tables, other stuff. Also use a CNC Router.
 + Got my amateur radio license. KE2CZX.
-+ Digital minimalism / hyper-tuning my digital life.
++ Digital minimalism / tuning my digital life.
 + Launched high-altitude balloons with my team at Columbia.
-+ Gridfinity and organization.
 + Non-frivolous 3D printing.
 + Writing code that does cool things or makes my life easier.
 + Fountain pens and stationery.
 
-** Talks/publications
+* Talks/publications
 + [[https://www.youtube.com/watch?v=6bAvPhhRbyM&list=UUmIe9q2LiRcDk0swxNGfw6A][Amateur Radio at Columbia University - History to Present Day]] ([[https://www.paara.org][Palo Alto Amateur Radio Association]] August 2025 meeting)
 + [[https://youtu.be/L897BU3BT6g?si=2juEOZcsMG8bLZ8Z&t=1262][Sharing Emacs Is Caring Emacs | EmacsConf 2023 Closing Keynote]] (EmacsConf 2023)
 + [[https://www.youtube.com/watch?v=7wKwPAWvPQs][~(concat "Remote High School" "Emacs")~]] (EmacsNYC February 2021)
 
-  
-** This page
-This page was generated from an ~org-mode~ document using ~Emacs~. I appreciate the simplicity of this approach.
+
+* This page
+Previously, I generated a single page from an ~org-mode~ document using ~Emacs~. I appreciate the simplicity of this approach. For a little more flexibility, I am now using [[https://jaspervdj.be/hakyll/][Hakyll]] to generate everything from the Org source files.
 
 ------
 

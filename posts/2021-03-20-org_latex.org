@@ -1,0 +1,105 @@
+---
+title: "Org LaTeX Export"
+description: Introduction to creating beautiful LaTeX documents from Org Mode.
+---
+#+TITLE: Org LaTeX Export
+#+SUBTITLE: /Straightforward Emacs/
+#+AUTHOR: Jake B
+:PROPERTIES:
+#+OPTIONS: toc:nil num:nil
+# #+SETUPFILE: ~/Dropbox/Mackup/emacs-stuff/org/setupfiles_html/org.min_css.setup
+# #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles.css" />
+# #+SETUPFILE: ~/Dropbox/Mackup/emacs-stuff/org/setupfiles_html/readtheorg.setup
+:END:
+
+* Prerequisites
+Things you'll need before following through with this video.
++ Decent Org Mode knowledge
++ Decent LaTeX Knowledge
++ Locally installed LaTeX compiler
+*** LaTeX Compiler
+This has links for all operating systems.
+https://www.latex-project.org/get/
+
+* Most basic LaTeX Export
+The most basic one possible. We only choose the document class and paper size. And, disable the table of contents.
+** Options
+#+CAPTION: Org Mode header for a basic LaTeX export
+#+BEGIN_SRC latex
+#+LaTeX_CLASS: article
+#+LaTeX_CLASS_OPTIONS: [letterpaper]
+#+OPTIONS: toc:nil
+#+END_SRC
+
+* Using your own LaTeX setup
+** Set up a plain LaTeX class for yourself
+This will give us a class that /won't/ include all the default packages in the generated LaTeX file. Put this in your ~init~ file. You can then use it with ~#+LATEX_CLASS: org-plain-latex~.
+#+BEGIN_SRC emacs-lisp
+  (with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+               '("org-plain-latex"
+                 "\\documentclass{article}
+             [NO-DEFAULT-PACKAGES]
+             [PACKAGES]
+             [EXTRA]"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+#+END_SRC
+
+** Create & include a ~SETUPFILE~
+A ~SETUPFILE~ is simply a file that contains some sort of org mode configuration. For example, the ~#+LATEX_CLASS:~ we saw earlier. Or, maybe =#+LATEX_HEADER:=. It could even be as simple as =#+TITLE:=. In this =SETUPFILE= we can place all of our lines of LaTeX code we want included in the final generated document. *This is a very powerful and easy method of perfectly customizing our export.*
+
+#+CAPTION: Linking to a ~SETUPFILE~
+#+ATTR_LATEX: :options numbers=left, captionpos=b
+#+BEGIN_SRC latex
+#+SETUPFILE: ~/Dropbox/Mackup/emacs-stuff/org/jake-standard-latex-export.org
+#+END_SRC
+
+** Structure the ~SETUPFILE~
+Now, in that ~SETUPFILE~, we place the LaTeX lines we normally would put in a ~.tex~ file. For example, ~\usepackage{amsmath}~. Hopefully you have your own favorite ~.tex~ file setup, but if not I suggest learning LaTeX and/or finding a template online.
+
+I suggest using a macro to add ~#+LATEX_CLASS: to each line~, rather than typing it manually of course! Notice the ~LaTeX_CLASS:~ - the custom one we just created.
+#+BEGIN_SRC latex
+#+LaTeX_CLASS: org-plain-latex
+#+LaTeX_CLASS_OPTIONS: [letter]
+#+LATEX_HEADER: \usepackage{lmodern} % Ensures we have the right font
+
+#+LATEX_HEADER: \usepackage[AUTO]{inputenc}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{amsmath, amsthm, amssymb}
+#+LATEX_HEADER: \usepackage[table, xcdraw]{xcolor}
+
+% and so on...
+#+END_SRC
+
+** Extra Notes
+Some notes not covered in the video.
+*** Code
+Enable using ~listings~ for code highlighting
+#+BEGIN_SRC emacs-lisp
+(setq org-latex-listings 't)
+#+END_SRC
+
+In your ~SETUPFILE:~
+#+BEGIN_SRC latex
+#+LATEX_HEADER: \usepackage{listings}
+#+END_SRC
+
+If you enable ~org-latex-listings~ but don't include the =listings= package in your TeX file, it will likely not compile (if you are exporting an org file with code blocks).
+
+*** Useful commands
++ ~org-latex-preview~ - toggles preview LaTeX math at point
+
+* Resources
++ https://orgmode.org/manual/LaTeX-Export.html#LaTeX-Export
++ [[https://orgmode.org/worg/org-tutorials/org-latex-export.html][Orgmode LaTeX Export Official Docs]]
++ https://orgmode.org/manual/LaTeX-fragments.html
++ https://orgmode.org/manual/Quoting-LaTeX-code.html
++ [[https://www.youtube.com/watch?v=S9lqMjNPjHc&list=WL&index=1][Never write plain LaTeX Again]] 
++ https://orgmode.org/guide/Tables.html
+  * https://orgmode.org/manual/Built_002din-Table-Editor.html
+  * https://orgmode.org/manual/Column-Groups.html#Column-groups
+

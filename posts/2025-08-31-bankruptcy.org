@@ -1,0 +1,135 @@
+---
+title: How to declare Emacs bankruptcy
+date: 2025-08-31
+description: Emacs Bankruptcy, the idea of starting your Emacs configuration from scratch in hopes of coming up with something better. What is it, why you should do it, my own Emacs bankruptcy, important points to consider.
+---
+
+This post is an edited script from the associated YouTube video: [[https://www.youtube.com/watch?v=dSlMmCD5quc][Emacs bankruptcy – fix your Emacs and your life]]
+
+* What is Emacs Bankruptcy
+
+First, we need to understand what Emacs bankruptcy is.
+
+Emacs bankruptcy is a term we use to describe starting over configuring
+Emacs, often from scratch, due to the fact that your Emacs configuration
+has become too long, too confusing, too bloated, too messy, and so on.
+
+* Is Emacs bankruptcy for you?
+
+Bankruptcy is a complex thing requiring lots of consideration with
+experts and careful analysis of your situation. Luckily, Emacs bankrupty
+is free and can be reverted at any time, given that you are using some
+version control.
+
+In this sense, then, I suggest everyone declare Emacs bankruptcy at
+least once. You may be surprised what a fresh slate makes you realize.
+
+As a side note, new Emacs versions have been changing variables and
+every so often a default changes, or something you used to do is no
+longer necessary, so this is a nice chance to deal with that.
+
+* How to do Emacs bankruptcy, and start over
+
+I suggest taking Emacs bankruptcy as a chance to start over from a clean
+slate, rather than trying to work with the pieces you have. What does
+that mean?
+
+That includes deleting your entire .emacs.d folder, or .emacs init file.
+Make sure to back it up, but after that, just wipe it. Boot up Emacs to
+a clean slate, so you're reminded of what you're starting from.
+
+* My Emacs bankruptcy
+
+I had a literate configuration that, tangled, is over 2000 lines, not
+including custom functions and configuration in other files. It has over
+100 stars on Github and actually comes up on YouTube pretty high. This
+was my four year masterpiece.
+
+When I started a new job a few months ago, I started with VSCode so I
+could hit the ground running. I didn't want to deal with configuring
+Emacs for my new tech stack. That's when I realized I had a problem. So
+I started over, and built a new configuration, the core of which is less
+than 300 lines! Incredible! And I swear to you, I used that every day,
+and got paid for the work I did with it. Emacs is an investment, and
+declaring bankruptcy paid off for me, and it can for you, too. So let's
+get started with a little re-enactment walkthrough.
+
+* Main points when starting from scratch
+
+Here are a few things to consider when starting over.
+
+One: decide on basic priorities. Will you be using Emacs in the terminal
+or as a GUI app. Will you be using Evil bindings, regular, or something
+else? From there, you can begin to make the more technical decisions,
+which will depend on your skill, interest, and knowledge.
+
+For example, what completion framework interests you --- Helm, Ido, Ivy,
+or Vertico, to name a few? Will you be using in-buffer text completion
+at point, and if so, which? Company or Corfu, or something else?
+
+Two: Decide on a consistent way to manage your packages and
+configuration. I am using use-package with Straight.el. Whatever you
+choose, stick to it. Emacs is a declarative piece of software, and we
+want to take full advantage of that. I'll have another video outlining
+how to create a really solid, reproducible, declarative Emacs
+configuration coming soon.
+
+Three: Get to work adding in what you need, ruthlessly avoiding what you
+don't. I'll show you how I did that right now.
+
+Four: Prefer built-in functionality. See where you can get away with not
+using another package. You'll be surprised, especially considering how
+many features are really up to par these days.
+
+* Example of starting over
+
+Let's take a look at my old configuration. I had a ton of
+basic Emacs configuration options set that, it turns out, I really do
+not need. How do I know I don't need them? Because I have no idea what
+difference they were making. Everything works fine right now!
+
+I avoided adding packages that I wasn't sure I needed. For example,
+`smartparens`. I guess I remember it being sort of nice but I
+can't really say for sure. I don't have it right now and have had no
+issues.
+
+Here's another one. Look at my `super-save` configuration
+previously, versus my current one. Oh wait, there is no super-save in my
+new one. And all my files save just fine, with `auto-save-visited-mode`.
+
+* Organization
+
+People often ask about how to organize their init files, so I'll give a
+few thoughts now. My old mega-configuration was a literate config, which
+means the source code and commentary was in a orgmode file, and the
+Elisp gets exported out into a `.el` file. That was really
+great when I was first learning, and it was great to share, because
+it's very organized and people can get some of my commentary.
+
+My new configuration has as few comments as possible, actually. I add
+headings for sections, but otherwise, I only add comments where needed.
+Why? For one, most things are quite obvious. For example, does
+`initial-major-mode 'text-mode` really need a comment? I only
+add comments where I might be confused as to why I set something a
+certain way, or to remind myself how something works.
+
+I also am generally not in favor of splitting configuration across many
+files. Yes, it may feel organized, but searching and jumping within one
+file, to me, is easier than managing multiple. In my case, I have a
+primary `init.el`, and a secondary file that is loaded if
+present, called `programming.el`. The core functionality of
+Emacs is contained in `init.el`. Everything in the
+programming file is secondary. I have Orgmode configuration in the main
+init file, only because it's fairly short. If it grew much longer, I'd
+probably move it to its own file. This way we can have a slightly more
+lightweight Emacs setup if desired, for example, just for notetaking,
+and avoid installing heavier projects like LSP and all its dependencies.
+
+* Concluding thoughts
+
+I hope that this discussion has given you something to think about, and
+perhaps will encourage you to go try declaring Emacs bankruptcy
+yourself. I'd love to hear in the comments if you have any thoughts or
+questions, and feel free to share your results, too, I'm curious to
+see. Let me know if you have any future video ideas or any other
+comments, I try to reply to all of them.

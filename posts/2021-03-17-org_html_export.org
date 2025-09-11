@@ -1,0 +1,45 @@
+---
+title: "Export Org Mode to HTML"
+description: Export your org mode files to HTML files, easily viewable and sharable. We'll go over basic options to adjust the export to your liking, and then take a look at custom CSS and setupfiles to make your exports beautiful.
+---
+#+TITLE: Export Org Mode to HTML
+#+AUTHOR: Jake B
+
+* In This Video
+** Most basic org mode HTML export
++ ~org-export-dispatch~
++ ~h~ for HTML
+  * ~o~ for open
+** Basic options to customize the export
++ Configure options by adding: =#+OPTIONS:=
+*** Numbering
++ ~num:nil~
+*** Table of Contents
++ ~toc:nil~
+*** Advanced options
++ https://orgmode.org/manual/Export-Settings.html
+** Further customizing the exported HTML
+Make it look better!
+*** SETUPFILES
++ readtheorg & bigblow themes
+  * https://github.com/fniessen/org-html-themes
+  * =#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-NAME.setup=
+*** Custom CSS
+#+BEGIN_SRC org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href"styles.css"/>
+#+END_SRC
+
+* Themes To Try
+I have not tried/like all of these, just some options you could give a go. You may need to download the CSS file directly for some of these as well as they may not be hosted online.
+** Org-Min
+~#+HTML_HEAD: <link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">~
+** Rethink
+https://github.com/jessekelly881/Rethink
+** Imagine
+https://github.com/jessekelly881/Imagine
+** Alphapapa's Darksun
+https://github.com/alphapapa/org-html-theme-darksun
+** Bigblow
+~#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup~
+** Readtheorg
+~#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup~

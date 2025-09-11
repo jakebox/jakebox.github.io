@@ -1,0 +1,18 @@
+<div class="post-list">
+    $for(posts)$
+        <article class="post-item">
+            <div class="post-header">
+                <h3 class="post-title">
+                    <a href="$url$">$title$</a>
+                </h3>
+                <time class="post-date">$date$</time>
+            </div>
+            $if(description)$
+            <p class="post-description">$description$</p>
+            $endif$
+        </article>
+    $endfor$
+    <div class="post-list-footer">
+        <a href="/archive.html" class="view-all-link">view all posts →</a>
+    </div>
+</div>
