@@ -3,9 +3,6 @@ module.exports = function(eleventyConfig) {
   // Copy any assets
   eleventyConfig.addPassthroughCopy({"./_assets": "assets"});
 
-  // Copy toplevel CSS from two directories up
-  eleventyConfig.addPassthroughCopy({"../style.css": "assets/style.css"});
-
   eleventyConfig.addCollection("pages", function(collectionApi) {
     return collectionApi.getFilteredByGlob("pages/*").reverse();
   });
@@ -41,9 +38,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: ".",
       includes: "_includes",
-      output: "../blog"
     },
-    pathPrefix: "/blog/",
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     templateFormats: ["md", "njk", "html"]
