@@ -1,0 +1,41 @@
+---
+title: Switching my website to Hakyll
+date: 2025-09-12
+description: Switching my Org Mode + Hugo website to Hakyll.
+---
+
+I decided to start making posts on my blog again, mainly to stand alongside my YouTube videos. I spent some time figuring out a new framework and ended up with Hakyll, a static site generator written and configured in Haskell. It has turned out better than I expected.
+
+* Requirements
+I wanted a simple static site generator. This is fairly easy to find. The more challenging requirement was a static site generator that supports Org Mode. I do all my writing in Org Mode and do not like using Markdown. My old site, built with Hugo, compiled Org to Markdown and then generated sites from there.
+
+On the other hand, Hakyll uses =pandoc= which has very good support for Org Mode, meaning I could keep all of my source files in Org rather than some intermediate.
+
+Hakyll also has a small footprint directory-wise and is easy to configure. I like to have a simple directory structure so the content and source is clear.
+
+* Results
+This site is generated mostly from Org files. All the content, from the homepage, to posts, and even the sidebar, are generated from Org files. I love being able to use Org's rich, familiar syntax, and Emacs' perfect support, for each piece of my site.
+
+Generating the sidebar from an Org file is simply a matter of compiling the file with pandoc and saving the result as a snapshot, which can then be included in a new default context that I include on each page.
+
+#+BEGIN_SRC haskell
+  sidebarCtx :: Context String
+  sidebarCtx =
+    field "sidebar" $ \_ -> do
+      body <- loadSnapshotBody "sidebar.org" "content"
+      return body
+#+END_SRC
+
+* Difficulties
+** Hakyll
+Learning Hakyll was a slight barrier. Though I was actually surprised, I was able to get what I wanted out of it much faster than when I started reworking my blog with [[https://www.11ty.dev/][Eleventy]]. Hakyll let me easily create the folder structure I wanted, which is important to me --- I want my repo to be clean. I found the default Hakyll =site.hs= to not require much modification for my blog.
+
+Another little issue is caching. Every so often a change I would make wouldn't seem to populate properly, until I cleared the cache and rebuilt. Hakyll is definitely slower than other generators I have used, but only when it comes to actually compiling the =site= binary, which only needs to be done when modifying the site configuration itself, and not post content.
+
+** Parsing Org
+Another difficulty was related to Org metadata. I discovered that Hakyll and Pandoc seem to be unable to pull the metadata from an Org file when formatted in the standard format, such as ~#+TITLE: Title~ and ~#+AUTHOR: Jake B~. Luckily, I found another Org + Hakyll repo on GitHub, where I saw that I can provide this metadata as a sort of YAML at the top of a file. I am not pleased with this solution, as I'd rather keep my files as pure to Org as possible, but this will do for now.
+
+I would like to investigate this issue further because I know Pandoc can actually read these symbols, I just think that it's not exposed directly in the API (I think I read that somewhere).
+
+** Nix 
+I have some baseline Nix integration for my site. I enter with =nix develop= and can access cabal and hakyll like that. I'd like to build with Nix but I had trouble getting running with that so I might circle back. I'm not sure where I'd start, perhaps with =haskell.nix= or =cabal2nix=? But for now this is fine.

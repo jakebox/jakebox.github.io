@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jacob Boxerman - Switching my website to Hakyll</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/default.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <script src="../assets/script.js"></script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Switching my website to Hakyll</h1> -->
+            <article>
+    <section class="header">
+        <h1>Switching my website to Hakyll</h1>
+        Posted on September 12, 2025
+        
+    </section>
+    <section>
+        <p>I decided to start making posts on my blog again, mainly to stand alongside my YouTube videos. I spent some time figuring out a new framework and ended up with Hakyll, a static site generator written and configured in Haskell. It has turned out better than I expected.</p>
+<h2 id="requirements">Requirements</h2>
+<p>I wanted a simple static site generator. This is fairly easy to find. The more challenging requirement was a static site generator that supports Org Mode. I do all my writing in Org Mode and do not like using Markdown. My old site, built with Hugo, compiled Org to Markdown and then generated sites from there.</p>
+<p>On the other hand, Hakyll uses <code class="verbatim">pandoc</code> which has very good support for Org Mode, meaning I could keep all of my source files in Org rather than some intermediate.</p>
+<p>Hakyll also has a small footprint directory-wise and is easy to configure. I like to have a simple directory structure so the content and source is clear.</p>
+<h2 id="results">Results</h2>
+<p>This site is generated mostly from Org files. All the content, from the homepage, to posts, and even the sidebar, are generated from Org files. I love being able to use Org’s rich, familiar syntax, and Emacs’ perfect support, for each piece of my site.</p>
+<p>Generating the sidebar from an Org file is simply a matter of compiling the file with pandoc and saving the result as a snapshot, which can then be included in a new default context that I include on each page.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ot">sidebarCtx ::</span> <span class="dt">Context</span> <span class="dt">String</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sidebarCtx <span class="ot">=</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  field <span class="st">&quot;sidebar&quot;</span> <span class="op">$</span> \_ <span class="ot">-&gt;</span> <span class="kw">do</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    body <span class="ot">&lt;-</span> loadSnapshotBody <span class="st">&quot;sidebar.org&quot;</span> <span class="st">&quot;content&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> body</span></code></pre></div>
+<h2 id="difficulties">Difficulties</h2>
+<h3 id="hakyll">Hakyll</h3>
+<p>Learning Hakyll was a slight barrier. Though I was actually surprised, I was able to get what I wanted out of it much faster than when I started reworking my blog with <a href="https://www.11ty.dev/">Eleventy</a>. Hakyll let me easily create the folder structure I wanted, which is important to me — I want my repo to be clean. I found the default Hakyll <code class="verbatim">site.hs</code> to not require much modification for my blog.</p>
+<p>Another little issue is caching. Every so often a change I would make wouldn’t seem to populate properly, until I cleared the cache and rebuilt. Hakyll is definitely slower than other generators I have used, but only when it comes to actually compiling the <code class="verbatim">site</code> binary, which only needs to be done when modifying the site configuration itself, and not post content.</p>
+<h3 id="parsing-org">Parsing Org</h3>
+<p>Another difficulty was related to Org metadata. I discovered that Hakyll and Pandoc seem to be unable to pull the metadata from an Org file when formatted in the standard format, such as <code>#+TITLE: Title</code> and <code>#+AUTHOR: Jake B</code>. Luckily, I found another Org + Hakyll repo on GitHub, where I saw that I can provide this metadata as a sort of YAML at the top of a file. I am not pleased with this solution, as I’d rather keep my files as pure to Org as possible, but this will do for now.</p>
+<p>I would like to investigate this issue further because I know Pandoc can actually read these symbols, I just think that it’s not exposed directly in the API (I think I read that somewhere).</p>
+<h3 id="nix">Nix</h3>
+<p>I have some baseline Nix integration for my site. I enter with <code class="verbatim">nix develop</code> and can access cabal and hakyll like that. I’d like to build with Nix but I had trouble getting running with that so I might circle back. I’m not sure where I’d start, perhaps with <code class="verbatim">haskell.nix</code> or <code class="verbatim">cabal2nix</code>? But for now this is fine.</p>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>
