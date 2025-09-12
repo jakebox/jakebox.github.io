@@ -33,6 +33,14 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
+    match "pages/*" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= return . fmap demoteHeaders
+            >>= loadAndApplyTemplate "templates/page.html"    postCtx
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= relativizeUrls
+
     create ["archive.html"] $ do
         route idRoute
         compile $ do
@@ -77,6 +85,12 @@ sidebarCtx =
   field "sidebar" $ \_ -> do
     body <- loadSnapshotBody "sidebar.org" "content"
     return body
+
+pageCtx :: Context String
+pageCtx =
+    urlField "url" `mappend`
+    titleField "title" `mappend`
+    defaultContext
 
 myDefaultContext :: Context String
 myDefaultContext =

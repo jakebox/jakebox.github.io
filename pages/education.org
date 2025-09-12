@@ -1,0 +1,61 @@
+---
+title: Education
+---
+
+This page is dedicated to my education. 
+-----
+
+* Courses I've taken
+I've noted the courses that have stuck with me the most and noted which topics and literature stands out.
+
+** Latin American Civilization I
+/Latin America from pre-colonial times to independence. With Professor Pizzigoni/.
+
+*My favorite topics:* Native American empires, the chain of conquest, local and international economy, the Inquisition, international politics, race, gender, and deviancy in colonial Latin America.
+
+** Latin American Civilization II
+/Latin America from independence to present-day. With Professor Salgado./
+
+*My favorite topics:* The Mexican Revolution, populism (Peronist Argentina), the Cuban Revolution and the post-revolutionary state, work, citizenship, and welfare, social security, the National Security State (Pinochet's Chile), neoliberalism and its discontents.
+
+*** Selected literature
+#+BEGIN_LITERATURE
+- López, "The India Bonita Contest of 1921 and the Ethnicization of Mexican National Culture" 
+- Milanesio, "Food Politics and Consumption in Peronist Argentina"
+- Tomás Moulian, "The Credit-Card Citizen"
+- Tinsman, "Politics of Gender and Consumption in Authoritarian Chile"
+#+END_LITERATURE
+
+** Masterpieces of Western Literature
+/Survey of western literature, from Homer to Toni Morrison. With Professor Zhang./
+
+*** Selected literature
+#+BEGIN_LITERATURE
+- Genesis
+- Homer, /Odyssey/ (trans. Emily Wilson)
+- Plato, /Symposium/
+- Virgil, /Aeneid/
+- Gospels of Luke and John
+- Ovid, /Metamorphoses/
+- Dante, /Inferno/
+- Montaigne, /Essays/
+- Cervantes, /Don Quixote/
+- Austen, /Northanger Abbey/
+#+END_LITERATURE
+
+** Contemporary Civilization
+/Survey of political literature and theory. With Professor Aitken, Professor Simons./
+
+*** Selected literature
+#+BEGIN_LITERATURE
+- Plato, /Republic/
+- Aristotle, /Nicomachean Ethics/
+- Aristotle, /Politics/
+- Aquinas, /Law, Morality and Politics/
+- Descartes, /Meditations on First Philosophy/
+- Hobbes, /Leviathan/
+- Locke, /Second Treatise of Government/
+- Rousseau, /Discourse on Inequality/; /Social Contract/
+- John Stuart Mill, /On Liberty/
+- Immanuel Kant, /Groundwork of the Metaphysics of Morals/
+#+END_LITERATURE

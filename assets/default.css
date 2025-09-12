@@ -146,6 +146,10 @@ ul {
 	padding-left: 0;
 }
 
+ul ul {
+	padding-left: 1.5em;
+}
+
 ul li {
 	margin-bottom: 0.5em;
 }
@@ -210,6 +214,34 @@ button {
 	border-radius: 6px;
 	cursor: pointer;
 	text-align: center;
+}
+
+.LITERATURE {
+    /* text-align: justify; */
+}
+
+/* Literature block styling */
+.LITERATURE ul li {
+    /* list-style: none; */
+    display: inline;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+/* .LITERATURE ul li { */
+/* 	margin-bottom: 0; */
+/* 	/\* font-style: italic; *\/ */
+/* } */
+
+.LITERATURE ul li:not(:last-child):after {
+	content: "•";
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+	font-style: normal;
+}
+
+.LITERATURE ul li:before {
+	content: none;
 }
 
 @media (max-width: 1024px) {
