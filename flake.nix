@@ -19,9 +19,11 @@
 	          pkgs.zlib
           ];
           shellHook = ''
+            alias clean="cabal run site clean"
             alias build="cabal run site build"
             alias serve="cabal run site server"
-            echo "Aliases: build, serve"
+            alias watch="cabal run site watch"
+            echo "Aliases: build, clean, serve, watch"
           '';
         };
       });
