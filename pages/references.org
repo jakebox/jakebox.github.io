@@ -1,0 +1,17 @@
+---
+title: People referencing me
+---
+
+I discovered that there are quite a few references to my posts and thoughts on the Internet. It's quite a fun experience to read what people have to say second-hand, as opposed to reading comments on my Reddit posts or YouTube videos. I decided to collect a list of them here.
+
++ [[https://irreal.org/blog/?p=11416][Irreal - Clocktables]]
+  - Review of my Org mode clocktables video. Apparently sparked a post from [[reference][The Emacs Cat - Org Mode: Exporting Clock Tables]], which then got its own follow-up again from [[https://irreal.org/blog/?p=11538][Irreal - Exporting Clock Tables]]. Fun to see how things can go round.
++ [[https://irreal.org/blog/?p=13257][Irreal - Emacs Bankruptcy]]
+  - Irreal comments on the Reddit thread under my Emacs Bankruptcy video, which sparked a lively debate. He says that he doesn't understand my argument that Emacs Bankruptcy is natural when a configuration grows too large. Perhaps he misunderstood, or I was unclear. I don't believe it's a natural step for every long configuration, merely a good idea for long, /unruly/ configurations.
++ [[https://macadie.info/2023/12/16/2023-12-austin-emacs-meetup/][2023-12 Austin Emacs Meetup]]
+  - Apparently there was some positive commentary on my EmacsConf 2023 Closing Remarks at the Austin Emacs Meetup from a professor in OKC.
++ [[https://lucidmanager.org/productivity/emacs-for-distraction-free-writing/][LucidManager - Emacs Org Mode for Distraction-Free Writing]]
+  - Glad to see my Org Mode demo featured in this article.
++ [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][Sophie Bosio - Prettifying Emacs Org Mode]]
++ [[https://lr0.fly.dev/yt.html][Hereby, all birds fly - YouTube Channels]]
+  - Pleased to be on a list among the top names in the Emacs YouTube community.
