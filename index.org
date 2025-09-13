@@ -1,3 +1,6 @@
+---
+title: Home
+---
 #+TITLE: Home
 
 Welcome to my personal site. Here you can find personal links and some of my work and interests. I'm an undergraduate student at Columbia University studying computer science. For up-to-date goings-on or professional information, visit my [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]].
@@ -40,7 +43,7 @@ emacs-uptime is an autoloaded interactive native-comp-function in ‘time.el’.
 Inferred type: (function (&optional t t) t)
 
 Probably introduced at or before Emacs version 23.1.
+
 #+BEGIN_EXPORT html
 <span class="emacs-uptime" id="emacs-uptime">Uptime: Loading...</span>
-
 #+END_EXPORT

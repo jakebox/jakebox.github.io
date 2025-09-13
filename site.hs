@@ -36,6 +36,7 @@ main = hakyllWith config $ do
     match "pages/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
+            >>= saveSnapshot "content"
             >>= return . fmap demoteHeaders
             >>= loadAndApplyTemplate "templates/page.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
@@ -55,9 +56,14 @@ main = hakyllWith config $ do
                 >>= relativizeUrls
 
     match "sidebar.org" $ do
-      compile $ pandocCompiler
-        >>= saveSnapshot "content"
-        >>= relativizeUrls
+      compile $ do
+        pages <- loadAllSnapshots "pages/*" "content"
+        let thisCtx =
+              listField "pages" pageCtx (return pages)
+        pandocCompiler
+          >>= applyAsTemplate thisCtx
+          >>= saveSnapshot "content"
+          >>= relativizeUrls
 
     match "index.org" $ do
         route $ setExtension "html"
