@@ -1,0 +1,23 @@
+---
+title: Organization
+---
+
+Thoughts on staying organized, and what organized means.
+
+-----
+
+* Inbox Zero
+[2025-09-15 Mon]
+
+I was a fervent /Inbox Zero/ devotee for many years. The goal as I understood it was to maintain an empty email inbox. I recently decided to quit this habit, and I am better for it.
+
+** Technical Failings
+Inbox Zero relies on a decent organizational system. Trash emails you don't need, file away important ones, archive others. It felt good to trash emails in the moment, but far too often I found myself searching for emails I had removed because I thought I wouldn't need them.
+
+** Mental Failings
+Inbox Zero was not built for people like me. I enjoy being organized, to a fault, and the idea of Inbox Zero gave creedence to an unhealthy, hyper-attuned mentality. Digital clutter is one of the most easy-to-ignore forms of clutter there is, so accepting some extra emails laying around in my inbox in exchange for a little more peace of mind is well worth it.
+
+Right as a junk email came in, I'd make the move to trash it. I wanted to maintain Inbox Zero at all times, so why let mail sit for any longer than it needed to?
+
+** New System
+I now only mark emails as read. Emails I know I need to refer to soon (such as an email with details about an upcoming event) I mark as Important and Unread. These go into a separate section at the top of my inbox. I only display the 10 most recent items in the inbox, which still keeps the screen fairly clutter-free. I'm pleased with this new system. The next step would be to check my email less frequently, but that's up to my own power of will.
