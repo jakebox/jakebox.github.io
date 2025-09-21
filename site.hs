@@ -55,6 +55,19 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
 
+    create ["sitemap.xml"] $ do
+        route idRoute
+        compile $ do
+            posts <- recentFirst =<< loadAll "posts/*"
+            pages <- loadAll "pages/*"
+            let sitemapCtx =
+                  listField "entries" (pageCtx `mappend` (constField "baseUrl" "https://jakebox.github.io"))
+                  (return (pages ++ posts)) `mappend`
+                  myDefaultContext
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
+                >>= relativizeUrls
+
     match "sidebar.org" $ do
       compile $ do
         pages <- loadAllSnapshots "pages/*" "content"
