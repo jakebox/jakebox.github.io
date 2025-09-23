@@ -244,7 +244,26 @@ button {
 	content: none;
 }
 
-@media (max-width: 1024px) {
+/* Side-by-side image support */
+.side-by-side-images {
+	display: flex;
+	gap: 1em;
+	margin: 1em 0;
+}
+
+.side-by-side-images img {
+	flex: 1;
+	max-width: 100%;
+	height: auto;
+}
+
+@media (max-width: 768px) {
+	.side-by-side-images {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 768px) {
 	#content {
 		flex-direction: column;
 	}
