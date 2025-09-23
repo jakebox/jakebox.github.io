@@ -2,57 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
-      <loc>https://jakebox.github.io//pages/education.html</loc>
+      <loc>https://jakebox.github.io/pages/education.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//pages/organization.html</loc>
+      <loc>https://jakebox.github.io/pages/emacs.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//pages/references.html</loc>
+      <loc>https://jakebox.github.io/pages/organization.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//posts/2025-09-12-this_blog.html</loc>
+      <loc>https://jakebox.github.io/pages/references.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//posts/2025-08-31-bankruptcy.html</loc>
+      <loc>https://jakebox.github.io/pages/tex.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//posts/2025-07-07-terminal_emacs.html</loc>
+      <loc>https://jakebox.github.io/posts/2025-09-12-this_blog.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//posts/2022-08-24-highlight.html</loc>
+      <loc>https://jakebox.github.io/posts/2025-08-31-bankruptcy.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//posts/2022-08-17-checkboxes.html</loc>
+      <loc>https://jakebox.github.io/posts/2025-07-07-terminal_emacs.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//posts/2022-03-20-org_reveal.html</loc>
+      <loc>https://jakebox.github.io/posts/2022-08-24-highlight.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//posts/2021-03-20-org_latex.html</loc>
+      <loc>https://jakebox.github.io/posts/2022-08-17-checkboxes.html</loc>
       
    </url>
 
    <url>
-      <loc>https://jakebox.github.io//posts/2021-03-17-org_html_export.html</loc>
+      <loc>https://jakebox.github.io/posts/2022-03-20-org_reveal.html</loc>
+      
+   </url>
+
+   <url>
+      <loc>https://jakebox.github.io/posts/2021-03-20-org_latex.html</loc>
+      
+   </url>
+
+   <url>
+      <loc>https://jakebox.github.io/posts/2021-03-17-org_html_export.html</loc>
       
    </url>
 

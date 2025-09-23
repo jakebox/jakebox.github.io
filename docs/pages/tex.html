@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Jacob Boxerman">
+        <meta name="description" content="Personal website and blog of Jacob Boxerman">
+        <title>Jacob Boxerman - LaTeX</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style>
+        :root{--bg-color:#f8f8f8;--text-color:#181818;--accent-color:#4389f7;--sidebar-bg:#eee;--border-color:#ccc}html[data-theme="dark"]{--bg-color:#130505;--text-color:#e1bd74;--accent-color:#f09536;--sidebar-bg:#1a0a0a;--border-color:#332222}body{background:var(--bg-color);font-family:'EB Garamond',Georgia,serif;line-height:1.4em;color:var(--text-color);font-size:18px;margin:0;height:100vh}#content{display:flex;max-width:1200px;min-height:100vh}#sidebar{width:250px;min-width:200px;padding:40px 20px;background-color:var(--sidebar-bg);border-right:1px solid var(--border-color);box-sizing:border-box;flex-shrink:0;margin-left:0;margin-right:40px;height:100vh;position:fixed;left:0;top:0;z-index:10}#main_content{flex-grow:1;padding:20px 20px 40px 20px;box-sizing:border-box;margin-left:290px}
+        </style>
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+        <link rel="preload" href="../assets/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/default.css"></noscript>
+        <link rel="preload" href="../assets/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/blog.css"></noscript>
+        <script src="../assets/script.js" defer></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKYYG67N0W"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BKYYG67N0W');
+        </script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<h2 id="pages">Pages</h2>
+<p><span class="math inline"><ul>
+
+<li><a href="../pages/education.html">education</a></li>
+
+<li><a href="../pages/emacs.html">emacs</a></li>
+
+<li><a href="../pages/organization.html">organization</a></li>
+
+<li><a href="../pages/references.html">references</a></li>
+
+<li><a href="../pages/tex.html">tex</a></li>
+
+</ul>
+</span></p>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>LaTeX</h1> -->
+            <article>
+    <section class="header">
+        <h1>LaTeX</h1>
+    </section>
+    <section>
+        <p>This page contains a variety of useful links and notes on the document preparation software LaTeX.</p>
+<hr />
+<p>Notes:</p>
+<ul>
+<li>Where to put .sty files on Mac: <code>~/Library/texmf/tex/latex</code></li>
+</ul>
+<h2 id="links">Links</h2>
+<h3 id="reading-listresources">Reading List/Resources</h3>
+<ul>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX - Wikibooks</a>
+<ul>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/2/2d/LaTeX.pdf">PDF</a></li>
+</ul></li>
+<li><a href="https://physics.nist.gov/cuu/pdf/typefaces.pdf">Typefaces for Symbols in Scientific Manuscripts</a></li>
+<li><a href="http://anorien.csc.warwick.ac.uk/mirrors/CTAN/info/l2tabu/english/l2tabuen.pdf">An essential guide to LATEX 2ε usage</a></li>
+<li><a href="https://user.math.uni-bremen.de/~grimpen/LaTeX.html">Best practices for LaTeX</a></li>
+<li><a href="https://practicaltypography.com/">https://practicaltypography.com/</a></li>
+<li><a href="https://physics.nist.gov/cuu/Units/checklist.html">SI Unit rules and style conventions</a></li>
+</ul>
+<h3 id="manuals">Manuals</h3>
+<ul>
+<li><a href="http://tug.ctan.org/tex-archive/macros/latex/contrib/caption/caption-eng.pdf">Customizing captions of floating environments</a></li>
+<li><a href="https://mirrors.concertpass.com/tex-archive/macros/latex/contrib/fancyhdr/fancyhdr.pdf">The fancyhdr and extramarks packages</a></li>
+<li><a href="https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/titlesec/titlesec.pdf">The titlesec, titleps and titletoc Packages</a></li>
+<li><a href="https://mirrors.concertpass.com/tex-archive/macros/latex/contrib/titling/titling.pdf">The titling package</a></li>
+<li><a href="https://ctan.math.illinois.edu/macros/latex/contrib/enumitem/enumitem.pdf">Customizing lists with the enumitem package</a></li>
+<li><a href="https://www.overleaf.com/learn/latex/Page_size_and_margins">Page size and margins (geometry) - Overleaf</a></li>
+</ul>
+<h3 id="explanations">Explanations</h3>
+<ul>
+<li><a href="https://tex.stackexchange.com/questions/7669/bfseries-is-to-textbf-as-what-is-to-textsf">The way LaTeX categorizes the different characteristics of printed material (encoding, family, size, shape, etc)</a></li>
+<li><a href="https://tex.stackexchange.com/questions/74353/what-commands-are-there-for-horizontal-spacing">Horizontal Spacing Commands - StackOverflow</a></li>
+</ul>
+<h3 id="instructional-guidestips">Instructional Guides/Tips</h3>
+<ul>
+<li><a href="https://tex.stackexchange.com/questions/263676/modifying-maketitle-with-the-titling-package">https://tex.stackexchange.com/questions/263676/modifying-maketitle-with-the-titling-package</a></li>
+<li><a href="https://tex.stackexchange.com/questions/53338/reducing-spacing-after-headings">https://tex.stackexchange.com/questions/53338/reducing-spacing-after-headings</a></li>
+<li><a href="https://stackoverflow.com/questions/23297422/org-mode-timestamp-format-when-exported">https://stackoverflow.com/questions/23297422/org-mode-timestamp-format-when-exported</a></li>
+<li><a href="https://tex.stackexchange.com/questions/155411/how-to-create-inner-section-like-environment-with-sub-table-of-contents">How to create inner section like environment with sub-table of contents</a></li>
+<li><a href="https://mostlymaths.net/2008/09/latex-booklets.html/">mostlymaths.net | How to create LaTeX booklets</a></li>
+</ul>
+<h3 id="tools">Tools</h3>
+<ul>
+<li><a href="https://www.mathcha.io/">https://www.mathcha.io/</a></li>
+<li><a href="https://tableconvert.com/">https://tableconvert.com/</a></li>
+</ul>
+<h3 id="fonts">Fonts</h3>
+<ul>
+<li><a href="https://tug.org/FontCatalogue/">https://tug.org/FontCatalogue/</a></li>
+<li><a href="https://ctan.org/pkg/kpfonts">https://ctan.org/pkg/kpfonts</a></li>
+<li><a href="https://www.cs.put.poznan.pl/csobaniec/software/latex/fonts.html">https://www.cs.put.poznan.pl/csobaniec/software/latex/fonts.html</a></li>
+<li><code>\usepackage{ebgaramond}</code></li>
+<li><code>\usepackage{libertine}</code></li>
+<li><code>\usepackage[bitstream-charter]{mathdesign}</code> (<a href="https://tug.org/FontCatalogue/charterbt/">https://tug.org/FontCatalogue/charterbt/</a>)</li>
+<li><code>\usepackage{cochineal}</code> (<a href="https://tug.org/FontCatalogue/">https://tug.org/FontCatalogue/</a>)</li>
+<li><code>\usepackage{euler} \usepackage{concrete}</code> (Concrete Mathematics)</li>
+<li><code>\usepackage{OldStandard}</code> (<a href="https://tug.org/FontCatalogue/oldstandard/">https://tug.org/FontCatalogue/oldstandard/</a>)</li>
+</ul>
+<h2 id="design-inspiration">Design Inspiration</h2>
+<ul>
+<li><a href="https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/microtype/microtype.pdf">The microtype manual</a></li>
+<li>Mishkan HaNefesh</li>
+<li><a href="https://www.myfonts.com/fonts/wilton/werk/">https://www.myfonts.com/fonts/wilton/werk/</a></li>
+<li><a href="https://www.fontsmith.com/fonts/fs-brabo/styles/family">https://www.fontsmith.com/fonts/fs-brabo/styles/family</a></li>
+<li><a href="https://www.amazon.com/gp/product/B01LB8FIYW/ref=x_gr_w_glide_sout?caller=Goodreads&amp;callerLink=https%3A%2F%2Fwww.goodreads.com%2Fbook%2Fshow%2F31838289-mishkan-hanefesh&amp;tag=x_gr_w_glide_sout-20&amp;asin=B01LB8FIYW&amp;revisionId=&amp;format=4&amp;depth=1">Amazon Kindle Preview</a></li>
+<li><a href="https://github.com/pelegs/maths_book">https://github.com/pelegs/maths_book</a></li>
+<li><a href="https://github.com/proafxin/antique_book">https://github.com/proafxin/antique_book</a></li>
+<li><a href="https://github.com/enhuiz/eisvogel">https://github.com/enhuiz/eisvogel</a></li>
+</ul>
+<h2 id="layout-templates">Layout Templates</h2>
+<h3 id="imagesfigures">Images/figures</h3>
+<h4 id="plain-image-with-defined-width">Plain image with defined width</h4>
+<p>The [H] parameter requires <code>\usepackage{float}</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[H]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\centering</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">\includegraphics</span>[width=16cm]{<span class="ex">Car Trial Data Tables.png</span>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\caption</span>{The two datatables.}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\label</span>{<span class="ex">fig:Datatables</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code></pre></div>
+<h4 id="two-side-by-side-figures-with-captions-a-label">Two side-by-side figures with captions &amp; a label</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h] <span class="co">% the 'h' places it &quot;here&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\centering</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\subfloat</span>[<span class="fu">\centering</span> Unweighted trials]{{<span class="bu">\includegraphics</span>[width=3.1in]{<span class="ex">(Unweighted) x̄ Distance Travelled vs. Height.png</span>} }}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\subfloat</span>[<span class="fu">\centering</span> Weighted trials]{{<span class="bu">\includegraphics</span>[width=3.1in]{<span class="ex">(Weighted) x̄ Distance Travelled vs. Height.png</span>} }}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\caption</span>{My two scatterplots.}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\label</span>{<span class="ex">fig:example</span>}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code></pre></div>
+<h4 id="customizing-image-export-from-orgmode">Customizing image export from orgmode</h4>
+<ul>
+<li><code>#+ATTR_LATEX: :height 4in :width 2in</code></li>
+</ul>
+<h3 id="equations">Equations</h3>
+<h4 id="standard-equation-with-text">Standard equation (with text)</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\text</span>{KE}<span class="ss">_1 + </span><span class="sc">\text</span>{PE}<span class="ss">_1 + </span><span class="sc">\text</span>{W}<span class="ss">_</span><span class="sc">\text</span><span class="ss">{NC} = </span><span class="sc">\text</span>{KE}<span class="ss">_2 + </span><span class="sc">\text</span>{PE}<span class="ss">_2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code></pre></div>
+<h4 id="multi-line-equation-aligned-on">Multi-line equation aligned on <code>=</code></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="sc">\setlength</span><span class="ss">{</span><span class="sc">\jot</span><span class="ss">}{5pt}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\text</span>{KE}<span class="ss">_1 + </span><span class="sc">\text</span>{PE}<span class="ss">_1 - </span><span class="sc">\text</span>{W}<span class="ss">_</span><span class="sc">\text</span><span class="ss">{friction} &amp; = </span><span class="sc">\text</span>{KE}<span class="ss">_2 + </span><span class="sc">\text</span>{PE}<span class="ss">_2 </span><span class="sc">\\</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\frac</span><span class="ss">{1}{2}mv^2_1 + mgy_1 + </span><span class="sc">\text</span>{F}<span class="ss">_</span><span class="sc">\text</span><span class="ss">{fr}d </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\cos\theta</span><span class="ss"> &amp; = </span><span class="sc">\frac</span><span class="ss">{1}{2}mv^2_2 + mgy_2 </span><span class="sc">\\</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\frac</span><span class="ss">{1}{2}m </span><span class="sc">\cdot</span><span class="ss"> 0 + mg</span><span class="sc">\cdot</span><span class="ss"> h + </span><span class="sc">\text</span>{F}<span class="ss">_</span><span class="sc">\text</span><span class="ss">{fr}d </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\cos</span><span class="ss"> 180^</span><span class="sc">\circ</span><span class="ss"> &amp; =  </span><span class="sc">\frac</span><span class="ss">{1}{2}mv^2_2 + mg </span><span class="sc">\cdot</span><span class="ss"> 0 </span><span class="sc">\\</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    mgh - </span><span class="sc">\text</span>{F}<span class="ss">_</span><span class="sc">\text</span><span class="ss">{fr}d &amp; = </span><span class="sc">\frac</span><span class="ss">{1}{2}mv^2_2</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="kw">\end</span>{<span class="ex">split</span>}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code></pre></div>
+<h4 id="side-by-side-equation-with-minipage">Side-by-side equation with minipage</h4>
+<p>Uses a minipage.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\noindent</span><span class="kw">\begin</span>{<span class="ex">minipage</span>}{.2<span class="fu">\linewidth</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="sc">\notag\setlength</span><span class="ss">{</span><span class="sc">\jot</span><span class="ss">}{5pt}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{G:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> g=9.81 m/s^2; m=0.0031</span><span class="sc">\text</span><span class="ss">{kg}; </span><span class="sc">\textbf</span>{h=0.57<span class="sc">\text</span>{m}}<span class="ss">; d=0.504</span><span class="sc">\text</span><span class="ss">{m}</span><span class="sc">\\</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{U:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> </span><span class="sc">\text</span>{F}<span class="ss">_</span><span class="sc">\text</span><span class="ss">{fr} </span><span class="sc">\\</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{E:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> mgh = 2</span><span class="sc">\ffr</span><span class="ss"> </span><span class="sc">\\</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{S:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> 0.0031</span><span class="sc">\text</span><span class="ss">{kg} </span><span class="sc">\cdot</span><span class="ss"> 9.81m/s^2 </span><span class="sc">\cdot</span><span class="ss"> 0.57</span><span class="sc">\text</span><span class="ss">{m} = 0.504</span><span class="sc">\text</span><span class="ss">{m} </span><span class="sc">\cdot</span><span class="ss"> 2 </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\ffr</span><span class="ss"> </span><span class="sc">\\</span><span class="ss"> </span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{S:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> 0.01733 = 1.008 </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\ffr</span><span class="ss"> = </span><span class="sc">\boxed</span><span class="ss">{0.017</span><span class="sc">\text</span><span class="ss">{N}}</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\end</span>{<span class="ex">split</span>}</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="kw">\end</span>{<span class="ex">equation</span>}</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}<span class="co">%</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}{1.2<span class="fu">\linewidth</span>}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="sc">\notag\setlength</span><span class="ss">{</span><span class="sc">\jot</span><span class="ss">}{5pt}</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{G:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> g=9.81 m/s^2; m=0.0031</span><span class="sc">\text</span><span class="ss">{kg}; </span><span class="sc">\textbf</span>{h=0.20<span class="sc">\text</span>{m}}<span class="ss">; d=0.168</span><span class="sc">\text</span><span class="ss">{m}</span><span class="sc">\\</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{U:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> </span><span class="sc">\text</span>{F}<span class="ss">_</span><span class="sc">\text</span><span class="ss">{fr} </span><span class="sc">\\</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{E:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> mgh = 2</span><span class="sc">\ffr</span><span class="ss"> </span><span class="sc">\\</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{S:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> 0.0031</span><span class="sc">\text</span><span class="ss">{kg} </span><span class="sc">\cdot</span><span class="ss"> 9.81m/s^2 </span><span class="sc">\cdot</span><span class="ss"> 0.20</span><span class="sc">\text</span><span class="ss">{m} = 0.168</span><span class="sc">\text</span><span class="ss">{m} </span><span class="sc">\cdot</span><span class="ss"> 2 </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\ffr</span><span class="ss"> </span><span class="sc">\\</span><span class="ss"> </span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\large</span><span class="ss">{</span><span class="sc">\textbf</span>{S:}<span class="ss">} &amp;</span><span class="sc">\;</span><span class="ss"> 0.0061 = 0.336 </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\ffr</span><span class="ss"> = </span><span class="sc">\boxed</span><span class="ss">{0.0181</span><span class="sc">\text</span><span class="ss">{N}}</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\end</span>{<span class="ex">split</span>}</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="kw">\end</span>{<span class="ex">equation</span>}</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span></code></pre></div>
+<p>The <code>&amp;</code> designates where to align. The <code>\;</code> serves as a space (I think it is the
+width of a space character, or slightly bigger).</p>
+<h2 id="lists">Lists</h2>
+<ul>
+<li>Enumitem package</li>
+<li><a href="https://orgmode.org/manual/Plain-lists-in-LaTeX-export.html#Plain-lists-in-LaTeX-export">https://orgmode.org/manual/Plain-lists-in-LaTeX-export.html#Plain-lists-in-LaTeX-export</a></li>
+<li><a href="https://tex.stackexchange.com/questions/12279/outline-of-style-i-a-i-a-1">https://tex.stackexchange.com/questions/12279/outline-of-style-i-a-i-a-1</a></li>
+</ul>
+<h2 id="xelatex">XeLaTeX</h2>
+<ul>
+<li><code>\symbol{&lt;code number&gt;}</code></li>
+</ul>
+<h3 id="alternative-font-simple">Alternative font simple</h3>
+<p><a href="https://www.overleaf.com/learn/latex/XeLaTeX#Setting_fonts_for_different_LaTeX_elements">https://www.overleaf.com/learn/latex/XeLaTeX#Setting_fonts_for_different_LaTeX_elements</a></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmainfont</span>{Times New Roman}</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\setsansfont</span>{Public Sans}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmonofont</span>[Color={0019D4}]{Courier New}</span></code></pre></div>
+<h3 id="alternative-font-complex">Alternative font complex</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">% Fonts - fontspec</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\setromanfont</span>[</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>BoldFont=EB Garamond Bold,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ItalicFont=EB Garamond Italic,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>BoldItalicFont=EB Garamond Bold Italic,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>]{EB Garamond Regular}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\setsansfont</span>[</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>BoldFont=Public Sans Bold,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>ItalicFont=Public Sans Italic,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>BoldItalicFont=Public Sans Bold Italic</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>]{Public Sans Regular}</span></code></pre></div>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>

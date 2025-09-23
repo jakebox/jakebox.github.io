@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Jacob Boxerman">
+        <meta name="description" content="Personal website and blog of Jacob Boxerman">
+        <title>Jacob Boxerman - Emacs</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style>
+        :root{--bg-color:#f8f8f8;--text-color:#181818;--accent-color:#4389f7;--sidebar-bg:#eee;--border-color:#ccc}html[data-theme="dark"]{--bg-color:#130505;--text-color:#e1bd74;--accent-color:#f09536;--sidebar-bg:#1a0a0a;--border-color:#332222}body{background:var(--bg-color);font-family:'EB Garamond',Georgia,serif;line-height:1.4em;color:var(--text-color);font-size:18px;margin:0;height:100vh}#content{display:flex;max-width:1200px;min-height:100vh}#sidebar{width:250px;min-width:200px;padding:40px 20px;background-color:var(--sidebar-bg);border-right:1px solid var(--border-color);box-sizing:border-box;flex-shrink:0;margin-left:0;margin-right:40px;height:100vh;position:fixed;left:0;top:0;z-index:10}#main_content{flex-grow:1;padding:20px 20px 40px 20px;box-sizing:border-box;margin-left:290px}
+        </style>
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+        <link rel="preload" href="../assets/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/default.css"></noscript>
+        <link rel="preload" href="../assets/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/blog.css"></noscript>
+        <script src="../assets/script.js" defer></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKYYG67N0W"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BKYYG67N0W');
+        </script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<h2 id="pages">Pages</h2>
+<p><span class="math inline"><ul>
+
+<li><a href="../pages/education.html">education</a></li>
+
+<li><a href="../pages/emacs.html">emacs</a></li>
+
+<li><a href="../pages/organization.html">organization</a></li>
+
+<li><a href="../pages/references.html">references</a></li>
+
+<li><a href="../pages/tex.html">tex</a></li>
+
+</ul>
+</span></p>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Emacs</h1> -->
+            <article>
+    <section class="header">
+        <h1>Emacs</h1>
+    </section>
+    <section>
+        <p>This page contains a variety of useful links and notes on the text editor Emacs, roughly organized. I don’t reference them very often anymore but thought they might be useful to someone else.</p>
+<hr />
+<h2 id="editing-tricks">Editing tricks</h2>
+<ul>
+<li>Dired search and replace - <a href="http://xahlee.info/emacs/emacs/find_replace_inter.html">link</a></li>
+<li><code>C-q C-j</code> literal newline</li>
+<li>Like hitting return: <code>M-j</code></li>
+<li>to jump to next sentence <code>M-e</code></li>
+<li>Delete everything in parenthesis (or <code>di)~/~di}</code>) <code>C-M-k</code></li>
+<li><code>flush-lines</code> <a href="http://xahlee.info/emacs/emacs/elisp_list_matching_lines.html">http://xahlee.info/emacs/emacs/elisp_list_matching_lines.html</a>
+<ul>
+<li>Remove blank lines: <code>M-x flush-lines RET ^$ RET</code></li>
+</ul></li>
+<li>Opposite: <code>keep-lines</code></li>
+<li><a href="https://hungyi.net/posts/emacs-calculate-while-you-write/">https://hungyi.net/posts/emacs-calculate-while-you-write/</a></li>
+</ul>
+<h3 id="text-input">Text input</h3>
+<ul>
+<li><code>M-x (set-input-method 'TeX) RET tex RET</code></li>
+<li><code>M-x (evil-ex-show-digraphs) RET</code></li>
+</ul>
+<h2 id="good-keybinds-to-remember">Good keybinds to remember</h2>
+<ul>
+<li><code>M-o</code> <code>(ivy-dispatching-done)</code>
+<ul>
+<li><a href="https://oremacs.com/swiper/#hydra-in-the-minibuffer">https://oremacs.com/swiper/#hydra-in-the-minibuffer</a></li>
+</ul></li>
+<li><code>C-M-j</code> - <code>(ivy-immediate-done)</code></li>
+</ul>
+<h2 id="orgmode">Orgmode</h2>
+<ul>
+<li><code>org-set-startup-visibility</code> (C-u C-u TAB)</li>
+<li><code>org-agenda-notime-is-late</code> - “You can use this option to decide if the schedule for today should come before or after timeless agenda entries.”</li>
+<li><a href="https://emacs.stackexchange.com/questions/41544/is-it-possible-to-include-a-base64-image-in-org-file">include base64 image in org file</a></li>
+<li><a href="https://orgmode.org/manual/Radio-Targets.html">Radio targets</a></li>
+<li>Command to reveal x many levels in orgmode <code>3 C-c &lt;tab&gt;</code></li>
+<li><code>C-c /</code> org sparse tree
+<ul>
+<li><code>C-c \</code> match tags</li>
+</ul></li>
+<li><code>C-u C-c C-c</code> to make list item into checkbox</li>
+<li><a href="https://stackoverflow.com/questions/58820073/s-in-org-agenda-prefix-format-doesnt-display-dates-in-the-todo-view">https://stackoverflow.com/questions/58820073/s-in-org-agenda-prefix-format-doesnt-display-dates-in-the-todo-view</a></li>
+</ul>
+<h3 id="clocking">Clocking</h3>
+<ul>
+<li><a href="https://orgmode.org/manual/Clocking-Work-Time.html">https://orgmode.org/manual/Clocking-Work-Time.html</a></li>
+<li>Insert clock table: <code>org-clock-report</code></li>
+<li>Update clock blocks - <code>C-c C-c</code> (place cursor on BEGIN)</li>
+</ul>
+<h3 id="org-mode-exporting">Org Mode Exporting</h3>
+<ul>
+<li><a href="https://orgmode.org/manual/Export-Settings.html">https://orgmode.org/manual/Export-Settings.html</a></li>
+<li><code>org-export-with-sub-superscripts</code></li>
+<li><a href="https://www.reddit.com/r/emacs/comments/swvbmm/you_want_to_write_a_custom_org_backend_lets_write/?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf">Write orgmode custom backend</a></li>
+</ul>
+<h3 id="html">HTML</h3>
+<ul>
+<li><code>#+HTML_HEAD: &lt;link rel="stylesheet" type="text/css" href="styles.css"/&gt;</code></li>
+<li><a href="https://stackoverflow.com/questions/19614104/how-to-tell-org-mode-to-embed-my-css-file-on-html-export">Embed CSS on export</a></li>
+</ul>
+<h3 id="latex">LaTeX</h3>
+<ul>
+<li><a href="http://pragmaticemacs.com/emacs/org-mode-basics-v-exporting-your-notes/">Org - Mode Basics: Exporting your notes (Latex basics)</a></li>
+<li><a href="https://www.reddit.com/r/orgmode/comments/jykmpt/after_latex_export_oxlatex_the_fourth_level/">https://www.reddit.com/r/orgmode/comments/jykmpt/after_latex_export_oxlatex_the_fourth_level/</a></li>
+<li><a href="https://github.com/dangom/org-thesis">https://github.com/dangom/org-thesis</a></li>
+</ul>
+<h3 id="org-reveal">org-reveal</h3>
+<h4 id="header">Header</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode org"><code class="sourceCode orgmode"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>:REVEAL_PROPERTIES:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>#+REVEAL_THEME: serif</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>#+REVEAL_TRANS: none</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>#+REVEAL_INIT_OPTIONS: slideNumber:true, margin:0.20, minScale: 0.001, maxScale: 2.0</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>#+REVEAL_TITLE_SLIDE: &lt;h2&gt;%t&lt;/h2&gt;&lt;h4&gt;&lt;em&gt;%s&lt;/em&gt;&lt;h4&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;p style=&quot;font-size: 20pt;&quot;&gt;By %a, %e&lt;/p&gt;&lt;h4&gt;%d&lt;/h4&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>#+REVEAL_REVEAL_JS_VERSION: 4</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">#+OPTIONS: timestamp:nil toc:1 num:nil</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>:END:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="pp">#+TITLE: Journalism 101 Online Breakout</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">#+SUBTITLE: and some misc catchall</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">#+AUTHOR: Jacob Boxerman</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">#+EMAIL: jboxerman@fwparker.org</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">#+DATE: August 23, 2021</span></span></code></pre></div>
+<h3 id="tables">Tables</h3>
+<ul>
+<li>Separators: Make new row with first column <code>/</code>. Put a <code>&lt;</code> in each column that should have a separator.</li>
+<li>Add solid line: <code>org-table-insert-hline</code></li>
+</ul>
+<h3 id="citationsbibliography">Citations/Bibliography</h3>
+<ul>
+<li><a href="https://blog.tecosaur.com/tmio/2021-07-31-citations.html">https://blog.tecosaur.com/tmio/2021-07-31-citations.html</a></li>
+<li>#+BIBLIOGRAPHY:</li>
+<li><span class="citation" data-cites="thing">[cite:@thing]</span></li>
+<li><a href="https://orgmode.org/manual/Creating-Footnotes.html">Footnote action</a>: C-c C-x f</li>
+</ul>
+<h3 id="org-columns">org-columns</h3>
+<ul>
+<li><a href="https://emacsconf.org/2021/talks/professional/">https://emacsconf.org/2021/talks/professional/</a></li>
+<li><a href="https://raw.githubusercontent.com/falloutphil/Misc/master/cpd.org">https://raw.githubusercontent.com/falloutphil/Misc/master/cpd.org</a></li>
+<li><a href="https://orgmode.org/manual/Using-column-view.html">https://orgmode.org/manual/Using-column-view.html</a></li>
+<li><a href="https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.html">https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.html</a></li>
+<li>Sample columns configuration using properties: <code>:COLUMNS: %50ITEM %TODO %REQUIRES %OUTCOME %NOTES</code>
+<ul>
+<li>Can do the same file-wide with <code>#+COLUMNS</code></li>
+</ul></li>
+</ul>
+<h3 id="org-ql">org-ql</h3>
+<ul>
+<li><code>(property "ARCHIVE_ITAGS" "cl")</code></li>
+</ul>
+<h3 id="clocktables">Clocktables</h3>
+<ul>
+<li><code>(setq org-duration-format 'h:mm)</code></li>
+<li>Today: <code>#+BEGIN: clocktable :maxlevel 3 :block today :hidefiles t :compact t</code></li>
+<li>This week: <code>#+BEGIN: clocktable :maxlevel 3 :block thisweek :hidefiles t :compact t</code></li>
+<li>All: <code>#+BEGIN: clocktable :maxlevel 10 :tags t</code></li>
+<li>Scopes (examples)
+<ul>
+<li><code>:scope ("work.org" "~/Dropbox/org/org-archive/homework-archive.org_archive" "~/Dropbox/org/org-archive/todo-archive.org_archive")</code></li>
+<li><code>:scope (lambda () (directory-files-recursively (expand-file-name "org-archive" org-directory) "homework"))</code></li>
+</ul></li>
+</ul>
+<h2 id="my-favorite-themes">My favorite themes</h2>
+<ol type="1">
+<li>jake-doom-plain/jake-doom-plain-dark</li>
+<li>doom-old-hope</li>
+<li>doom-dark+</li>
+<li>doom-molokai</li>
+<li>doom-one/doom-one-light</li>
+<li>nano</li>
+<li>kaolin-galaxy</li>
+<li>doom-snazzy</li>
+<li>modus-themes</li>
+<li>doom-miramare</li>
+<li>doom-peacock</li>
+<li>doom-flatwhite</li>
+</ol>
+<h2 id="code">Code</h2>
+<h3 id="python">Python</h3>
+<ul>
+<li><code>run-python</code> : begin shell thing</li>
+<li><code>C-c C-c</code> : run the content of the buffer in the opened python shell</li>
+<li><code>C-c C-r</code> : run the selected region in the python shell</li>
+</ul>
+<h2 id="ispell">ISpell</h2>
+<ul>
+<li><code>M-x ispell</code></li>
+</ul>
+<h3 id="editing-commands">Editing commands</h3>
+<p>*Select a number to auto-correct</p>
+<ul>
+<li><code>SPC</code> - skip for later</li>
+<li><code>a</code> - accept wrong word for buffer</li>
+<li><code>i</code> - insert word into personal dictionary</li>
+</ul>
+<h2 id="misc">Misc</h2>
+<ul>
+<li><a href="https://hg.sr.ht/~zck/zmusic/">https://hg.sr.ht/~zck/zmusic/</a></li>
+<li><a href="https://www.rosipov.com/images/posts/vim-movement-commands-cheatsheet.png">Vim movement diagram</a></li>
+</ul>
+<h3 id="packages-ive-installed-for-emacs">Packages I’ve installed for Emacs:</h3>
+<ul>
+<li>aspell (spellchecking)</li>
+<li>chemacs (multiple emacs profiles)</li>
+<li>emacs-plus</li>
+<li>fd (faster find)</li>
+<li>fzf (fuzzy file search)</li>
+<li>gnu coreutils (gls, ggrep, etc)</li>
+<li>ripgrep (faster grep)</li>
+</ul>
+<h2 id="calc">Calc</h2>
+<h3 id="summing-a-column-of-numbers-in-emacs-jasani.org"><a href="https://www.jasani.org/posts/2007/summing-a-column-of-numbers-in-emacs/">Summing a Column of Numbers in Emacs :: jasani.org</a></h3>
+<h3 id="emacs-commands-to-calculate-sum-average-etc.-of-region---super-user"><a href="https://superuser.com/questions/1077154/emacs-commands-to-calculate-sum-average-etc-of-region">Emacs commands to calculate sum, average, etc. of region - Super User</a></h3>
+<h2 id="links">Links</h2>
+<h3 id="elisp">Elisp</h3>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/manual/pdf/elisp.pdf">GNU Emacs Lisp Reference Manual</a></li>
+</ul>
+<h4 id="comparisons-conditionals">Comparisons &amp; Conditionals</h4>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Comparison-of-Numbers.html">Comparison of Numbers</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Conditionals.html">Conditionals</a>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/else.html">If–then–else Expressions</a></li>
+</ul></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Equality-Predicates.html">Equality Predicates</a></li>
+</ul>
+<h4 id="expressions">Expressions</h4>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/Parts-of-let-Expression.html">Let expression</a></li>
+</ul>
+<h4 id="lists">Lists</h4>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Building-Lists.html">Cons Cells and Lists</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/car-_0026-cdr.html">car and cdr</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html">Alists</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/List-Elements.html">Accessing elements of lists</a></li>
+<li><a href="http://ergoemacs.org/emacs/elisp_list.html">http://ergoemacs.org/emacs/elisp_list.html</a></li>
+</ul>
+<h3 id="manualsguides">Manuals/Guides</h3>
+<ul>
+<li><a href="https://emacsdocs.org/">https://emacsdocs.org/</a></li>
+<li><a href="https://youtube.com/watch?v=993dmoDdybs&amp;feature=share">The GNU Emacs Calculator - YouTube</a></li>
+</ul>
+<h3 id="people-blogs-configs">People (blogs, configs)</h3>
+<ul>
+<li><a href="https://karl-voit.at/apps-I-am-using/">https://karl-voit.at/apps-I-am-using/</a></li>
+<li><a href="https://github.com/piercegwang/emacsd/">https://github.com/piercegwang/emacsd/</a></li>
+<li><a href="https://gitlab.com/dwt1/dotfiles">https://gitlab.com/dwt1/dotfiles</a></li>
+<li><a href="https://sachachua.com/dotemacs/">https://sachachua.com/dotemacs/</a></li>
+<li><a href="https://github.com/ogdenwebb/snug-emacs">https://github.com/ogdenwebb/snug-emacs</a></li>
+<li><a href="https://github.com/mclear-tools/dotemacs">https://github.com/mclear-tools/dotemacs</a></li>
+<li><a href="https://github.com/bcmertz/dotfiles/tree/main/.emacs.d">https://github.com/bcmertz/dotfiles/tree/main/.emacs.d</a></li>
+<li><a href="https://gitlab.com/public-repositories/emacs-groundup">https://gitlab.com/public-repositories/emacs-groundup</a></li>
+<li><a href="https://alhassy.github.io/emacs.d/">https://alhassy.github.io/emacs.d/</a></li>
+<li><a href="https://github.com/SystemCrafters/crafted-emacs">https://github.com/SystemCrafters/crafted-emacs</a></li>
+</ul>
+<h3 id="forums">Forums</h3>
+<ul>
+<li><a href="https://www.reddit.com/r/emacs/comments/ulsrb5/what_have_you_recently_removed_from_your_emacs/?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf">what have you recently removed from your emacs config? – reddit</a></li>
+</ul>
+<h3 id="articlespostsblogs">Articles/posts/blogs</h3>
+<ul>
+<li><a href="https://jao.io/blog/2022-06-19-simple-note-taking.html">https://jao.io/blog/2022-06-19-simple-note-taking.html</a></li>
+</ul>
+<h3 id="packages">Packages</h3>
+<ul>
+<li><a href="https://www.emacswiki.org/emacs/TypographicalPunctuationMarks">https://www.emacswiki.org/emacs/TypographicalPunctuationMarks</a></li>
+<li><a href="https://github.com/misohena/phscroll">https://github.com/misohena/phscroll</a></li>
+<li><a href="https://github.com/bmag/emacs-purpose">https://github.com/bmag/emacs-purpose</a></li>
+<li>Marginalia - cool stuff in describe variable, function, etc. Same-ish as ivy-rich</li>
+<li><a href="https://github.com/alphapapa/org-bookmark-heading">https://github.com/alphapapa/org-bookmark-heading</a></li>
+<li><a href="https://github.com/osener/emacs-webkit-color-picker">https://github.com/osener/emacs-webkit-color-picker</a></li>
+<li><a href="https://github.com/misohena/el-easydraw">https://github.com/misohena/el-easydraw</a></li>
+<li><a href="https://github.com/ioah86/repetition_error_finder/">https://github.com/ioah86/repetition_error_finder/</a></li>
+<li><a href="https://github.com/bitspook/spookfox">https://github.com/bitspook/spookfox</a></li>
+<li><a href="https://gitlab.com/tygrdev/org-real">https://gitlab.com/tygrdev/org-real</a></li>
+<li><a href="https://github.com/joaotavora/eglot">https://github.com/joaotavora/eglot</a></li>
+<li><a href="https://github.com/Silex/elmacro">https://github.com/Silex/elmacro</a></li>
+<li><a href="https://github.com/novoid/Memacs">https://github.com/novoid/Memacs</a></li>
+<li><a href="https://alhassy.github.io/org-special-block-extras/">https://alhassy.github.io/org-special-block-extras/</a></li>
+<li><a href="https://github.com/minad/org-modern">https://github.com/minad/org-modern</a> + <a href="https://github.com/jdtsmith/org-modern-indent">https://github.com/jdtsmith/org-modern-indent</a></li>
+</ul>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>

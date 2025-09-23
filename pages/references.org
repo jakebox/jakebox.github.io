@@ -15,3 +15,4 @@ I discovered that there are quite a few references to my posts and thoughts on t
 + [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][Sophie Bosio - Prettifying Emacs Org Mode]]
 + [[https://lr0.fly.dev/yt.html][Hereby, all birds fly - YouTube Channels]]
   - Pleased to be on a list among the top names in the Emacs YouTube community.
++ [[https://yanboyang.com/posts/20230618184642-org_reveal][Boyang Yan - org-reveal]]

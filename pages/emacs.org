@@ -1,0 +1,182 @@
+---
+title: Emacs
+---
+
+This page contains a variety of useful links and notes on the text editor Emacs, roughly organized. I don't reference them very often anymore but thought they might be useful to someone else.
+
+-----
+
+* Editing tricks
+- Dired search and replace - [[http://xahlee.info/emacs/emacs/find_replace_inter.html][link]]
+- ~C-q C-j~ literal newline
+- Like hitting return: ~M-j~
+- to jump to next sentence ~M-e~
+- Delete everything in parenthesis (or ~di)~/~di}~) ~C-M-k~
+- ~flush-lines~ http://xahlee.info/emacs/emacs/elisp_list_matching_lines.html
+  - Remove blank lines: ~M-x flush-lines RET ^$ RET~
+- Opposite: ~keep-lines~
+- https://hungyi.net/posts/emacs-calculate-while-you-write/
+** Text input
+- ~M-x (set-input-method 'TeX) RET tex RET~
+- ~M-x (evil-ex-show-digraphs) RET~
+* Good keybinds to remember
+- ~M-o~ ~(ivy-dispatching-done)~
+  - https://oremacs.com/swiper/#hydra-in-the-minibuffer
+- ~C-M-j~ - ~(ivy-immediate-done)~
+* Orgmode
+- ~org-set-startup-visibility~ (C-u C-u TAB)
+- ~org-agenda-notime-is-late~ - "You can use this option to decide if the schedule for today should come before or after timeless agenda entries."
+- [[https://emacs.stackexchange.com/questions/41544/is-it-possible-to-include-a-base64-image-in-org-file][include base64 image in org file]]
+- [[https://orgmode.org/manual/Radio-Targets.html][Radio targets]]
+- Command to reveal x many levels in orgmode ~3 C-c <tab>~
+- ~C-c /~ org sparse tree
+  + ~C-c \~ match tags
+- ~C-u C-c C-c~ to make list item into checkbox
+- https://stackoverflow.com/questions/58820073/s-in-org-agenda-prefix-format-doesnt-display-dates-in-the-todo-view
+** Clocking
+- https://orgmode.org/manual/Clocking-Work-Time.html
+- Insert clock table: ~org-clock-report~
+- Update clock blocks - ~C-c C-c~ (place cursor on BEGIN)
+** Org Mode Exporting
+- https://orgmode.org/manual/Export-Settings.html
+- ~org-export-with-sub-superscripts~
+- [[https://www.reddit.com/r/emacs/comments/swvbmm/you_want_to_write_a_custom_org_backend_lets_write/?utm_source=share&utm_medium=ios_app&utm_name=iossmf][Write orgmode custom backend]]
+** HTML
+- ~#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles.css"/>~
+- [[https://stackoverflow.com/questions/19614104/how-to-tell-org-mode-to-embed-my-css-file-on-html-export][Embed CSS on export]]
+** LaTeX
+- [[http://pragmaticemacs.com/emacs/org-mode-basics-v-exporting-your-notes/][Org - Mode Basics: Exporting your notes (Latex basics)]]
+- https://www.reddit.com/r/orgmode/comments/jykmpt/after_latex_export_oxlatex_the_fourth_level/
+- https://github.com/dangom/org-thesis
+** org-reveal
+*** Header
+#+begin_src org
+  :REVEAL_PROPERTIES:
+  ,#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+  ,#+REVEAL_THEME: serif
+  ,#+REVEAL_TRANS: none
+  ,#+REVEAL_INIT_OPTIONS: slideNumber:true, margin:0.20, minScale: 0.001, maxScale: 2.0
+  ,#+REVEAL_TITLE_SLIDE: <h2>%t</h2><h4><em>%s</em><h4><br><br><br><p style="font-size: 20pt;">By %a, %e</p><h4>%d</h4>
+  ,#+REVEAL_REVEAL_JS_VERSION: 4
+  ,#+OPTIONS: timestamp:nil toc:1 num:nil
+  :END:
+  ,#+TITLE: Journalism 101 Online Breakout
+  ,#+SUBTITLE: and some misc catchall
+  ,#+AUTHOR: Jacob Boxerman
+  ,#+EMAIL: jboxerman@fwparker.org
+  ,#+DATE: August 23, 2021
+#+end_src
+** Tables
+- Separators: Make new row with first column ~/~. Put a ~<~ in each column that should have a separator.
+- Add solid line: ~org-table-insert-hline~
+** Citations/Bibliography
+- https://blog.tecosaur.com/tmio/2021-07-31-citations.html
+- #+BIBLIOGRAPHY:
+- [cite:@thing]
+- [[https://orgmode.org/manual/Creating-Footnotes.html][Footnote action]]: C-c C-x f
+** org-columns
+- https://emacsconf.org/2021/talks/professional/
+- https://raw.githubusercontent.com/falloutphil/Misc/master/cpd.org
+- https://orgmode.org/manual/Using-column-view.html
+- https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.html
+- Sample columns configuration using properties: ~:COLUMNS: %50ITEM %TODO %REQUIRES %OUTCOME %NOTES~
+  - Can do the same file-wide with ~#+COLUMNS~
+** org-ql
+- ~(property "ARCHIVE_ITAGS" "cl")~
+** Clocktables
++ ~(setq org-duration-format 'h:mm)~
++ Today: ~#+BEGIN: clocktable :maxlevel 3 :block today :hidefiles t :compact t~
++ This week: ~#+BEGIN: clocktable :maxlevel 3 :block thisweek :hidefiles t :compact t~
++ All: ~#+BEGIN: clocktable :maxlevel 10 :tags t~
++ Scopes (examples)
+  * ~:scope ("work.org" "~/Dropbox/org/org-archive/homework-archive.org_archive" "~/Dropbox/org/org-archive/todo-archive.org_archive")~
+  * ~:scope (lambda () (directory-files-recursively (expand-file-name "org-archive" org-directory) "homework"))~
+* My favorite themes
+1. jake-doom-plain/jake-doom-plain-dark
+2. doom-old-hope
+3. doom-dark+
+4. doom-molokai
+5. doom-one/doom-one-light
+6. nano
+7. kaolin-galaxy
+8. doom-snazzy
+9. modus-themes
+10. doom-miramare
+11. doom-peacock
+12. doom-flatwhite
+* Code
+** Python
+- ~run-python~ : begin shell thing
+- ~C-c C-c~ : run the content of the buffer in the opened python shell
+- ~C-c C-r~ : run the selected region in the python shell
+* ISpell
+- ~M-x ispell~
+** Editing commands
+*Select a number to auto-correct
+- ~SPC~ - skip for later
+- ~a~ - accept wrong word for buffer
+- ~i~ - insert word into personal dictionary
+* Misc
+- https://hg.sr.ht/~zck/zmusic/
+- [[https://www.rosipov.com/images/posts/vim-movement-commands-cheatsheet.png][Vim movement diagram]]
+** Packages I've installed for Emacs:
+- aspell (spellchecking)
+- chemacs (multiple emacs profiles)
+- emacs-plus
+- fd (faster find)
+- fzf (fuzzy file search)
+- gnu coreutils (gls, ggrep, etc)
+- ripgrep (faster grep)
+* Calc
+** [[https://www.jasani.org/posts/2007/summing-a-column-of-numbers-in-emacs/][Summing a Column of Numbers in Emacs :: jasani.org]]
+** [[https://superuser.com/questions/1077154/emacs-commands-to-calculate-sum-average-etc-of-region][Emacs commands to calculate sum, average, etc. of region - Super User]]
+* Links
+** Elisp
+- [[https://www.gnu.org/software/emacs/manual/pdf/elisp.pdf][GNU Emacs Lisp Reference Manual]]
+*** Comparisons & Conditionals
+- [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Comparison-of-Numbers.html][Comparison of Numbers]]
+- [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Conditionals.html][Conditionals]]
+  - [[https://www.gnu.org/software/emacs/manual/html_node/eintr/else.html][If–then–else Expressions]]
+- [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Equality-Predicates.html][Equality Predicates]]
+*** Expressions
+- [[https://www.gnu.org/software/emacs/manual/html_node/eintr/Parts-of-let-Expression.html][Let expression]]
+*** Lists
+- [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Building-Lists.html][Cons Cells and Lists]]
+- [[https://www.gnu.org/software/emacs/manual/html_node/eintr/car-_0026-cdr.html][car and cdr]]
+- [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html][Alists]]
+- [[https://www.gnu.org/software/emacs/manual/html_node/elisp/List-Elements.html][Accessing elements of lists]]
+- http://ergoemacs.org/emacs/elisp_list.html
+** Manuals/Guides
+- https://emacsdocs.org/
+- [[https://youtube.com/watch?v=993dmoDdybs&feature=share][The GNU Emacs Calculator - YouTube]]
+** People (blogs, configs)
+- https://karl-voit.at/apps-I-am-using/
+- https://github.com/piercegwang/emacsd/
+- https://gitlab.com/dwt1/dotfiles
+- https://sachachua.com/dotemacs/
+- https://github.com/ogdenwebb/snug-emacs
+- https://github.com/mclear-tools/dotemacs
+- https://github.com/bcmertz/dotfiles/tree/main/.emacs.d
+- https://gitlab.com/public-repositories/emacs-groundup
+- https://alhassy.github.io/emacs.d/
+- https://github.com/SystemCrafters/crafted-emacs
+** Forums
+- [[https://www.reddit.com/r/emacs/comments/ulsrb5/what_have_you_recently_removed_from_your_emacs/?utm_source=share&utm_medium=ios_app&utm_name=iossmf][what have you recently removed from your emacs config? -- reddit]]
+** Articles/posts/blogs
+- https://jao.io/blog/2022-06-19-simple-note-taking.html
+** Packages
+- https://www.emacswiki.org/emacs/TypographicalPunctuationMarks
+- https://github.com/misohena/phscroll
+- https://github.com/bmag/emacs-purpose
+- Marginalia - cool stuff in describe variable, function, etc. Same-ish as ivy-rich
+- https://github.com/alphapapa/org-bookmark-heading
+- https://github.com/osener/emacs-webkit-color-picker
+- https://github.com/misohena/el-easydraw
+- https://github.com/ioah86/repetition_error_finder/
+- [[https://github.com/bitspook/spookfox]]
+- https://gitlab.com/tygrdev/org-real
+- https://github.com/joaotavora/eglot
+- https://github.com/Silex/elmacro
+- https://github.com/novoid/Memacs
+- https://alhassy.github.io/org-special-block-extras/
+- https://github.com/minad/org-modern + https://github.com/jdtsmith/org-modern-indent

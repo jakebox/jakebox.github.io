@@ -1,0 +1,161 @@
+---
+title: LaTeX
+---
+
+This page contains a variety of useful links and notes on the document preparation software LaTeX.
+
+-----
+
+Notes:
+- Where to put .sty files on Mac: ~~/Library/texmf/tex/latex~
+* Links
+** Reading List/Resources
+- [[https://en.wikibooks.org/wiki/LaTeX][LaTeX - Wikibooks]]
+  - [[https://upload.wikimedia.org/wikipedia/commons/2/2d/LaTeX.pdf][PDF]]
+- [[https://physics.nist.gov/cuu/pdf/typefaces.pdf][Typefaces for Symbols in Scientific Manuscripts]]
+- [[http://anorien.csc.warwick.ac.uk/mirrors/CTAN/info/l2tabu/english/l2tabuen.pdf][An essential guide to LATEX 2ε usage]]
+- [[https://user.math.uni-bremen.de/~grimpen/LaTeX.html][Best practices for LaTeX]]
+- https://practicaltypography.com/
+- [[https://physics.nist.gov/cuu/Units/checklist.html][SI Unit rules and style conventions]]
+** Manuals
+- [[http://tug.ctan.org/tex-archive/macros/latex/contrib/caption/caption-eng.pdf][Customizing captions of floating environments]]
+- [[https://mirrors.concertpass.com/tex-archive/macros/latex/contrib/fancyhdr/fancyhdr.pdf][The fancyhdr and extramarks packages]]
+- [[https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/titlesec/titlesec.pdf][The titlesec, titleps and titletoc Packages]]
+- [[https://mirrors.concertpass.com/tex-archive/macros/latex/contrib/titling/titling.pdf][The titling package]]
+- [[https://ctan.math.illinois.edu/macros/latex/contrib/enumitem/enumitem.pdf][Customizing lists with the enumitem package]]
+- [[https://www.overleaf.com/learn/latex/Page_size_and_margins][Page size and margins (geometry) - Overleaf]]
+** Explanations
+- [[https://tex.stackexchange.com/questions/7669/bfseries-is-to-textbf-as-what-is-to-textsf][The way LaTeX categorizes the different characteristics of printed material (encoding, family, size, shape, etc)]]
+- [[https://tex.stackexchange.com/questions/74353/what-commands-are-there-for-horizontal-spacing][Horizontal Spacing Commands - StackOverflow]]
+** Instructional Guides/Tips
+- https://tex.stackexchange.com/questions/263676/modifying-maketitle-with-the-titling-package
+- https://tex.stackexchange.com/questions/53338/reducing-spacing-after-headings
+- https://stackoverflow.com/questions/23297422/org-mode-timestamp-format-when-exported
+- [[https://tex.stackexchange.com/questions/155411/how-to-create-inner-section-like-environment-with-sub-table-of-contents][How to create inner section like environment with sub-table of contents]]
+- [[https://mostlymaths.net/2008/09/latex-booklets.html/][mostlymaths.net  | How to create LaTeX booklets]]
+** Tools
+- https://www.mathcha.io/
+- https://tableconvert.com/
+** Fonts
+- https://tug.org/FontCatalogue/
+- https://ctan.org/pkg/kpfonts
+- https://www.cs.put.poznan.pl/csobaniec/software/latex/fonts.html
+- ~\usepackage{ebgaramond}~
+- ~\usepackage{libertine}~
+- ~\usepackage[bitstream-charter]{mathdesign}~ (https://tug.org/FontCatalogue/charterbt/)
+- ~\usepackage{cochineal}~ (https://tug.org/FontCatalogue/)
+- ~\usepackage{euler} \usepackage{concrete}~ (Concrete Mathematics)
+- ~\usepackage{OldStandard}~ (https://tug.org/FontCatalogue/oldstandard/)
+* Design Inspiration
+- [[https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/microtype/microtype.pdf][The microtype manual]]
+- Mishkan HaNefesh
+- https://www.myfonts.com/fonts/wilton/werk/
+- https://www.fontsmith.com/fonts/fs-brabo/styles/family
+- [[https://www.amazon.com/gp/product/B01LB8FIYW/ref=x_gr_w_glide_sout?caller=Goodreads&callerLink=https%3A%2F%2Fwww.goodreads.com%2Fbook%2Fshow%2F31838289-mishkan-hanefesh&tag=x_gr_w_glide_sout-20&asin=B01LB8FIYW&revisionId=&format=4&depth=1][Amazon Kindle Preview]]
+- https://github.com/pelegs/maths_book
+- https://github.com/proafxin/antique_book
+- https://github.com/enhuiz/eisvogel
+* Layout Templates
+** Images/figures
+*** Plain image with defined width
+The [H] parameter requires ~\usepackage{float}~.
+#+begin_src latex
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=16cm]{Car Trial Data Tables.png}
+    \caption{The two datatables.}
+    \label{fig:Datatables}
+  \end{figure}
+#+end_src
+*** Two side-by-side figures with captions & a label
+#+begin_src latex
+  \begin{figure}[h] % the 'h' places it "here"
+    \centering
+    \subfloat[\centering Unweighted trials]{{\includegraphics[width=3.1in]{(Unweighted) x̄ Distance Travelled vs. Height.png} }}
+    \subfloat[\centering Weighted trials]{{\includegraphics[width=3.1in]{(Weighted) x̄ Distance Travelled vs. Height.png} }}
+    \caption{My two scatterplots.}
+    \label{fig:example}
+  \end{figure}
+#+end_src
+*** Customizing image export from orgmode
+- ~#+ATTR_LATEX: :height 4in :width 2in~
+** Equations
+*** Standard equation (with text)
+#+begin_src latex
+  \begin{equation}
+    \text{KE}_1 + \text{PE}_1 + \text{W}_\text{NC} = \text{KE}_2 + \text{PE}_2
+  \end{equation}
+#+end_src
+*** Multi-line equation aligned on ~=~
+#+begin_src latex
+  \begin{equation}\setlength{\jot}{5pt}
+    \begin{split}
+      \text{KE}_1 + \text{PE}_1 - \text{W}_\text{friction} & = \text{KE}_2 + \text{PE}_2 \\
+      \frac{1}{2}mv^2_1 + mgy_1 + \text{F}_\text{fr}d \cdot \cos\theta & = \frac{1}{2}mv^2_2 + mgy_2 \\
+      \frac{1}{2}m \cdot 0 + mg\cdot h + \text{F}_\text{fr}d \cdot \cos 180^\circ & =  \frac{1}{2}mv^2_2 + mg \cdot 0 \\
+      mgh - \text{F}_\text{fr}d & = \frac{1}{2}mv^2_2
+    \end{split}
+  \end{equation}
+#+end_src
+*** Side-by-side equation with minipage
+Uses a minipage.
+#+begin_src latex
+  \noindent\begin{minipage}{.2\linewidth}
+
+    \begin{equation}\notag\setlength{\jot}{5pt}
+      \begin{split}
+        \large{\textbf{G:}} &\; g=9.81 m/s^2; m=0.0031\text{kg}; \textbf{h=0.57\text{m}}; d=0.504\text{m}\\
+        \large{\textbf{U:}} &\; \text{F}_\text{fr} \\
+        \large{\textbf{E:}} &\; mgh = 2\ffr \\
+        \large{\textbf{S:}} &\; 0.0031\text{kg} \cdot 9.81m/s^2 \cdot 0.57\text{m} = 0.504\text{m} \cdot 2 \cdot \ffr \\ 
+        \large{\textbf{S:}} &\; 0.01733 = 1.008 \cdot \ffr = \boxed{0.017\text{N}}
+      \end{split}
+    \end{equation}
+
+  \end{minipage}%
+  \begin{minipage}{1.2\linewidth}
+
+    \begin{equation}\notag\setlength{\jot}{5pt}
+      \begin{split}
+        \large{\textbf{G:}} &\; g=9.81 m/s^2; m=0.0031\text{kg}; \textbf{h=0.20\text{m}}; d=0.168\text{m}\\
+        \large{\textbf{U:}} &\; \text{F}_\text{fr} \\
+        \large{\textbf{E:}} &\; mgh = 2\ffr \\
+        \large{\textbf{S:}} &\; 0.0031\text{kg} \cdot 9.81m/s^2 \cdot 0.20\text{m} = 0.168\text{m} \cdot 2 \cdot \ffr \\ 
+        \large{\textbf{S:}} &\; 0.0061 = 0.336 \cdot \ffr = \boxed{0.0181\text{N}}
+      \end{split}
+    \end{equation}
+
+  \end{minipage}
+#+end_src
+The ~&~ designates where to align. The ~\;~ serves as a space (I think it is the
+width of a space character, or slightly bigger).
+* Lists
+- Enumitem package
+- https://orgmode.org/manual/Plain-lists-in-LaTeX-export.html#Plain-lists-in-LaTeX-export
+- https://tex.stackexchange.com/questions/12279/outline-of-style-i-a-i-a-1
+* XeLaTeX
+- ~\symbol{<code number>}~
+** Alternative font simple
+https://www.overleaf.com/learn/latex/XeLaTeX#Setting_fonts_for_different_LaTeX_elements
+#+begin_src latex
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+  \setsansfont{Public Sans}
+  \setmonofont[Color={0019D4}]{Courier New}
+#+end_src
+** Alternative font complex
+#+begin_src latex
+  \usepackage{fontspec}
+  % Fonts - fontspec
+  \setromanfont[
+  BoldFont=EB Garamond Bold,
+  ItalicFont=EB Garamond Italic,
+  BoldItalicFont=EB Garamond Bold Italic,
+  ]{EB Garamond Regular}
+
+  \setsansfont[
+  BoldFont=Public Sans Bold,
+  ItalicFont=Public Sans Italic,
+  BoldItalicFont=Public Sans Bold Italic
+  ]{Public Sans Regular}
+#+end_src
