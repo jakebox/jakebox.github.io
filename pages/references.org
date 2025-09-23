@@ -16,3 +16,4 @@ I discovered that there are quite a few references to my posts and thoughts on t
 + [[https://lr0.fly.dev/yt.html][Hereby, all birds fly - YouTube Channels]]
   - Pleased to be on a list among the top names in the Emacs YouTube community.
 + [[https://yanboyang.com/posts/20230618184642-org_reveal][Boyang Yan - org-reveal]]
++ [[https://whhone.com/posts/emacs-in-a-terminal/][Wai Hon - Using Emacs in a Terminal]] 

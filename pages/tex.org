@@ -6,8 +6,6 @@ This page contains a variety of useful links and notes on the document preparati
 
 -----
 
-Notes:
-- Where to put .sty files on Mac: ~~/Library/texmf/tex/latex~
 * Links
 ** Reading List/Resources
 - [[https://en.wikibooks.org/wiki/LaTeX][LaTeX - Wikibooks]]
@@ -159,3 +157,5 @@ https://www.overleaf.com/learn/latex/XeLaTeX#Setting_fonts_for_different_LaTeX_e
   BoldItalicFont=Public Sans Bold Italic
   ]{Public Sans Regular}
 #+end_src
+* Misc
+- Where to put .sty files on Mac: ~~/Library/texmf/tex/latex~
