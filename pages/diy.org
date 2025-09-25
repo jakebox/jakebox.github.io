@@ -48,3 +48,25 @@ Cutting boards are a fun, easy, and useful project, especially when one has a va
 
 #+HTML: <div style="clear:both;"></div>
 
+* CNC Double-Cup Pentray
+
+#+ATTR_HTML: :style float:left;width:35%;margin-right:2%;
+[[../assets/images/pentray_1.jpg]]
+
+I saw a similar design online and wanted to try to recreate it out of some oak I had on hand. I wasn't thrilled with the end result but it was a nice challenge. I used a few milling operations to try to automate the process as much as possible and minimize any sanding or finishing I had to do.
+
+I finished the piece with a few coats of gunstock finish which fills grain and gives a nice shine and texture. The bottom got a piece of cork for a smooth, grippy base and a nice shadow line along the bottom.
+
+/Left: roughing pass with 1/2" ball-nose endmill; Right: parallel smoothing pass with a 1/4" endmill/
+
+#+HTML: <div style="clear:both;"></div>
+
+#+BEGIN_HTML
+<video autoplay loop muted playsinline class="" style="float:left;width:40%;margin-right:5%">
+  <source src="../assets/images/pentray_roughing.webm" type="video/webm">
+</video>
+<video autoplay loop muted playsinline class="" style="float:left;width:40%">
+  <source src="../assets/images/pentray_smoothing.webm" type="video/webm">
+</video>
+#+END_HTML
+
