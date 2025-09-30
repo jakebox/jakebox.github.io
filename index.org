@@ -17,14 +17,14 @@ $partial("templates/post-list.html")$
 + [[https://github.com/jakebox/finance][finance]]             (TUI budget / finance tracker in Haskell)
 
 * Things I've done and enjoy doing
-+ Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (/q.v./: [[./pages/diy.html][DIY]]).
++ Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (/q.v./: [[./pages/diy.html][DIY]])
 + Launched high-altitude balloons with my team at Columbia.
 + Tuning my digital life.
 + Non-frivolous 3D printing.
 + Worked writing software at some interesting places.
 + Got my amateur radio license. KE2CZX.
 + Writing code that does cool things or makes my life easier.
-+ Fountain pens and stationery.
++ Fountain pens and stationery. (/q.v./: [[./pages/stationery.html][Stationery]])
 
 * Talks/publications
 + [[https://www.youtube.com/watch?v=6bAvPhhRbyM&list=UUmIe9q2LiRcDk0swxNGfw6A][Amateur Radio at Columbia University - History to Present Day]]  (PAARA, August 2025)
@@ -35,8 +35,7 @@ $partial("templates/post-list.html")$
 * This page
 Previously, I generated a single page from an ~org-mode~ document using ~Emacs~. I appreciate the
 simplicity of this approach. For a little more flexibility, I am now using [[https://jaspervdj.be/hakyll/][Hakyll]] to generate
-everything from the Org source files.
-
+everything from the Org source files. (/q.v./: [[./posts/2025-09-12-this_blog.html][Switching my website to Hakyll]])
 ------
 
 emacs-uptime is an autoloaded interactive native-comp-function in ‘time.el’.
