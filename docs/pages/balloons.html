@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Jacob Boxerman">
+        <meta name="description" content="Personal website and blog of Jacob Boxerman">
+        <title>Jacob Boxerman - High-Altitude Balloons</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style>
+        :root{--bg-color:#f8f8f8;--text-color:#181818;--accent-color:#4389f7;--sidebar-bg:#eee;--border-color:#ccc}html[data-theme="dark"]{--bg-color:#130505;--text-color:#e1bd74;--accent-color:#f09536;--sidebar-bg:#1a0a0a;--border-color:#332222}body{background:var(--bg-color);font-family:'EB Garamond',Georgia,serif;line-height:1.4em;color:var(--text-color);font-size:18px;margin:0;height:100vh}#content{display:flex;max-width:1200px;min-height:100vh}#sidebar{width:250px;min-width:200px;padding:40px 20px;background-color:var(--sidebar-bg);border-right:1px solid var(--border-color);box-sizing:border-box;flex-shrink:0;margin-left:0;margin-right:40px;height:100vh;position:fixed;left:0;top:0;z-index:10}#main_content{flex-grow:1;padding:20px 20px 40px 20px;box-sizing:border-box;margin-left:290px}
+        </style>
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+        <link rel="preload" href="../assets/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/default.css"></noscript>
+        <link rel="preload" href="../assets/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/blog.css"></noscript>
+        <script src="../assets/script.js" defer></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKYYG67N0W"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BKYYG67N0W');
+        </script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<p>Building software, hardware, and tools. Solving problems quickly.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<h3 id="pages">Pages</h3>
+<p><span class="math inline"><ul>
+
+<li><a href="../pages/balloons.html">balloons</a></li>
+
+<li><a href="../pages/diy.html">diy</a></li>
+
+<li><a href="../pages/education.html">education</a></li>
+
+<li><a href="../pages/emacs.html">emacs</a></li>
+
+<li><a href="../pages/references.html">references</a></li>
+
+<li><a href="../pages/stationery.html">stationery</a></li>
+
+<li><a href="../pages/tex.html">tex</a></li>
+
+</ul>
+</span></p>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>High-Altitude Balloons</h1> -->
+            <article>
+    <section class="header">
+        <h1>High-Altitude Balloons</h1>
+    </section>
+    <section>
+        <p><img src="../assets/images/balloons_fall_1.jpeg" style="float:left;width:35%;max-height:300px;object-fit:cover;margin-right:20px;" /></p>
+<p>I spent two years as the co-Mission Lead for the <a href="https://columbiaspace.org/">Columbia Space Initiative’s</a> high-altitude balloons team. We design and launch high-altitude research devices. My co-lead and I restarted the team after it ceased in 2020 during COVID-19. It was an excellent experience where I learned a lot technically as well as how to be a leader. I stepped down as lead for my senior year to allow younger students to lead, in hopes of continuing the team after I graduate.</p>
+<p>I’m very passionate about the project and wanted to display our work and successes on my website.</p>
+<p><em>Key ideas: High-altitude balloon launches, logistics, team leadership, RF theory and practice, micrcontrollers, sensors, driving a van</em></p>
+<div style="clear:both;"></div>
+<hr />
+<h2 id="spring-2024-launch">Spring 2024 Launch</h2>
+<p>This was the team’s first launch since 2019. We lost most of our institutional knowledge, save for the documents left behind by previous members. We designed and built a fairly complex payload and launched on a large 1600g balloon.</p>
+<h3 id="payload">Payload</h3>
+<p><img src="../assets/images/balloons_1.png" style="float:left;width:40%;margin-right:5%;" /></p>
+<p>The payload consisted of a GoPro, sensor stack on an Arduino Mega (VO2, humidity, temperature, UV, altitude/pressure), a custom built GPS tracker using <a href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System">APRS</a> (Automatic Packet Reporting System), and a <a href="https://www.findmespot.com/en-us">SPOT</a> satellite GPS tracker. The sensor data would be logged to the SD card for later review. The payload was put inside of a styrofoam coooler and held with a reusable eharness we sewed together.</p>
+<p>My primary focus was the APRS transmitter. Being on a tight budget, I came up with a design that used a <a href="https://www.baofengradio.com/products/uv-5r">Baofeng UV-5R</a> HT (5W) from China and an Arduino Uno. I cut into the included microphone cable and hijacked the push-to-talk (PTT) and the microphone input to be able to transmit the FM-modulated AFSK at 144.390 MHz that APRS uses over the radio, activating PTT as-needed through a BJT transistor.</p>
+<div style="clear:both;"></div>
+<h3 id="launch">Launch</h3>
+<p>We launched the 1600g balloon about three hours upstate from New York City. It was a cold and windy day and our inexperienced team struggled to fill the balloon, mainly due to the heavy winds that made it difficult to keep straight up. We managed to fill the balloon, and tested our APRS GPS as well as the SPOT tracker.</p>
+<p>We launched and immediately relized we were not receiving information from the SPOT GPS, were also not getting any data from the radio tracker. We drove the projected landing location but did not find the balloon. Our hope was that someone would find it in Eastern Connecticut and call us, and we could go pick it up.</p>
+<p><img src="../assets/images/balloons_2.jpg" style="float:left;width:60%;margin-bottom:1em;margin-right:5%;" /></p>
+<p>That night, we realized that the two GPS trackers were most likely interferring with each other. The working theory was that when the AA battery pack ran out on the homebrew APRS tracker, we’d get pings from the SPOT.</p>
+<p>And indeed, the next morning, the SPOT tracker sent the location of the balloon. Unfortunately, it was over the Atlantic ocean, around 30,000 feet and nearly 200 miles off the coast of Newfoundland. It turned out that we had underfilled the balloon by about one-fifth. That meant the balloon’s ascent was slower than intended, and the strong winds carried it eastward, off the coast of the continent.</p>
+<p>The tracker continued to ping for about a half an hour until it sent its final message at 0 feet above sea level and then went silent.</p>
+<h2 id="fall-2024-launch">Fall 2024 Launch</h2>
+<p>For our launch the following semester we decided to go for a simpler payload and focus on getting some good footage. We built a simple payload with a triangle of wood, carrying an Insta360 X3, SPOT tracker, and Anker battery pack. We did a better job filling the balloon, launching from Delhi, New York. The winds were very favorable and carried the balloon southwards towards Stamford, CT. The balloon landed around 5p.m. in the very tall tree of a couple in Stamford. Our fortunate was one in a million — the owners of the property were in the land management and tree trimming business, and after the initial scare of two kids showing up at their doorstep at nightfall, they promised they would do their best to get it down. In January, they managed to cut down the branch and mailed us the payload.</p>
+<figure style="width:75%;margin-left:auto;margin-right:auto;margin-bottom:1em;">
+<img src="../assets/images/balloons_fall_2.jpeg" />
+<figcaption><em>Filling the balloon.</em></figcaption>
+</figure>
+<p>Unfortunately, the launch was not perfect — we only got the first half hour of the 2.5 hour flight. The footage is beautiful nonetheless. Check out this <a href="https://www.youtube.com/watch?v=HKMDcCpAlpo">video of our launch</a> produced by one of our team members, <a href="https://www.claudioianphoto.in/">Claudio</a>.</p>
+<video autoplay loop muted playsinline style="float:center;width:100%;margin-left:auto;margin-right:auto;">
+  <source src="../assets/images/balloons.webm" type="video/webm">
+</video>
+
+<p><img src="../assets/images/balloons_fall_3.jpg" style="float:left;width:45%;max-height:260px;margin-right:2%;margin-bottom:1em;object-fit:cover;" /></p>
+<p><img src="../assets/images/balloons_fall_4.jpg" style="float:right;width:45%;max-height:260px;margin-left:2%;margin-bottom:1em;object-fit:cover;" /></p>
+<div style="clear:both;"></div>
+<h2 id="pico-balloons">Pico Balloons</h2>
+<p>After our Fall 2024 launch, I decided to refocus our team’s efforts on a new project that was less logistically challenging. We are in the process of building Pico Balloons, ultra-light boards that get launched on non-expanding mylar balloons, rise to around 40,000 feet and then (ideally) circumnavigate the globe.</p>
+<p>The boards use the RP2040 microcontroller and an Si5351A clock generator with a TXCO crystal oscillator to transmit WSPR on the 17-meter band (~18 MHz). The idea is to send our position with WSPR along with a tiny bit of environmental data from a Bosch combo temperature/humidity/pressure sensor.</p>
+<p><img src="../assets/images/balloons_pico_1.jpg" style="float:left;width:45%;margin-right:2%;" /></p>
+<p><img src="../assets/images/balloons_pico_2.jpg" style="float:left;width:45%;margin-right:0%;" /></p>
+<div style="clear:both;"></div>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>
