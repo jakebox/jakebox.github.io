@@ -18,13 +18,11 @@ $partial("templates/post-list.html")$
 
 * Things I've done and enjoy doing
 + Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (/q.v./: [[./pages/diy.html][DIY]])
-+ Launched high-altitude balloons with my team at Columbia.
-+ Tuning my digital life.
-+ Non-frivolous 3D printing.
++ Launched high-altitude balloons with my team at Columbia.                                    (/q.v./: [[./pages/balloons.html][Balloons]])
 + Worked writing software at some interesting places.
-+ Got my amateur radio license. KE2CZX.
-+ Writing code that does cool things or makes my life easier.
-+ Fountain pens and stationery. (/q.v./: [[./pages/stationery.html][Stationery]])
++ Learning about RF, got my amateur radio license. KE2CZX.
++ Tuning my digital life.
++ Fountain pens and stationery.                                                                (/q.v./: [[./pages/stationery.html][Stationery]])
 
 * Talks/publications
 + [[https://www.youtube.com/watch?v=6bAvPhhRbyM&list=UUmIe9q2LiRcDk0swxNGfw6A][Amateur Radio at Columbia University - History to Present Day]]  (PAARA, August 2025)
