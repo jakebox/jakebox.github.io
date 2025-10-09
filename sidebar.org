@@ -2,8 +2,6 @@
 
 CS @ Columbia University.
 
-Building software, hardware, and tools. Solving problems quickly.
-
 *** Links
 + [[https://github.com/jakebox/][GitHub]]
 + [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]]

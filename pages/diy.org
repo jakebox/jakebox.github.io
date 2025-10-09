@@ -8,7 +8,7 @@ I enjoy building things. My projects often have some sort of technical aspect or
 * Figured trays
 /Blender, Fusion360, CNC Router; walnut, maple, tung oil/
 
-My roommate and I made a series of trays using a CNC router. We wanted to go beyond simple, rectangular or circular designs, and create parts with complex geometry that make people wonder how they were made. This took a lot of research and CAM time on my part, to figure out the best way to machine these geometries. To allow the double-sided machining, we first machined a negative mold of the base of the trays out of MDF, which would later be used to hold the rounded bottoms while the top and interiors were machined.
+My [[https://rlist07.github.io/][roommate]] and I made a series of trays using a CNC router. We wanted to go beyond simple, rectangular or circular designs, and create parts with complex geometry that make people wonder how they were made. This took a lot of research and CAM time on my part, to figure out the best way to machine these geometries. To allow the double-sided machining, we first machined a negative mold of the base of the trays out of MDF, which would later be used to hold the rounded bottoms while the top and interiors were machined.
 
 #+ATTR_HTML: :style float:left;width:40%;margin-right:5%;
 [[../assets/images/tray_1.jpg]]

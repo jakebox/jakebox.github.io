@@ -3,7 +3,7 @@ title: Home
 ---
 #+TITLE: Home
 
-Welcome to my personal site. Here you can find personal links and some of my work and interests. I'm an undergraduate student at Columbia University studying computer science. For professional information, visit my [[https://www.linkedin.com/in/jacob-boxerman/][LinkedIn]].
+This is my website. Work, projects, interests. /Currently:/ undergrad at Columbia University. /Professional:/ visit my LinkedIn. /Contact:/ email listed on GitHub.
 
 -----
 
@@ -12,9 +12,10 @@ $partial("templates/post-list.html")$
 
 * Selected projects
 + [[https://withixion.com/][ixion]]               (Agentic AI purchasing and inventory management platform)
-+ [[https://github.com/jakebox/jake-emacs][emacs configuration]] (My personal config, 100+ GitHub stars)
-+ [[https://github.com/jakebox/org-preview-html][org-preview-html]]    (Emacs minor mode, 40,000+ downloads)
++ [[https://github.com/jakebox/org-preview-html][org-preview-html]]    (Emacs minor mode)
 + [[https://github.com/jakebox/finance][finance]]             (TUI budget / finance tracker in Haskell)
++ [[https://rlist07.github.io/beerbelly.html][BeerBelly]]           (full-stack app with AI-powered recommendations)
++ [[https://github.com/jakebox/jake-emacs][emacs configuration]] (My personal config, 100+ GitHub stars)
 
 * Things I've done and enjoy doing
 + Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (/q.v./: [[./pages/diy.html][DIY]])

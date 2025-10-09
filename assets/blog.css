@@ -49,8 +49,9 @@ img {
 }
 
 .post-list-footer {
-  margin-top: 1rem;
+  margin-top: 0rem;
   text-align: right;
+  margin-bottom: -1rem;
 }
 
 .view-all-link {
