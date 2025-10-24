@@ -10,6 +10,7 @@ This page contains a variety of useful links and notes on the text editor Emacs,
 - Dired search and replace - [[http://xahlee.info/emacs/emacs/find_replace_inter.html][link]]
 - ~C-q C-j~ literal newline
 - Like hitting return: ~M-j~
+- Join lines: ~M-^~ (Vim: ~J~)
 - to jump to next sentence ~M-e~
 - Delete everything in parenthesis (or ~di)~/~di}~) ~C-M-k~
 - ~flush-lines~ http://xahlee.info/emacs/emacs/elisp_list_matching_lines.html

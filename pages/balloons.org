@@ -3,7 +3,7 @@ title: High-Altitude Balloons
 ---
 
 #+ATTR_HTML: :style float:left;width:35%;max-height:300px;object-fit:cover;margin-right:20px;
-[[../assets/images/balloons_fall_1.jpeg]]
+[[../assets/images/balloons_fall_1.jpg]]
 
 I spent two years as the co-Mission Lead for the [[https://columbiaspace.org/][Columbia Space Initiative's]] high-altitude balloons team. We design and launch high-altitude research devices. My co-lead and I restarted the team after it ceased in 2020 during COVID-19. It was an excellent experience where I learned a lot technically as well as how to be a leader. I stepped down as lead for my senior year to allow younger students to lead, in hopes of continuing the team after I graduate.
 
@@ -50,7 +50,7 @@ For our launch the following semester we decided to go for a simpler payload and
 
 #+ATTR_HTML: :style width:75%;margin-left:auto;margin-right:auto;margin-bottom:1em;
 #+CAPTION: /Filling the balloon./
-[[../assets/images/balloons_fall_2.jpeg]]
+[[../assets/images/balloons_fall_2.jpg]]
 
 Unfortunately, the launch was not perfect --- we only got the first half hour of the 2.5 hour flight. The footage is beautiful nonetheless. Check out this [[https://www.youtube.com/watch?v=HKMDcCpAlpo][video of our launch]] produced by one of our team members, [[https://www.claudioianphoto.in/][Claudio]].
 
