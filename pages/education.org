@@ -59,3 +59,20 @@ I've noted the courses that have stuck with me the most and noted which topics a
 - John Stuart Mill, /On Liberty/
 - Immanuel Kant, /Groundwork of the Metaphysics of Morals/
 #+END_LITERATURE
+
+
+** Heterogenous Computing for Signal and Data Processing
+Excellent course that reviewed the basics of heterogenous architectures, their applications, and programming for GPUs, as well as dives into the detail of GPUs. With Professor [[https://www.aidl.ee.columbia.edu/people/zk-my-page][Zoran Kostic]], formerly at Broadcom and Nokia Bell Labs, fascinating to get to hear his stories and expertise.
+
+Gave me a much more well-rounded view of computing from the borderline of hardware and software, and a better understanding of SoCs. I feel I have a grasp on how a device like a mobile phone works end-to-end and the design requirements that go into it. Seems like a valuabe thing to understand especially when developing embedded software that deserves extra care and attention.
+
+*** Topics of Note
+#+BEGIN_LITERATURE
+- System-on-Chip (SoC) theory and architecture
+- NVIDIA GPU architecture
+- CUDA / OpenCL
+- [[https://github.com/inducer/pycuda][PyCUDA]] / [[https://documen.tician.de/pyopencl/runtime_platform.html][PyOpenCL]]
+- Kernel algorithms and optimization (e.g. convolution)
+- Memory hierarchy, access patterns
+- [[https://developer.nvidia.com/nsight-systems][NVIDIA NSight]] Profiling
+#+END_LITERATURE

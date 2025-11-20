@@ -52,6 +52,7 @@ main = hakyllWith config $ do
                     myDefaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
+                >>= return . fmap demoteHeaders
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
 
