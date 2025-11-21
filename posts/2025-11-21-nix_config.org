@@ -1,0 +1,53 @@
+---
+title: I published my Nix configuration
+description: Sharing some details about my Nix configuration.
+---
+
+I finally got around to publishing my Nix configuration publicly on GitHub. I avoided doing this for a while since I had some details from my work Nix configuration that I didn't want to publish, so I pulled those out and made a new repo, which you can find [[https://github.com/jakebox/nix-config][here]].
+
+In this post I detail some of the points that I am pleased with from my configuration and that might prove interesting to other Nix enthusaists. I cannot claim to be particularly skilled with Nix, merely that my setup works well for me. Reach out if you see room for improvement.
+
+* File Structure
+
+My project structure is fairly simple, which has been a goal for me. I much prefer a few, larger files, to many small files. I find the benefit to spreading things out to be very minimal, and causes more clutter than it's worth.
+
+To that end, my directory structure is something like this:
+
+#+BEGIN_SRC
+├── flake.nix                 # Main flake configuration
+├── systems/
+│   ├── mac-configuration.nix          # macOS system configuration
+│   ├── xps-configuration.nix          # NixOS system configuration
+│   └── xps-hardware-configuration.nix # Dell XPS hardware config
+├── home/
+│   ├── personal-mac.nix      # personal Macbook Home Manager config
+│   ├── personal-nixos.nix    # persoanl NixOS Home Manager config
+│   ├── ubuntu-vm.nix         # Ubuntu VM Home Manager config
+│   ├── common.nix            # Shared Home Manager configuration
+│   └── modules/
+│       ├── browser.nix       # firefox
+│       ├── taskwarrior.nix   # taskwarrior
+│       └── vscode.nix        # VS Code configuration
+#+END_SRC
+
+At the top level is the =flake.nix=. Then, we have two folders, =systems= and =home=. Systems contains a configuration for each of my hardware systems. For example, my Macbook, my Dell XPS running NixOS, or even a NixOS VM. This means each system will have one file, in the case of =nix-darwin=, or two for NixOS, as we need a =hardware.nix=.
+
+* Home Manager
+
+Inside =home= at the top level is the =common.nix=. This file contains most of my configuration, such as zsh prompt and plugins, Git preferences, packages to install, shell aliases, tmux, and so on. It takes a few extra inputs: the name of an SSH key, an email, and a username. These are used to populate details like signing keys and Git.
+
+Also in home are files specific to a single machine. For example, my Macbook, or my NixOS machine. These import =common.nix=, setting =_module.args= for the aforementioned inputs, and overriding configurations where necessary with =lib.mkForce=.
+
+This leads to a maintainble structure that doesn't have an excess of files to browse, and keeps most things shared, meaning I get the exact same experience no matter what machine I'm on.
+
+* Notes on =nix-darwin=
+
+=nix-darwin= is a project that brings the declarative power of NixOS to MacOS. It works very well and I love using it. I wanted to note the trouble with installing packages, however (/Note: this may have been patched, I am yet to try it/). Installing GUI applications on Nix places them into the Nix store, aliased into a directory like =/Users/<user>/Applications/Home Manager Apps=. The issue here is that Spotlight search does not index these aliases, meaning you won't find them easily on your system, and they'll look like aliases.
+
+My preferred method of installing GUI apps is to use =nix-homebrew= with casks. This is a good compromise and lets the apps update themselves too.
+
+* Managing Firefox
+Using home-manager to configure Firefox is pretty easy. The difficulty is discovering what you can set. Use =about:config= in Firefox to search for preferences and see what might be worth setting.
+
+* Conclusion
+My Nix config has required little tweaking. Or, rather, I have not been overly compelled to edit it. This must be a combination of having landed on a solid config, and some level of mental fortitude to be glad when something is working. Reach out if you have any ideas or comments.
