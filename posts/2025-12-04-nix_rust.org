@@ -1,0 +1,50 @@
+---
+title: "Building Rust Projects with Nix"
+description: How to use Nix to build Rust Cargo projects, without rebuilding dependencies.
+---
+
+I've been working on some Rust personal projects and wanted to build and deploy them with Nix. I was already using a Flake for the development shell, so I figured I'd work out how to build with Nix. It took me a little longer than I'd like to admit, but looking back it's fairly simple, so I thought I'd explain how in a blog post. 
+
+We're going to use [[https://github.com/nix-community/naersk][naersk]], which is pretty much a drop-in replacement for the built-in =rustPlatform.buildRustPackage=, but with the added bonus of being able to avoid recompiling every dependency when you rebuild your own crate.
+
+* Build file setup
+Here's the file I came up with.
+
+#+BEGIN_SRC nix
+  { naersk', pkgs }:
+
+  naersk'.buildPackage {
+    pname = "my_package";
+    version = "0.1.0";
+
+    src = pkgs.lib.cleanSource ../backend;
+
+    cargoLock = ../backend/Cargo.lock;
+
+    nativeBuildInputs = [ pkgs.pkg-config ];
+    buildInputs = [ pkgs.openssl pkgs.sqlite ];
+
+    RUSTFLAGS = [ "--cfg" "sqlx_macros_offline" ];
+  }
+#+END_SRC
+
+I've left a few extra items in for demo purposes. We pass in =naersk'=, which comes from the flake as =naersk' = pkgs.callPackage naersk {};=. We set a few configurations, including where the source comes from, and point to the Cargo lockfile (I believe it will get auto-detected if it's in the root). I am using [[https://github.com/launchbadge/sqlx][sqlx]] to build, so I can use =RUSTFLAGS= to set some necessary flags for compiling my setup. And that's basically it.
+
+* In the flake
+Naersk is included as an input to the flake, from GitHub. We get =naersk'= with =pkgs.CallPackage=, like so:
+
+#+BEGIN_SRC nix
+  naersk' = pkgs.callPackage naersk {};
+#+END_SRC
+
+  I include the build file in the outputs of my flake like so:
+
+#+BEGIN_SRC nix
+  backend = import ./nix/backend.nix { inherit pkgs naersk'; };
+#+END_SRC
+
+And then I can set build with =nix build .#backend= by setting =packages.backend = backend;=.
+
+
+* Conclusion
+Perhaps there is a cleaner way to write this, but I'm pleased with its functionality. Using =naersk= means I don't have to recompile every crate my project depends on, only my own code, which saves a lot of time when rebuilding. As always, let me know if you have any comments, feedback, or questions.

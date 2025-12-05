@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Jacob Boxerman">
+        <meta name="description" content="How to use Nix to build Rust Cargo projects, without rebuilding dependencies.">
+        <title>Jacob Boxerman - Building Rust Projects with Nix</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style>
+        :root{--bg-color:#f8f8f8;--text-color:#181818;--accent-color:#4389f7;--sidebar-bg:#eee;--border-color:#ccc}html[data-theme="dark"]{--bg-color:#130505;--text-color:#e1bd74;--accent-color:#f09536;--sidebar-bg:#1a0a0a;--border-color:#332222}body{background:var(--bg-color);font-family:'EB Garamond',Georgia,serif;line-height:1.4em;color:var(--text-color);font-size:18px;margin:0;height:100vh}#content{display:flex;max-width:1200px;min-height:100vh}#sidebar{width:250px;min-width:200px;padding:40px 20px;background-color:var(--sidebar-bg);border-right:1px solid var(--border-color);box-sizing:border-box;flex-shrink:0;margin-left:0;margin-right:40px;height:100vh;position:fixed;left:0;top:0;z-index:10}#main_content{flex-grow:1;padding:20px 20px 40px 20px;box-sizing:border-box;margin-left:290px}
+        </style>
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+        <link rel="preload" href="../assets/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/default.css"></noscript>
+        <link rel="preload" href="../assets/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/blog.css"></noscript>
+        <script src="../assets/script.js" defer></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKYYG67N0W"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BKYYG67N0W');
+        </script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<h3 id="pages">Pages</h3>
+<p><span class="math inline"><ul>
+
+<li><a href="../pages/balloons.html">balloons</a></li>
+
+<li><a href="../pages/diy.html">diy</a></li>
+
+<li><a href="../pages/education.html">education</a></li>
+
+<li><a href="../pages/emacs.html">emacs</a></li>
+
+<li><a href="../pages/references.html">references</a></li>
+
+<li><a href="../pages/stationery.html">stationery</a></li>
+
+<li><a href="../pages/tex.html">tex</a></li>
+
+</ul>
+</span></p>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Building Rust Projects with Nix</h1> -->
+            <article>
+    <section class="header">
+        <h1>Building Rust Projects with Nix</h1>
+        Posted on December  4, 2025
+        
+    </section>
+    <section>
+        <p>I’ve been working on some Rust personal projects and wanted to build and deploy them with Nix. I was already using a Flake for the development shell, so I figured I’d work out how to build with Nix. It took me a little longer than I’d like to admit, but looking back it’s fairly simple, so I thought I’d explain how in a blog post.</p>
+<p>We’re going to use <a href="https://github.com/nix-community/naersk">naersk</a>, which is pretty much a drop-in replacement for the built-in <code class="verbatim">rustPlatform.buildRustPackage</code>, but with the added bonus of being able to avoid recompiling every dependency when you rebuild your own crate.</p>
+<h2 id="build-file-setup">Build file setup</h2>
+<p>Here’s the file I came up with.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode nix"><code class="sourceCode nix"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> <span class="va">naersk'</span><span class="op">,</span> <span class="va">pkgs</span> <span class="op">}</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>naersk'<span class="op">.</span>buildPackage <span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">pname</span> <span class="op">=</span> <span class="st">&quot;my_package&quot;</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">version</span> <span class="op">=</span> <span class="st">&quot;0.1.0&quot;</span><span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="va">src</span> <span class="op">=</span> pkgs<span class="op">.</span>lib<span class="op">.</span>cleanSource <span class="ss">../backend</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="va">cargoLock</span> <span class="op">=</span> <span class="ss">../backend/Cargo.lock</span><span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="va">nativeBuildInputs</span> <span class="op">=</span> <span class="op">[</span> pkgs<span class="op">.</span>pkg-config <span class="op">];</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="va">buildInputs</span> <span class="op">=</span> <span class="op">[</span> pkgs<span class="op">.</span>openssl pkgs<span class="op">.</span>sqlite <span class="op">];</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="va">RUSTFLAGS</span> <span class="op">=</span> <span class="op">[</span> <span class="st">&quot;--cfg&quot;</span> <span class="st">&quot;sqlx_macros_offline&quot;</span> <span class="op">];</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>I’ve left a few extra items in for demo purposes. We pass in <code class="verbatim">naersk'</code>, which comes from the flake as <code class="verbatim">naersk' = pkgs.callPackage naersk {};</code>. We set a few configurations, including where the source comes from, and point to the Cargo lockfile (I believe it will get auto-detected if it’s in the root). I am using <a href="https://github.com/launchbadge/sqlx">sqlx</a> to build, so I can use <code class="verbatim">RUSTFLAGS</code> to set some necessary flags for compiling my setup. And that’s basically it.</p>
+<h2 id="in-the-flake">In the flake</h2>
+<p>Naersk is included as an input to the flake, from GitHub. We get <code class="verbatim">naersk'</code> with <code class="verbatim">pkgs.CallPackage</code>, like so:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode nix"><code class="sourceCode nix"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>naersk' = pkgs<span class="op">.</span>callPackage naersk <span class="op">{}</span>;</span></code></pre></div>
+<p>I include the build file in the outputs of my flake like so:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode nix"><code class="sourceCode nix"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>backend = <span class="bu">import</span> <span class="ss">./nix/backend.nix</span> <span class="op">{</span> <span class="kw">inherit</span> <span class="va">pkgs</span> <span class="va">naersk</span>'<span class="op">;</span> <span class="op">}</span>;</span></code></pre></div>
+<p>And then I can set build with <code class="verbatim">nix build .#backend</code> by setting <code class="verbatim">packages.backend = backend;</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Perhaps there is a cleaner way to write this, but I’m pleased with its functionality. Using <code class="verbatim">naersk</code> means I don’t have to recompile every crate my project depends on, only my own code, which saves a lot of time when rebuilding. As always, let me know if you have any comments, feedback, or questions.</p>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>
