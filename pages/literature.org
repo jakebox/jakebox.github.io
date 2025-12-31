@@ -1,0 +1,121 @@
+---
+title: Literature
+---
+
+This is a non-comprehensive list of the books I have read. I include books that were assigned for a
+school course /iff/: I paid particular attention to, and can claim to have some taste for it. *I
+exclude:* books of which I only read a small excerpt; textbooks; reference books; technical
+books. *Motivation:* to remember what I have read; to look for patterns.
+
+-----
+
+|-----------------------------------------------+-------------------+------------+-------|
+| Which                                         | Who               | When Did I | Stars |
+|-----------------------------------------------+-------------------+------------+-------|
+| The Count of Monte Cristo                     | Alexandre Dumas   |    12/2025 | =*****= |
+| Rise and Kill First                           | Ronen Bergman     |    12/2025 | =***=   |
+| Great Expectations                            | Charles Dickens   |    11/2025 | =*****= |
+| The Unbearable Lightness of Being             | Milan Kundera     |       2024 | =***=   |
+| The Turn of the Screw                         | Henry James       |       2024 | =****=  |
+| Northanger Abbey                              | Jane Austen       |       2024 | =****=  |
+| The Odyssey                                   | Homer             |       2023 |       |
+| The Iliad of Homer                            | Homer             |       2023 |       |
+| Leviathan                                     | Thomas Hobbesian  |       2023 |       |
+| Infero                                        | Dante             |       2023 |       |
+| To the Lighthouse                             | Virginia Woolf    |       2023 |       |
+| The Aeneid of Virgil                          | Virgil            |       2023 |       |
+| Plato's Republic                              | Plato             |       2023 |       |
+| The Nicomachean Ethics                        | Aristotle         |       2023 |       |
+| Politics                                      | Aristotle         |       2023 |       |
+| Words That Hurt, Words That Heal              | Joseph Telushkin  |    10/2021 |       |
+| Guns, Germs, and Steel                        | Jared Diamond     |    06/2021 |       |
+| Sapiens                                       | Yuval Noah Harari |    06/2021 |       |
+| Rebbe                                         | Joseph Telushkin  |       2017 |       |
+| Blink                                         | Malcolm Gladwell  |            |       |
+| The Tipping Point                             | Malcolm Gladwell  |            |       |
+| Influence                                     | Robert Cialdini   |            |       |
+| The Intelligent Investor                      | Benjamin Graham   |            |       |
+| Predictably Irrational                        | Dan Ariely        |            |       |
+| Science, Religion, and the Search for Meaning | Jonathan Sacks    |            |       |
+| Not in God's Name                             | Jonathan Sacks    |            |       |
+| To Kill A Mockingbird                         | Harper Lee        |            |       |
+| Steve Jobs                                    | Walter Isaacson   |            |       |
+| The Innovators                                | Walter Isaacson   |            |       |
+| The Hitchhiker's Guide to the Galaxy          | Douglas Adams     |            |       |
+| Winesburg, Ohio                               | Sherwood Anderson |            |       |
+| If on a winter's night a traveler             | Italo Calvino     |            |       |
+| 1984                                          | George Orwell     |            |       |
+| So, Anyway                                    | John Cleese       |            |       |
+| Pride and Prejudice                           | Jane Austen       |            |       |
+| The Adventures of Huckleberry Finn            | Mark Twain        |            |       |
+| The Adventures of Tom Sawyer                  | Mark Twain        |            |       |
+| Fahrenheit 451                                | Ray Bradbury      |            |       |
+| In Cold Blood                                 | Truman Capote     |            |       |
+| Happy to Be Here                              | Garrison Keillor  |            |       |
+| The Keillor Reader                            | Garrison Keillor  |            |       |
+| Slapstick                                     | Kurt Vonnegut     |            |       |
+| Mother Night                                  | Kurt Vonnegut     |            |       |
+| While Mortals Sleep                           | Kurt Vonnegut     |            |       |
+| The Sirens of Titan                           | Kurt Vonnegut     |            |       |
+| God Bless You, Mr. Rosewater                  | Kurt Vonnegut     |            |       |
+| Cat's Cradle                                  | Kurt Vonnegut     |            |       |
+| Player Piano                                  | Kurt Vonnegut     |            |       |
+|-----------------------------------------------+-------------------+------------+-------|
+
+* Film & Television :noexport:
+
+** Film
+|-----------------------------------+---------|
+| Title                             | Date    |
+|-----------------------------------+---------|
+| The Grand Budapest Hotel          | 04/2021 |
+| Now You See Me                    | 01/2021 |
+| Now You See Me 2                  | 01/2021 |
+| No Direction Home                 | 01/2022 |
+| Silver Linings Playbook           | 07/2022 |
+| Shakespeare in Love               | 12/2022 |
+| BlacKkKlansman                    | 01/2023 |
+| Everything Everywhere All at Once | 01/2023 |
+| The Dictator                      | 03/2023 |
+| Django Unchained                  | 06/2023 |
+| Ocean’s 8                         | 2024    |
+| The Big Short                     | 09/2025 |
+| A Complete Unknown                | 08/2025 |
+| Bridge on the River Kwai          | 10/2025 |
+| Ocean’s 11                        | 12/2025 |
+|-----------------------------------+---------|
+
+** TV
+|---------------------------|
+| Title                     |
+|---------------------------|
+| The Office                |
+| Breaking Bad              |
+| Unbreakable Kimmy Schmidt |
+| New Girl                  |
+| Silicon Valley            |
+| Better Call Saul          |
+| Jury Duty                 |
+|---------------------------|
+
+* Live Performance :noexport:
+
+** Opera & Ballet
+|--------------------+-------------+-------------+------------|
+| Title              | Composer    | Venue       |       Date |
+|--------------------+-------------+-------------+------------|
+| La Traviata        | Verdi       | Met Opera   |       2023 |
+| Macbeth            | Verdi       | Lyric Opera |            |
+| Marriage of Figaro | Mozart      | Lyric Opera |            |
+| Don Giovanni       | Mozart      | Met Opera   | 2025-10-01 |
+| The Nutcracker     | Tchaikovsky | Lyric Opera | 2025-12-01 |
+|--------------------+-------------+-------------+------------|
+
+** Concerts
+|-------------------------------------+------------------+------------|
+| Program/Performer                   | Venue            |       Date |
+|-------------------------------------+------------------+------------|
+| [[https://www.carnegiehall.org/Calendar/2025/10/15/Israel-Philharmonic-Orchestra-0800PM][Israel Philharmonic Orchestra]]       | Carnagie Hall    | 2025-10-15 |
+| [[https://www.nyphil.org/concerts-tickets/2526/jean-yves-thibaudet-and-pines-of-rome/][Jean-Yves Thibaudet & /Pines of Rome]]/ | David Gefen Hall | 2025-11-26 |
+|-------------------------------------+------------------+------------|
+

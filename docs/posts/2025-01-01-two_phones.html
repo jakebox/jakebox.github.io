@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="index, follow">
         <meta name="author" content="Jacob Boxerman">
-        <meta name="description" content="Writing a simple Emacs Lisp function to allow me to view all unchecked Org Mode checkboxes. A daily problem solved simply.">
-        <title>Jacob Boxerman - Show all unchecked Org Mode checkboxes</title>
+        <meta name="description" content="Personal website and blog of Jacob Boxerman">
+        <title>Jacob Boxerman - 2025-01-01-two_phones</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <style>
@@ -80,38 +80,29 @@
         </div>
 
         <main id="main_content">
-            <!-- <h1>Show all unchecked Org Mode checkboxes</h1> -->
+            <!-- <h1>2025-01-01-two_phones</h1> -->
             <article>
     <section class="header">
-        <h1>Show all unchecked Org Mode checkboxes</h1>
-        Posted on August 17, 2022
+        <h1>2025-01-01-two_phones</h1>
+        Posted on January  1, 2025
         
     </section>
     <section>
-        <blockquote>
-<p>This is my first Straightforward Emacs blog post. Inspired by my video series, these posts will contain brief, descriptive write-ups of my favorite Emacs functions and features, problems I’ve solved, and short instructional guides. Many posts center on solving real world problems, especially with Org Mode, which I use to organize much of my work and personal life. I hope these posts will help you create and find solutions to your own problems.</p>
-</blockquote>
-<p>Recently I was creating a packing list using Emacs’ Org Mode. I had multiple headings for each item category (clothing, toiletries, etc), with lists under each heading.</p>
-<figure>
-<img src="../assets/images/checkboxes_1.png" />
-<figcaption>Part of my packing list.</figcaption>
-</figure>
-<p>Org sparse tree features are one way to make this search. But I decided to write a very small function using <code>occur</code>, allowing me to quickly generate an interactive list of all the unchecked checkboxes in a given Org file.</p>
+        <p>Being a little more out of touch has been one of the best things I’ve done this year.</p>
+<p>Six months ago I bought a Nokia 2760. I liked the idea of a ‘dumbphone’ (as they’re called on Reddit), the idea of a simpler device. I had simplified my iPhone to its limits, keeping only what I felt were the most necessary apps. But even then, I seemed to feel its pull. I decided to purchase the Nokia and give it a trial run. $89 from US Mobile, with a $10 per month plan. Not pennies, but I figured any improvement in my life is worth a meal a month, and at least worth a try.</p>
+<p>The new phone has its own phone number, different from my iPhone. Part of the motivation was to allow me the freedom to ditch the flip phone if needed. And I still needed my iPhone for some crucial things, primarily ride-sharing apps required by my living situation. I gave the new phone number to the smallest subset of people possible. To this day, I have 7 phone numbers saved in the phone.</p>
+<p>My strategy was, and still is: the iPhone stays out of sight, ideally in a drawer. I’m free to use it at home, if needed, for tasks like texting family and friends, checking email and Slack, light web browsing, or using it for MFA. As much as possible is relegated to my laptop. Outside of the home, I only carry my flip phone. My friends and family know the guaranteed way to reach me is my flip phone.</p>
+<p>As it turned out, this separation is superior to simply having one flip phone, or even one smartphone. It’s freeing to manage a few crucial conversations (mostly logistical) when I’m out. Chatting or catching up over text (inevitable) can happen when I’m back from whatever I was doing. To ensure I can be found if absolutely necessary, I co-opted the ‘Driving’ do-not-disturb feature on my iPhone, replacing the auto-reply message with something like:</p>
 <blockquote>
-<p>From EmacsWiki: Occur lists all lines of the current buffer that match a regexp that you give it.</p>
+<p>hi, i’m out and away from my phone. if you need me, feel free to reach me at &lt;my other number&gt;.
+-jb</p>
 </blockquote>
-<p>Using <code>occur</code>, we can get something that looks like this:</p>
-<figure>
-<img src="../assets/images/checkboxes_2.png" />
-<figcaption>Left pane: original packing list. Right pane: <code>Occur</code> buffer matching unchecked boxes.</figcaption>
-</figure>
-<p>What’s nice about <code>Occur</code> is that it’s interactive — you can easily jump to a line and make modifications.</p>
-<p>You can manually achieve this result by running <code>M-x occur</code> and typing in the regex, but I wanted to bind this search to a key, so I wrote a very small function:</p>
-<div class="sourceCode" id="cb1" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> jakebox/org-occur-unchecked-boxes </span>()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  (occur <span class="st">&quot;</span><span class="sc">\\</span><span class="st">[ </span><span class="sc">\\</span><span class="st">]&quot;</span>)) <span class="co">;; Match [ ]</span></span></code></pre></div>
-<p>Sure, there are more complex and comprehensive ways of doing things, but I like this function as an example of how a problem can be solved quickly and easily with Emacs. Someone with little programming knowledge could work their way around to a solution like this.</p>
+<p>A few friends and family members expressed confusion initially. But it turns out that if someone likes you, or needs you in some way, they’ll get over the difficulty of having an extra contact in their phone.</p>
+<p>&lt; include commentary from friends/family? &gt;</p>
+<p>The flip phone has some ‘smart’ features. It includes a web browser that I’ve opened once or twice. It has a calendar, timer and alarm, and even Google Maps, though my cell plan is so slow it doesn’t seem to function off WiFi. I do play 2048 on it sometimes. But I do not feel any pull whatsoever. I used to see that ‘pull’ as a self-control problem, but the more I tried to avoid my smartphone, the more clear it became that the simplest, healthiest, and easiest solution is simply to not have it on my person. I’d check email and Slack needlessly. And still, the final barrier, was texting. The most innocent of pursuits truly</p>
+<p>My iPhone still comes out with me every so often. A concert required digital tickets, for example. If I’m going somewhere very unfamiliar and want the security of Google Maps. When I travelled internationally this past summer, I brought my iPhone, and its features were indespensible. But usually, I can get by without, and just scribbling the location and some directions in a pocket notebook.</p>
+<h2 id="changes">Changes</h2>
+<p>A number of things have changed since I got my flip phone. The number of pictures in my photo album has decreased greatly. I still take pictures on my flip phone when I feel it’s especially warranted, but I rarely bother to pull them off and look at them, except every few months.</p>
     </section>
 </article>
 

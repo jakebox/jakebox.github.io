@@ -11,11 +11,12 @@ This is my website. Work, projects, interests. /Currently:/ undergrad at Columbi
 $partial("templates/post-list.html")$
 
 * Selected projects
-+ [[https://withixion.com/][ixion]]               (Agentic AI purchasing and inventory management platform)
++ [[https://withixion.com/][ixion]]               (agentic AI purchasing and inventory management platform)
 + [[https://github.com/jakebox/org-preview-html][org-preview-html]]    (Emacs minor mode)
 + [[https://github.com/jakebox/finance][finance]]             (TUI budget / finance tracker in Haskell)
-+ [[https://rlist07.github.io/beerbelly.html][BeerBelly]]           (full-stack app with AI-powered recommendations)
-+ [[https://github.com/jakebox/jake-emacs][emacs configuration]] (My personal config, 100+ GitHub stars)
++ [[https://beerbellyapp.com/][Beerbelly]]           (a new way to rate and track your favorite beers)
++ [[https://github.com/jakebox/jake-emacs][emacs configuration]] (my personal config, 100+ GitHub stars)
++ [[https://github.com/jakebox/partifuller][partifuller]]         (90s-themed party RSVP system in Rust)
 
 * Things I've done and enjoy doing
 + Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (/q.v./: [[./pages/diy.html][DIY]])

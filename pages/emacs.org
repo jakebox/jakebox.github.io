@@ -24,6 +24,7 @@ This page contains a variety of useful links and notes on the text editor Emacs,
 - ~M-o~ ~(ivy-dispatching-done)~
   - https://oremacs.com/swiper/#hydra-in-the-minibuffer
 - ~C-M-j~ - ~(ivy-immediate-done)~
+- ~M-RET~ - same but for Vertico
 * Orgmode
 - ~org-set-startup-visibility~ (C-u C-u TAB)
 - ~org-agenda-notime-is-late~ - "You can use this option to decide if the schedule for today should come before or after timeless agenda entries."

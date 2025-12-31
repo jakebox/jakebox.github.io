@@ -70,3 +70,26 @@ I finished the piece with a few coats of gunstock finish which fills grain and g
 </video>
 #+END_HTML
 
+#+HTML: <div style="clear:both;"></div>
+
+* Box #1
+
+/Bandsaw, tablesaw; walnut, maple, polycrylic (semi-gloss)/
+
+#+ATTR_HTML: :style float:left;width:35%;margin-right:2%;
+[[../assets/images/box_2.jpg]]
+
+With a hankering to improve my woodworking skills and make some gifts I tried my hand at a box. I'll say that I'm happy with the progress I made. The result is appropriate for the skill I had and the amount of time I put in.
+
+My miters improved a lot. I have a better grasp on how to produce them. I made a fence for the gague on the tablesaw which helped a lot. My confidence in milling and resawing is better, too. I milled the box sides from a single, thick piece of walnut; first on the badnsaw and then on the tablesaw.
+
+The bottom was made with an inset grove and the top with a rabbet. I love how the bottom came out but am less pleased with the top. Next time I want to make both with a groove and cut through to produce the lid.
+
+I rushed to sand and finish because the box came out a bit out of square and had the aforementioned flaws. I also learned that I am tired of polycrylic for pieces like this. I don't like the texture. Next time I will use something like tung oil or a wax.
+
+This was a good reference: https://www.newtonmakes.com/blog/how-to-make-a-wood-box
+
+#+ATTR_HTML: :style float:center;width:75%;
+[[../assets/images/box_1.jpg]]
+
+
