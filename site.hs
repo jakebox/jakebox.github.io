@@ -47,8 +47,7 @@ main = hakyllWith config $ do
         compile $ do
             posts <- recentFirst =<< loadAllSnapshots "posts/*" "content"
             let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
+                    listField "posts" allPostsCtx (return posts) `mappend`
                     myDefaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
@@ -98,6 +97,11 @@ main = hakyllWith config $ do
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
+    myDefaultContext
+
+allPostsCtx :: Context String
+allPostsCtx =
+    dateField "date" "%Y-%m-%d" `mappend`
     myDefaultContext
 
 sidebarCtx :: Context String

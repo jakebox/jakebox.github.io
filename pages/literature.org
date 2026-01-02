@@ -20,7 +20,7 @@ books. *Motivation:* to remember what I have read; to look for patterns.
 | Northanger Abbey                              | Jane Austen       |       2024 | =****=  |
 | The Odyssey                                   | Homer             |       2023 |       |
 | The Iliad of Homer                            | Homer             |       2023 |       |
-| Leviathan                                     | Thomas Hobbesian  |       2023 |       |
+| Leviathan                                     | Thomas Hobbes     |       2023 |       |
 | Infero                                        | Dante             |       2023 |       |
 | To the Lighthouse                             | Virginia Woolf    |       2023 |       |
 | The Aeneid of Virgil                          | Virgil            |       2023 |       |

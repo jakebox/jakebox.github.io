@@ -113,6 +113,78 @@ img {
   font-family: 'EB Garamond', Georgia, serif;
 }
 
+/* All Posts page styles */
+.all-posts {
+  margin: 2rem 0;
+}
+
+.all-posts h1 {
+  font-size: 1.8em;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+  /* border-bottom: 1px solid var(--border-color); */
+  padding-bottom: 0.5rem;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.post-entry {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+  /* padding: 0.2rem 0; */
+  /* border-bottom: 0.1px solid var(--border-subtle); */
+}
+
+.post-entry:last-child {
+  border-bottom: none;
+}
+
+.post-meta {
+  grid-column: 1;
+  min-width: 100px;
+}
+
+.post-date {
+  font-size: 0.85em;
+  color: var(--blog-muted);
+  font-family: monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-title {
+  grid-column: 2;
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+  /* line-height: 1.0; */
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: var(--accent-color);
+}
+
+.post-summary {
+  grid-column: 2;
+  margin: 0.3rem 0 0 0;
+  color: var(--blog-subtle);
+  font-size: 0.85em;
+  line-height: 1.4;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
 
 @media (max-width: 1024px) {
   #main_content {
@@ -124,26 +196,50 @@ img {
   #main_content {
     padding: 16px 24px;
   }
-  
+
   blockquote {
     padding: 0.5rem 1rem;
     margin: 1rem 0;
   }
-  
+
   pre {
     padding: 1rem;
     margin: 1rem 0;
     font-size: 0.8rem;
   }
-  
+
   .post-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.2rem;
-    margin-bottom: 0.3rem;
+    gap: 1.2rem;
+    margin-bottom: 0.0rem;
   }
-  
+
   .post-item {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.0rem;
+  }
+
+  /* All posts page mobile styles */
+  .post-entry {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  .post-meta {
+    grid-column: 1;
+    min-width: auto;
+  }
+
+  .post-title {
+    grid-column: 1;
+  }
+
+  .post-summary {
+    grid-column: 1;
+  }
+
+  .all-posts h1 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
   }
 }

@@ -5,6 +5,7 @@
 	--accent-hover: #336fcc;
 	--sidebar-bg: #eee;
 	--border-color: #ccc;
+	--border-subtle: #e0e0e0;
 	--muted-text: #666;
 	--hr-color: #ddd;
 	--sidebar-text: #222;
@@ -17,6 +18,7 @@ html[data-theme="dark"] {
 	--accent-hover: #e1862d;
 	--sidebar-bg: #1a0a0a;
 	--border-color: #332222;
+	--border-subtle: #2a1a1a;
 	--muted-text: #f09536;
 	--hr-color: #332222;
 	--sidebar-text: #e1bd74;
