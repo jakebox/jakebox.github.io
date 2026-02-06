@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Jacob Boxerman">
+        <meta name="description" content="Building the most robust Emacs config you've seen.">
+        <title>Jacob Boxerman - Declarative, Reproducible Emacs with straight.el and use-package</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style>
+        :root{--bg-color:#f8f8f8;--text-color:#181818;--accent-color:#4389f7;--sidebar-bg:#eee;--border-color:#ccc}html[data-theme="dark"]{--bg-color:#130505;--text-color:#e1bd74;--accent-color:#f09536;--sidebar-bg:#1a0a0a;--border-color:#332222}body{background:var(--bg-color);font-family:'EB Garamond',Georgia,serif;line-height:1.4em;color:var(--text-color);font-size:18px;margin:0;height:100vh}#content{display:flex;max-width:1200px;min-height:100vh}#sidebar{width:250px;min-width:200px;padding:40px 20px;background-color:var(--sidebar-bg);border-right:1px solid var(--border-color);box-sizing:border-box;flex-shrink:0;margin-left:0;margin-right:40px;height:100vh;position:fixed;left:0;top:0;z-index:10}#main_content{flex-grow:1;padding:20px 20px 40px 20px;box-sizing:border-box;margin-left:290px}
+        </style>
+        <script>
+        (function() {
+          function getSystemTheme() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          function getStoredTheme() {
+            return localStorage.getItem('theme');
+          }
+          const storedTheme = getStoredTheme();
+          const systemTheme = getSystemTheme();
+          const theme = storedTheme || systemTheme;
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+        <link rel="preload" href="../assets/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/default.css"></noscript>
+        <link rel="preload" href="../assets/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/blog.css"></noscript>
+        <script src="../assets/script.js" defer></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKYYG67N0W"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BKYYG67N0W');
+        </script>
+    </head>
+    <body>
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p>CS @ Columbia University.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/jakebox/">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
+<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
+</ul>
+<h3 id="pages">Pages</h3>
+<p><span class="math inline"><ul>
+
+<li><a href="../pages/balloons.html">balloons</a></li>
+
+<li><a href="../pages/diy.html">diy</a></li>
+
+<li><a href="../pages/education.html">education</a></li>
+
+<li><a href="../pages/emacs.html">emacs</a></li>
+
+<li><a href="../pages/literature.html">literature</a></li>
+
+<li><a href="../pages/references.html">references</a></li>
+
+<li><a href="../pages/stationery.html">stationery</a></li>
+
+<li><a href="../pages/tex.html">tex</a></li>
+
+</ul>
+</span></p>
+<p><button onclick="toggleTheme()">Toggle Theme</button></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Declarative, Reproducible Emacs with straight.el and use-package</h1> -->
+            <article>
+    <section class="header">
+        <h1>Declarative, Reproducible Emacs with straight.el and use-package</h1>
+        Posted on February  5, 2026
+        
+    </section>
+    <section>
+        <p>Watch the companion video <a href="https://www.youtube.com/watch?v=DnCkMpBkDp4">here</a>. It contains a brief overview and a tour of a sample configuration.</p>
+<h2 id="introduction">Introduction</h2>
+<p>This summer I went on a journey to build my perfect, reproducible, declarative Emacs configuration. I’ve settled on a very effective setup that I’d like to share today. You may find that these are principles you have adopted unknowingly, so it’s time to put a name to it.</p>
+<p>First of all, what do I mean by reproducible and declarative? Reproducible refers to the idea that we can easily reproduce the exact Emacs environment we have on one machine, on any other. That doesn’t only mean things like color scheme and keybindings, but extends to packages, too. Small bugs and changes can crop up between package releases, so having the confidence that I am on a specific version is good.</p>
+<p>Declarative—which here goes hand in hand with reproducibility—means to me that we configure how we want Emacs to behave in a well-defined manner that is difficult to misinterpret or be missing some definition or configuration. To give a simple example you are likely familiar with: rather than installing packages by hand with <code class="verbatim">package-list-packages</code>, we write in our configuration that we would like such-and-such package to be installed. Adhereing strictly to this principle means the entirety of our Emacs setup can be successfully defined and understood with a single file.</p>
+<p>To that end, Emacs and some excellent packages written for it provide incredible functionality to allow us to <em>define how we want Emacs to behave</em>, without requiring us to worry about when that behavior occurs or in what order. Particularly, <code class="verbatim">use-package</code> can be configured to load packages when needed rather than loading them in the manner in which they are written in the <code class="verbatim">init.el</code> file, which is likely completely arbitrary. Loading in an aribtrary manner can cause dependency issues and configuration conflicts.</p>
+<p>There are two packages that are core to my configuration, <a href="https://github.com/radian-software/straight.el">straight.el</a> and <a href="https://github.com/jwiegley/use-package">use-package</a>. They both have excellent documentation and I’m barely scraping the surface here.</p>
+<h2 id="straight.el">straight.el</h2>
+<p>Straight.el is an excellent package manager for Emacs that I use for two main reasons. First, packages are downloaded from their source and stored locally, allowing easy edits to the elisp. Second, package versions can be pinned with a lockfile marking their commit hash. This means the same package version will be installed every time, unless the lockfile changes.</p>
+<p>To use straight.el, visit the GitHub repo, copy the bootstrap code, and then do a few other nitpicks they require.</p>
+<p>straight.el allows us to configure profiles to organize packages and their lockfiles. I like to set two <code class="verbatim">straight-profiles</code>, one for base packages, and one for programming-related packages. This produces separate lockfiles for each profile, which lets me have just the core on a machine that I won’t be using for development.</p>
+<p>From there, we can start with use-package, which integrates well with straight.</p>
+<h2 id="use-package">use-package</h2>
+<p>use-package is a declarative configuration package which provides a macro, <code class="verbatim">use-package</code>, that handles loading packages and setting its configuration in a declarative and clear way. It makes building modular, clean configurations really easy, and I’ve chosen it for my Emacs configuration, as many others have, too.</p>
+<p>It has great documentation that I recommend you read, but to get you started, here are the most important keywords to know: <code class="verbatim">:init</code>; <code class="verbatim">:config</code>; <code class="verbatim">:custom</code>; <code class="verbatim">:hook</code>.</p>
+<p>There are other videos on use-package so I don’t want to spend too much time on the nuts and bolts. So let’s talk theory. Everyone has their own opinions, so keep in mind you will almost certainly see people do things other ways.</p>
+<p>The <code class="verbatim">init</code> keyword runs code before a package is loaded. I use <code class="verbatim">:init</code> as sparingly as possible, because the idea of setting options before a package is loaded always bothers me, and most of the time is actually not necessary. I use it only in three packages in my config. <code class="verbatim">custom</code> and <code class="verbatim">config</code> provide similar functionality. <code class="verbatim">custom</code> sets custom variables and <code class="verbatim">config</code> runs arbitrary elisp after package load.</p>
+<p>You should prefer <code class="verbatim">:custom</code> over <code class="verbatim">:config</code>. Custom settings, when changed with this interface, are allowed to have side effects, meaning that something else might change when the variable is changed, and we want to respect that behavior.</p>
+<p><code class="verbatim">:config</code> can be useful for when you need to run some arbitary code to set options. For example, I have a <code class="verbatim">dolist</code> to set a variable’s value.</p>
+<p>Finally, <code class="verbatim">:hook</code> is just a nice, clean way to add hooks. A great one to use is <code class="verbatim">after-init</code>. For example:</p>
+<div class="sourceCode" id="cb1" data-org-language="emacs-lisp"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">use-package</span> recentf</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  :hook (after-init . recentf-mode)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  :custom (recentf-max-saved-items <span class="dv">60</span>))</span></code></pre></div>
+<p>This will activate recentf-mode after initialization. I find this to be a clean, readable way to do this.</p>
+<h2 id="tour">Tour</h2>
+<p>See video for the tour.</p>
+<p>You will see that I use <code class="verbatim">use-package</code> to configure my default Emacs settings which again sticks with my goals of a declarative and modular configuration. Any configuration related to a package goes inside that use-package block, to the greatest extent it is possible. This includes not only package settings but also keybindings, with <code class="verbatim">general.el</code>. Keybinding configuration is maintained alongside the relevant package where possible, rather than in a central keybinding section.</p>
+<p>Nearly everything is contained inside a <code class="verbatim">use-package</code> block. The blocks do not depend on each other, nor do they depend on any order. The only important thing is to have the <code class="verbatim">straight.el</code> bootstrap up top.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope that I have laid out my thesis for the organization and motivation of my Emacs configuration. These principles were inspired by <a href="https://nixos.org/">Nix</a>, which made me realize that I have been pursuing the principles of declarative configurations and functional programming through Emacs for years without knowing it. I imagine many of you have as well, so this guide should put you on the right track.</p>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>

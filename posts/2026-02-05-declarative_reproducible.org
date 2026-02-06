@@ -1,0 +1,97 @@
+---
+title: Declarative, Reproducible Emacs with straight.el and use-package
+description: Building the most robust Emacs config you've seen.
+---
+#+TITLE: Declarative, Reproducible Emacs with =straight.el= and use-package
+#+DATE: Fall 2025
+#+AUTHOR: Jake B
+
+Watch the companion video [[https://www.youtube.com/watch?v=DnCkMpBkDp4][here]]. It contains a brief overview and a tour of a sample configuration.
+
+* Introduction
+
+This summer I went on a journey to build my perfect, reproducible, declarative Emacs configuration. I've settled on a very effective setup that I'd like to share today. You may find that these are principles you have adopted unknowingly, so it's time to put a name to it.
+
+First of all, what do I mean by reproducible and declarative? Reproducible refers to the idea that we can easily reproduce the exact Emacs environment we have on one machine, on any other. That doesn't only mean things like color scheme and keybindings, but extends to packages, too. Small bugs and changes can crop up between package releases, so having the confidence that I am on a specific version is good.
+
+Declarative---which here goes hand in hand with reproducibility---means to me that we configure how we want Emacs to behave in a well-defined manner that is difficult to misinterpret or be missing some definition or configuration. To give a simple example you are likely familiar with: rather than installing packages by hand with =package-list-packages=, we write in our configuration that we would like such-and-such package to be installed. Adhereing strictly to this principle means the entirety of our Emacs setup can be successfully defined and understood with a single file.
+
+To that end, Emacs and some excellent packages written for it provide incredible functionality to allow us to /define how we want Emacs to behave/, without requiring us to worry about when that behavior occurs or in what order. Particularly, =use-package= can be configured to load packages when needed rather than loading them in the manner in which they are written in the =init.el= file, which is likely completely arbitrary. Loading in an aribtrary manner can cause dependency issues and configuration conflicts.
+
+There are two packages that are core to my configuration, [[https://github.com/radian-software/straight.el][straight.el]] and [[https://github.com/jwiegley/use-package][use-package]]. They both have excellent documentation and I'm barely scraping the surface here.
+
+* straight.el
+
+Straight.el is an excellent package manager for Emacs that I use for two main reasons. First, packages are downloaded from their source and stored locally, allowing easy edits to the elisp. Second, package versions can be pinned with a lockfile marking their commit hash. This means the same package version will be installed every time, unless the lockfile changes.
+
+To use straight.el, visit the GitHub repo, copy the bootstrap code, and then do a few other nitpicks they require.
+
+straight.el allows us to configure profiles to organize packages and their lockfiles. I like to set two =straight-profiles=, one for base packages, and one for programming-related packages. This produces separate lockfiles for each profile, which lets me have just the core on a machine that I won't be using for development.
+
+From there, we can start with use-package, which integrates well with straight.
+
+* use-package
+
+use-package is a declarative configuration package which provides a macro, =use-package=, that handles loading packages and setting its configuration in a declarative and clear way. It makes building modular, clean configurations really easy, and I've chosen it for my Emacs configuration, as many others have, too.
+
+It has great documentation that I recommend you read, but to get you started, here are the most important keywords to know: =:init=; =:config=; =:custom=; =:hook=.
+
+There are other videos on use-package so I don't want to spend too much time on the nuts and bolts. So let's talk theory. Everyone has their own opinions, so keep in mind you will almost certainly see people do things other ways.
+
+The =init= keyword runs code before a package is loaded. I use =:init= as sparingly as possible, because the idea of setting options before a package is loaded always bothers me, and most of the time is actually not necessary. I use it only in three packages in my config. =custom= and =config= provide similar functionality. =custom= sets custom variables and =config= runs arbitrary elisp after package load.
+
+You should prefer =:custom= over =:config=. Custom settings, when changed with this interface, are allowed to have side effects, meaning that something else might change when the variable is changed, and we want to respect that behavior.
+
+=:config= can be useful for when you need to run some arbitary code to set options. For example, I have a =dolist= to set a variable's value.
+
+Finally, =:hook= is just a nice, clean way to add hooks. A great one to use is =after-init=. For example:
+
+#+BEGIN_SRC emacs-lisp
+  (use-package recentf
+    :hook (after-init . recentf-mode)
+    :custom (recentf-max-saved-items 60))
+#+END_SRC
+
+This will activate recentf-mode after initialization. I find this to be a clean, readable way to do this.
+
+* Tour
+
+See video for the tour.
+
+You will see that I use =use-package= to configure my default Emacs settings which again sticks with my goals of a declarative and modular configuration. Any configuration related to a package goes inside that use-package block, to the greatest extent it is possible. This includes not only package settings but also keybindings, with =general.el=. Keybinding configuration is maintained alongside the relevant package where possible, rather than in a central keybinding section.
+
+Nearly everything is contained inside a =use-package= block. The blocks do not depend on each other, nor do they depend on any order. The only important thing is to have the =straight.el= bootstrap up top.
+
+* Conclusion
+
+I hope that I have laid out my thesis for the organization and motivation of my Emacs configuration. These principles were inspired by [[https://nixos.org/][Nix]], which made me realize that I have been pursuing the principles of declarative configurations and functional programming through Emacs for years without knowing it. I imagine many of you have as well, so this guide should put you on the right track.
+
+* Video Slides :noexport:
+
+** Introduction
+Towards a reproducible, declarative Emacs configuration
+
+- Reproducible: recreate the exact same Emacs environment on any machine
+- Declarative: a configuration that defines Emacs' behavior in a well-defined manner
+
+** Core tenents
+=straight.el= and =use-package.el=
+
+** straight.el
+https://github.com/radian-software/straight.el
+
+** use-package
+https://github.com/jwiegley/use-package
+
+(now comes with Emacs)
+
+*** Core ideas
+- =:init=
+- =:config=
+- =:custom=
+- =:hook=
+
+** Tour
+Free-form tour through some examples in my configuration.
+
+** Conclusion
