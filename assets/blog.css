@@ -152,17 +152,18 @@ img {
 }
 
 .post-date {
-  font-size: 0.85em;
+  font-size: 0.75em;
   color: var(--blog-muted);
   font-family: monospace;
   font-variant-numeric: tabular-nums;
+  opacity: 0.6;
 }
 
 .post-title {
   grid-column: 2;
   margin: 0;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 400;
   /* line-height: 1.0; */
   font-family: 'EB Garamond', Georgia, serif;
 }

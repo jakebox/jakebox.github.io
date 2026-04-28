@@ -8,6 +8,7 @@
         <meta name="author" content="Jacob Boxerman">
         <meta name="description" content="Personal website and blog of Jacob Boxerman">
         <title>Jacob Boxerman - Stationery</title>
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <style>
@@ -15,15 +16,7 @@
         </style>
         <script>
         (function() {
-          function getSystemTheme() {
-            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          function getStoredTheme() {
-            return localStorage.getItem('theme');
-          }
-          const storedTheme = getStoredTheme();
-          const systemTheme = getSystemTheme();
-          const theme = storedTheme || systemTheme;
+          var theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           document.documentElement.setAttribute('data-theme', theme);
         })();
         </script>
@@ -48,35 +41,8 @@
       <div id="content" class="content">
         <div id="sidebar">
           <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
-<p>CS @ Columbia University.</p>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="https://github.com/jakebox/">GitHub</a></li>
-<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
-<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
-</ul>
-<h3 id="pages">Pages</h3>
-<p><span class="math inline"><ul>
-
-<li><a href="../pages/balloons.html">balloons</a></li>
-
-<li><a href="../pages/diy.html">diy</a></li>
-
-<li><a href="../pages/education.html">education</a></li>
-
-<li><a href="../pages/emacs.html">emacs</a></li>
-
-<li><a href="../pages/literature.html">literature</a></li>
-
-<li><a href="../pages/references.html">references</a></li>
-
-<li><a href="../pages/stationery.html">stationery</a></li>
-
-<li><a href="../pages/tex.html">tex</a></li>
-
-</ul>
+<p><span class="math inline"><span class="page-list"><a href="../pages/about.html">about</a><span class="page-sep">&nbsp;/</span> <a href="../pages/balloons.html">balloons</a><span class="page-sep">&nbsp;/</span> <a href="../pages/diy.html">diy</a><span class="page-sep">&nbsp;/</span> <a href="../pages/education.html">education</a><span class="page-sep">&nbsp;/</span> <a href="../pages/emacs.html">emacs</a><span class="page-sep">&nbsp;/</span> <a href="../pages/literature.html">literature</a><span class="page-sep">&nbsp;/</span> <a href="../pages/projects.html">projects</a><span class="page-sep">&nbsp;/</span> <a href="../pages/references.html">references</a><span class="page-sep">&nbsp;/</span> <a href="../pages/stationery.html">stationery</a><span class="page-sep">&nbsp;/</span> <a href="../pages/talks.html">talks</a><span class="page-sep">&nbsp;/</span> <a href="../pages/tex.html">tex</a><span class="page-sep">&nbsp;/</span> </span>
 </span></p>
-<p><button onclick="toggleTheme()">Toggle Theme</button></p>
         </div>
 
         <main id="main_content">

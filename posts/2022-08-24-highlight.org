@@ -1,5 +1,5 @@
 ---
-title: "Automatically Highlight Emacs Buffer Text"
+title: Automatically highlight Emacs buffer text
 date: 2022-08-24
 tags: emacs orgmode
 description: Using hl-prog-extra to automatically highlight instances of text in an Emacs buffer.

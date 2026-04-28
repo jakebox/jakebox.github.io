@@ -1,5 +1,5 @@
 ---
-title: "Straightforward Emacs: Classy Slideshows From Emacs Org Mode + org-reveal"
+title: 'Guide: Classy slideshows from Org Mode with org-reveal'
 date: 2021-09-02
 description: Use Org Mode and org-reveal to create classy reveal.js slideshows from your Org Mode files.
 ---

@@ -16,6 +16,10 @@ main = hakyllWith config $ do
         route   idRoute
         compile copyFileCompiler
 
+    match "assets/*.svg" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match "assets/*.js" $ do
         route   idRoute
         compile copyFileCompiler
@@ -81,13 +85,9 @@ main = hakyllWith config $ do
     match "index.org" $ do
         route $ setExtension "html"
         compile $ do
-          posts <- fmap (take 3) . recentFirst =<< loadAllSnapshots "posts/*" "content"
-          let indexCtx =
-                  listField "posts" postCtx (return posts)
           pandocCompiler
-            >>= applyAsTemplate indexCtx
             >>= return . fmap demoteHeaders
-            >>= loadAndApplyTemplate "templates/default.html" (myDefaultContext <> indexCtx)
+            >>= loadAndApplyTemplate "templates/default.html" myDefaultContext
             >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler

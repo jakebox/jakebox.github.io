@@ -93,3 +93,12 @@ This was a good reference: https://www.newtonmakes.com/blog/how-to-make-a-wood-b
 [[../assets/images/box_1.jpg]]
 
 
+* Wallet
+
+#+ATTR_HTML: :style float:left;width:35%;margin-right:2%;
+[[../assets/images/wallet.jpg]]
+
+* Pocket Notebooks
+
+#+ATTR_HTML: :style float:left;width:35%;margin-right:2%;
+[[../assets/images/notebooks.jpg]]

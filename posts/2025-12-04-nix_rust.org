@@ -1,5 +1,5 @@
 ---
-title: "Building Rust Projects with Nix"
+title: Building Rust projects with Nix
 description: How to use Nix to build Rust Cargo projects, without rebuilding dependencies.
 ---
 

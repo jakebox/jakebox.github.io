@@ -1,5 +1,5 @@
 ---
-title: Leaving Inbox Zero
+title: Leaving inbox zero
 description: I was a fervent Inbox Zero devotee for many years. The goal as I understood it was to maintain an empty email inbox. I recently decided to quit this habit, and I am better for it.
 ---
 

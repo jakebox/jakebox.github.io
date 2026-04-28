@@ -1,51 +1,9 @@
 ---
 title: Home
 ---
-#+TITLE: Home
 
-This is my website. Work, projects, interests. /Currently:/ undergrad at Columbia University. /Professional:/ visit my LinkedIn. /Contact:/ email listed on GitHub.
+* Jacob Boxerman
 
------
+My deliberate digital life & the things outside of it.
 
-* Recent blog posts
-$partial("templates/post-list.html")$
-
-* Selected projects
-+ [[https://withixion.com/][ixion]]               (agentic AI purchasing and inventory management platform)
-+ [[https://github.com/jakebox/org-preview-html][org-preview-html]]    (Emacs minor mode)
-+ [[https://github.com/jakebox/finance][finance]]             (TUI budget / finance tracker in Haskell)
-+ [[https://beerbellyapp.com/][Beerbelly]]           (a new way to rate and track your favorite beers)
-+ [[https://github.com/jakebox/jake-emacs][emacs configuration]] (my personal config, 100+ GitHub stars)
-+ [[https://github.com/jakebox/partifuller][partifuller]]         (90s-themed party RSVP system in Rust)
-
-* Things I've done and enjoy doing
-+ Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (/q.v./: [[./pages/diy.html][DIY]])
-+ Launched high-altitude balloons with my team at Columbia.                                    (/q.v./: [[./pages/balloons.html][Balloons]])
-+ Worked writing software at some interesting places.
-+ Learning about RF, got my amateur radio license. KE2CZX.
-+ Tuning my digital life.
-+ Fountain pens and stationery.                                                                (/q.v./: [[./pages/stationery.html][Stationery]])
-
-* Talks/publications
-+ [[https://www.youtube.com/watch?v=6bAvPhhRbyM&list=UUmIe9q2LiRcDk0swxNGfw6A][Amateur Radio at Columbia University - History to Present Day]]  (PAARA, August 2025)
-+ [[https://youtu.be/L897BU3BT6g?si=2juEOZcsMG8bLZ8Z&t=1262][Sharing Emacs Is Caring Emacs | EmacsConf 2023 Closing Keynote]] (EmacsConf 2023)
-+ [[https://www.youtube.com/watch?v=7wKwPAWvPQs][~(concat "Remote High School" "Emacs")~]]                        (EmacsNYC, February 2021)
-
-
-* This page
-Previously, I generated a single page from an ~org-mode~ document using ~Emacs~. I appreciate the
-simplicity of this approach. For a little more flexibility, I am now using [[https://jaspervdj.be/hakyll/][Hakyll]] to generate
-everything from the Org source files. (/q.v./: [[./posts/2025-09-12-this_blog.html][Switching my website to Hakyll]])
-------
-
-emacs-uptime is an autoloaded interactive native-comp-function in ‘time.el’.
-
-(emacs-uptime &optional FORMAT HERE)
-
-Inferred type: (function (&optional t t) t)
-
-Probably introduced at or before Emacs version 23.1.
-
-#+BEGIN_EXPORT html
-<span class="emacs-uptime" id="emacs-uptime">Uptime: Loading...</span>
-#+END_EXPORT
+[[./pages/about.html][About]] / [[./pages/projects.html][Projects]] / [[./archive.html][Blog]]

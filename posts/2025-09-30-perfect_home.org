@@ -1,5 +1,5 @@
 ---
-title: A Solution for the Cleanest MacOS Home Folder
+title: A solution for the cleanest macOS home folder
 description: Rethinking my home folder – now I only see what I need to see. Paranoid power users only.
 ---
 

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
+      <loc>https://jakebox.github.io/pages/about.html</loc>
+      
+   </url>
+
+   <url>
       <loc>https://jakebox.github.io/pages/balloons.html</loc>
       
    </url>
@@ -27,12 +32,22 @@
    </url>
 
    <url>
+      <loc>https://jakebox.github.io/pages/projects.html</loc>
+      
+   </url>
+
+   <url>
       <loc>https://jakebox.github.io/pages/references.html</loc>
       
    </url>
 
    <url>
       <loc>https://jakebox.github.io/pages/stationery.html</loc>
+      
+   </url>
+
+   <url>
+      <loc>https://jakebox.github.io/pages/talks.html</loc>
       
    </url>
 

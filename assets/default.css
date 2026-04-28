@@ -35,7 +35,7 @@ body {
 }
 
 code {
-    font-family: monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 16px;
 }
 
@@ -67,7 +67,7 @@ a:visited, a:link { color: var(--accent-color); }
 }
 
 #sidebar h2 {
-	font-size: 1.5em;
+	font-size: 1.1em;
 	margin-top: 10px;
 	margin-bottom: 10px;
     line-height: 1.2em;
@@ -82,6 +82,15 @@ a:visited, a:link { color: var(--accent-color); }
 #sidebar h2 a:hover {
 	color: inherit;
 }
+#sidebar h3 {
+	font-family: 'EB Garamond', Georgia, serif;
+	font-size: 1.2em;
+	font-weight: 500;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+	color: var(--sidebar-text);
+}
+
 #sidebar ul {
 	margin-bottom: 20px;
 	list-style-type: none;
@@ -118,12 +127,12 @@ h1, .title {
 }
 
 h1, .title {
-	font-family: monospace;
+	font-family: 'EB Garamond', Georgia, serif;
 }
 
 h2, h3 {
-	font-family: monospace;
-	font-weight: 600;
+	font-family: 'EB Garamond', Georgia, serif;
+	font-weight: 400;
 	margin-top: 2em;
 	margin-bottom: 0.8em;
 	letter-spacing: -0.5px;
@@ -190,12 +199,12 @@ h3,
 
 #sidebar h1,
 #sidebar h2 {
-	font-family: monospace;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	color: var(--sidebar-text);
 }
 
 #sidebar ul li a {
-	font-family: monospace;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	color: var(--sidebar-text);
 }
 
@@ -204,18 +213,48 @@ h3,
 	line-height: 1.0;
 }
 
+.page-list {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 0.75em;
+	line-height: 1.9;
+	word-spacing: 0.15em;
+	display: block;
+}
+
+.page-sep {
+	opacity: 0.4;
+	margin: 0 0.1em;
+}
+
+.sidebar-links {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 0.75em;
+}
+
+.sidebar-links a {
+	color: var(--sidebar-text);
+}
+
+.page-list a {
+	color: var(--sidebar-text);
+}
+
 button {
 	display: inline-block;
-	padding: 5px 10px;
-	font-family: monospace;
-	font-size: 0.8em;
-	font-weight: 500;
-	color: #fff;
-	background-color: var(--accent-color);
+	padding: 0;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 0.7em;
+	font-weight: 400;
+	color: var(--muted-text);
+	background: none;
 	border: none;
-	border-radius: 6px;
 	cursor: pointer;
-	text-align: center;
+	text-align: left;
+	opacity: 0.6;
+}
+
+button:hover {
+	opacity: 1;
 }
 
 .LITERATURE {

@@ -1,5 +1,5 @@
 ---
-title: Declarative, Reproducible Emacs with straight.el and use-package
+title: Declarative, reproducible Emacs with straight.el and use-package
 description: Building the most robust Emacs config you've seen.
 ---
 #+TITLE: Declarative, Reproducible Emacs with =straight.el= and use-package

@@ -1,5 +1,5 @@
 ---
-title: "Org LaTeX Export"
+title: 'Guide: Export Org Mode to LaTeX'
 description: Introduction to creating beautiful LaTeX documents from Org Mode.
 ---
 #+TITLE: Org LaTeX Export

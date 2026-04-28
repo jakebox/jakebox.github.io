@@ -1,0 +1,20 @@
+---
+title: about
+---
+#+TITLE: About
+
+** Interests
+
++ Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (/q.v./: [[./diy.html][DIY]])
++ Launched high-altitude balloons with my team at Columbia. (/q.v./: [[./balloons.html][Balloons]])
++ Worked writing software at some interesting places.
++ Learning about RF, got my amateur radio license. KE2CZX.
++ Tuning my digital life.
++ Fountain pens and stationery. (/q.v./: [[./stationery.html][Stationery]])
+
+** Links
+
++ [[https://github.com/jakebox/][GitHub]]
++ [[https://www.youtube.com/c/JakeBox0][YouTube]]
+
+/Contact:/ through [[https://github.com/jakebox/][GitHub]].

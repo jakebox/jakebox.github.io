@@ -1,0 +1,8 @@
+---
+title: talks
+---
+#+TITLE: Talks
+
++ [[https://www.youtube.com/watch?v=6bAvPhhRbyM&list=UUmIe9q2LiRcDk0swxNGfw6A][Amateur Radio at Columbia University - History to Present Day]] (PAARA, August 2025)
++ [[https://youtu.be/L897BU3BT6g?si=2juEOZcsMG8bLZ8Z&t=1262][Sharing Emacs Is Caring Emacs | EmacsConf 2023 Closing Keynote]] (EmacsConf 2023)
++ [[https://www.youtube.com/watch?v=7wKwPAWvPQs][~(concat "Remote High School" "Emacs")~]] (EmacsNYC, February 2021)

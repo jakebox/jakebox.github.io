@@ -8,6 +8,7 @@
         <meta name="author" content="Jacob Boxerman">
         <meta name="description" content="Personal website and blog of Jacob Boxerman">
         <title>Jacob Boxerman - Home</title>
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <style>
@@ -15,15 +16,7 @@
         </style>
         <script>
         (function() {
-          function getSystemTheme() {
-            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          function getStoredTheme() {
-            return localStorage.getItem('theme');
-          }
-          const storedTheme = getStoredTheme();
-          const systemTheme = getSystemTheme();
-          const theme = storedTheme || systemTheme;
+          var theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           document.documentElement.setAttribute('data-theme', theme);
         })();
         </script>
@@ -48,120 +41,15 @@
       <div id="content" class="content">
         <div id="sidebar">
           <h2 id="section-1"><a href="./">Jacob Boxerman</a></h2>
-<p>CS @ Columbia University.</p>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="https://github.com/jakebox/">GitHub</a></li>
-<li><a href="https://www.linkedin.com/in/jacob-boxerman/">LinkedIn</a></li>
-<li><a href="https://www.youtube.com/c/JakeBox0">YouTube</a></li>
-</ul>
-<h3 id="pages">Pages</h3>
-<p><span class="math inline"><ul>
-
-<li><a href="./pages/balloons.html">balloons</a></li>
-
-<li><a href="./pages/diy.html">diy</a></li>
-
-<li><a href="./pages/education.html">education</a></li>
-
-<li><a href="./pages/emacs.html">emacs</a></li>
-
-<li><a href="./pages/literature.html">literature</a></li>
-
-<li><a href="./pages/references.html">references</a></li>
-
-<li><a href="./pages/stationery.html">stationery</a></li>
-
-<li><a href="./pages/tex.html">tex</a></li>
-
-</ul>
+<p><span class="math inline"><span class="page-list"><a href="./pages/about.html">about</a><span class="page-sep">&nbsp;/</span> <a href="./pages/balloons.html">balloons</a><span class="page-sep">&nbsp;/</span> <a href="./pages/diy.html">diy</a><span class="page-sep">&nbsp;/</span> <a href="./pages/education.html">education</a><span class="page-sep">&nbsp;/</span> <a href="./pages/emacs.html">emacs</a><span class="page-sep">&nbsp;/</span> <a href="./pages/literature.html">literature</a><span class="page-sep">&nbsp;/</span> <a href="./pages/projects.html">projects</a><span class="page-sep">&nbsp;/</span> <a href="./pages/references.html">references</a><span class="page-sep">&nbsp;/</span> <a href="./pages/stationery.html">stationery</a><span class="page-sep">&nbsp;/</span> <a href="./pages/talks.html">talks</a><span class="page-sep">&nbsp;/</span> <a href="./pages/tex.html">tex</a><span class="page-sep">&nbsp;/</span> </span>
 </span></p>
-<p><button onclick="toggleTheme()">Toggle Theme</button></p>
         </div>
 
         <main id="main_content">
             <!-- <h1>Home</h1> -->
-            <p>This is my website. Work, projects, interests. <em>Currently:</em> undergrad at Columbia University. <em>Professional:</em> visit my LinkedIn. <em>Contact:</em> email listed on GitHub.</p>
-<hr />
-<h2 id="recent-blog-posts">Recent blog posts</h2>
-<p><span class="math inline"><div class="post-list">
-    
-        <article class="post-item">
-            <div class="post-header">
-                <h5 class="post-title">
-                    <a href="./posts/2026-02-05-declarative_reproducible.html">Declarative, Reproducible Emacs with straight.el and use-package</a>
-                </h5>
-                <time class="post-date">February  5, 2026</time>
-            </div>
-            
-            <p class="post-description">Building the most robust Emacs config you've seen.</p>
-            
-        </article>
-    
-        <article class="post-item">
-            <div class="post-header">
-                <h5 class="post-title">
-                    <a href="./posts/2025-12-04-nix_rust.html">Building Rust Projects with Nix</a>
-                </h5>
-                <time class="post-date">December  4, 2025</time>
-            </div>
-            
-            <p class="post-description">How to use Nix to build Rust Cargo projects, without rebuilding dependencies.</p>
-            
-        </article>
-    
-        <article class="post-item">
-            <div class="post-header">
-                <h5 class="post-title">
-                    <a href="./posts/2025-11-21-nix_config.html">I published my Nix configuration</a>
-                </h5>
-                <time class="post-date">November 21, 2025</time>
-            </div>
-            
-            <p class="post-description">Sharing some details about my Nix configuration.</p>
-            
-        </article>
-    
-    <div class="post-list-footer">
-        <a href="./archive.html" class="view-all-link">view all posts →</a>
-    </div>
-</div>
-</span></p>
-<h2 id="selected-projects">Selected projects</h2>
-<ul>
-<li><a href="https://withixion.com/">ixion</a> (agentic AI purchasing and inventory management platform)</li>
-<li><a href="https://github.com/jakebox/org-preview-html">org-preview-html</a> (Emacs minor mode)</li>
-<li><a href="https://github.com/jakebox/finance">finance</a> (TUI budget / finance tracker in Haskell)</li>
-<li><a href="https://beerbellyapp.com/">Beerbelly</a> (a new way to rate and track your favorite beers)</li>
-<li><a href="https://github.com/jakebox/jake-emacs">emacs configuration</a> (my personal config, 100+ GitHub stars)</li>
-<li><a href="https://github.com/jakebox/partifuller">partifuller</a> (90s-themed party RSVP system in Rust)</li>
-</ul>
-<h2 id="things-ive-done-and-enjoy-doing">Things I’ve done and enjoy doing</h2>
-<ul>
-<li>Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (<em>q.v.</em>: <a href="./pages/diy.html">DIY</a>)</li>
-<li>Launched high-altitude balloons with my team at Columbia. (<em>q.v.</em>: <a href="./pages/balloons.html">Balloons</a>)</li>
-<li>Worked writing software at some interesting places.</li>
-<li>Learning about RF, got my amateur radio license. KE2CZX.</li>
-<li>Tuning my digital life.</li>
-<li>Fountain pens and stationery. (<em>q.v.</em>: <a href="./pages/stationery.html">Stationery</a>)</li>
-</ul>
-<h2 id="talkspublications">Talks/publications</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=6bAvPhhRbyM&amp;list=UUmIe9q2LiRcDk0swxNGfw6A">Amateur Radio at Columbia University - History to Present Day</a> (PAARA, August 2025)</li>
-<li><a href="https://youtu.be/L897BU3BT6g?si=2juEOZcsMG8bLZ8Z&amp;t=1262">Sharing Emacs Is Caring Emacs | EmacsConf 2023 Closing Keynote</a> (EmacsConf 2023)</li>
-<li><a href="https://www.youtube.com/watch?v=7wKwPAWvPQs"><code>(concat "Remote High School" "Emacs")</code></a> (EmacsNYC, February 2021)</li>
-</ul>
-<h2 id="this-page">This page</h2>
-<p>Previously, I generated a single page from an <code>org-mode</code> document using <code>Emacs</code>. I appreciate the
-simplicity of this approach. For a little more flexibility, I am now using <a href="https://jaspervdj.be/hakyll/">Hakyll</a> to generate
-everything from the Org source files. (<em>q.v.</em>: <a href="./posts/2025-09-12-this_blog.html">Switching my website to Hakyll</a>)</p>
-<hr />
-<p>emacs-uptime is an autoloaded interactive native-comp-function in ‘time.el’.</p>
-<p>(emacs-uptime &amp;optional FORMAT HERE)</p>
-<p>Inferred type: (function (&amp;optional t t) t)</p>
-<p>Probably introduced at or before Emacs version 23.1.</p>
-<span class="emacs-uptime" id="emacs-uptime">Uptime: Loading...</span>
-
+            <h2 id="jacob-boxerman">Jacob Boxerman</h2>
+<p>My deliberate digital life &amp; the things outside of it.</p>
+<p><a href="./pages/about.html">About</a> / <a href="./pages/projects.html">Projects</a> / <a href="./archive.html">Blog</a></p>
         </main>
         </div>
 

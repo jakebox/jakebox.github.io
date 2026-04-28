@@ -1,5 +1,5 @@
 ---
-title: "Export Org Mode to HTML"
+title: 'Guide: Export Org Mode to HTML'
 description: Export your org mode files to HTML files, easily viewable and sharable. We'll go over basic options to adjust the export to your liking, and then take a look at custom CSS and setupfiles to make your exports beautiful.
 ---
 #+TITLE: Export Org Mode to HTML

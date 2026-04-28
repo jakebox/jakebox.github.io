@@ -9,58 +9,75 @@ books. *Motivation:* to remember what I have read; to look for patterns.
 
 -----
 
-|-----------------------------------------------+-------------------+------------+-------|
-| Which                                         | Who               | When Did I | Stars |
-|-----------------------------------------------+-------------------+------------+-------|
-| The Count of Monte Cristo                     | Alexandre Dumas   |    12/2025 | =*****= |
-| Rise and Kill First                           | Ronen Bergman     |    12/2025 | =***=   |
-| Great Expectations                            | Charles Dickens   |    11/2025 | =*****= |
-| The Unbearable Lightness of Being             | Milan Kundera     |       2024 | =***=   |
-| The Turn of the Screw                         | Henry James       |       2024 | =****=  |
-| Northanger Abbey                              | Jane Austen       |       2024 | =****=  |
-| The Odyssey                                   | Homer             |       2023 |       |
-| The Iliad of Homer                            | Homer             |       2023 |       |
-| Leviathan                                     | Thomas Hobbes     |       2023 |       |
-| Infero                                        | Dante             |       2023 |       |
-| To the Lighthouse                             | Virginia Woolf    |       2023 |       |
-| The Aeneid of Virgil                          | Virgil            |       2023 |       |
-| Plato's Republic                              | Plato             |       2023 |       |
-| The Nicomachean Ethics                        | Aristotle         |       2023 |       |
-| Politics                                      | Aristotle         |       2023 |       |
-| Words That Hurt, Words That Heal              | Joseph Telushkin  |    10/2021 |       |
-| Guns, Germs, and Steel                        | Jared Diamond     |    06/2021 |       |
-| Sapiens                                       | Yuval Noah Harari |    06/2021 |       |
-| Rebbe                                         | Joseph Telushkin  |       2017 |       |
-| Blink                                         | Malcolm Gladwell  |            |       |
-| The Tipping Point                             | Malcolm Gladwell  |            |       |
-| Influence                                     | Robert Cialdini   |            |       |
-| The Intelligent Investor                      | Benjamin Graham   |            |       |
-| Predictably Irrational                        | Dan Ariely        |            |       |
-| Science, Religion, and the Search for Meaning | Jonathan Sacks    |            |       |
-| Not in God's Name                             | Jonathan Sacks    |            |       |
-| To Kill A Mockingbird                         | Harper Lee        |            |       |
-| Steve Jobs                                    | Walter Isaacson   |            |       |
-| The Innovators                                | Walter Isaacson   |            |       |
-| The Hitchhiker's Guide to the Galaxy          | Douglas Adams     |            |       |
-| Winesburg, Ohio                               | Sherwood Anderson |            |       |
-| If on a winter's night a traveler             | Italo Calvino     |            |       |
-| 1984                                          | George Orwell     |            |       |
-| So, Anyway                                    | John Cleese       |            |       |
-| Pride and Prejudice                           | Jane Austen       |            |       |
-| The Adventures of Huckleberry Finn            | Mark Twain        |            |       |
-| The Adventures of Tom Sawyer                  | Mark Twain        |            |       |
-| Fahrenheit 451                                | Ray Bradbury      |            |       |
-| In Cold Blood                                 | Truman Capote     |            |       |
-| Happy to Be Here                              | Garrison Keillor  |            |       |
-| The Keillor Reader                            | Garrison Keillor  |            |       |
-| Slapstick                                     | Kurt Vonnegut     |            |       |
-| Mother Night                                  | Kurt Vonnegut     |            |       |
-| While Mortals Sleep                           | Kurt Vonnegut     |            |       |
-| The Sirens of Titan                           | Kurt Vonnegut     |            |       |
-| God Bless You, Mr. Rosewater                  | Kurt Vonnegut     |            |       |
-| Cat's Cradle                                  | Kurt Vonnegut     |            |       |
-| Player Piano                                  | Kurt Vonnegut     |            |       |
-|-----------------------------------------------+-------------------+------------+-------|
+|-----------------------------------------------+----------------------+------------+-------|
+| Which                                         | Who                  | When Did I | Stars |
+|-----------------------------------------------+----------------------+------------+-------|
+| City of Glass                                 | Paul Auster          |    02/2026 | =***=   |
+| Play It as It Lays                            | Joan Didion          |    02/2026 | =*=     |
+| Giovanni's Room                               | James Baldwin        |    01/2026 | =**=    |
+| David Copperfield                             | Charles Dickens      |    01/2026 | =****=  |
+| The Count of Monte Cristo                     | Alexandre Dumas      |    12/2025 | =*****= |
+| Rise and Kill First                           | Ronen Bergman        |    12/2025 | =***=   |
+| Great Expectations                            | Charles Dickens      |    11/2025 | =*****= |
+| Sweetness and Power                           | Sidney Mintz         |    09/2025 | =**=    |
+| The Unbearable Lightness of Being             | Milan Kundera        |       2024 | =***=   |
+| The Turn of the Screw                         | Henry James          |       2024 | =****=  |
+| Northanger Abbey                              | Jane Austen          |       2023 | =****=  |
+| Don Quixote                                   | Miguel Cervantes     |       2023 |       |
+| The Odyssey                                   | Homer                |       2023 |       |
+| The Iliad of Homer                            | Homer                |       2023 |       |
+| Leviathan                                     | Thomas Hobbes        |       2023 |       |
+| Infero                                        | Dante                |       2023 | =****=  |
+| To the Lighthouse                             | Virginia Woolf       |       2023 |       |
+| The Aeneid of Virgil                          | Virgil               |       2023 | =*****= |
+| Plato's Republic                              | Plato                |       2023 |       |
+| The Nicomachean Ethics                        | Aristotle            |       2023 |       |
+| Politics                                      | Aristotle            |       2023 |       |
+| Parable of the Sower                          | Octavia Butler       |       2022 | =**=    |
+| Song of Solomon                               | Toni Morrison        |       2022 | =****=  |
+| Words That Hurt, Words That Heal              | Joseph Telushkin     |    10/2021 |       |
+| Guns, Germs, and Steel                        | Jared Diamond        |    06/2021 |       |
+| Sapiens                                       | Yuval Noah Harari    |    06/2021 |       |
+| Say Nothing                                   | Patrick Radden Keefe |       2020 |       |
+| Killers of the Flower Moon                    | David Grann          |       2019 |       |
+| Rebbe                                         | Joseph Telushkin     |       2017 | =*****= |
+| Blink                                         | Malcolm Gladwell     |            |       |
+| The Tipping Point                             | Malcolm Gladwell     |            |       |
+| Influence                                     | Robert Cialdini      |            |       |
+| The Intelligent Investor                      | Benjamin Graham      |            |       |
+| Predictably Irrational                        | Dan Ariely           |            |       |
+| Science, Religion, and the Search for Meaning | Jonathan Sacks       |            |       |
+| Not in God's Name                             | Jonathan Sacks       |            |       |
+| To Kill A Mockingbird                         | Harper Lee           |            |       |
+| Steve Jobs                                    | Walter Isaacson      |            |       |
+| The Innovators                                | Walter Isaacson      |            |       |
+| The Hitchhiker's Guide to the Galaxy          | Douglas Adams        |            |       |
+| Winesburg, Ohio                               | Sherwood Anderson    |            |       |
+| If on a winter's night a traveler             | Italo Calvino        |            |       |
+| 1984                                          | George Orwell        |            |       |
+| So, Anyway                                    | John Cleese          |            |       |
+| Pride and Prejudice                           | Jane Austen          |            |       |
+| The Adventures of Huckleberry Finn            | Mark Twain           |            |       |
+| The Adventures of Tom Sawyer                  | Mark Twain           |            |       |
+| Fahrenheit 451                                | Ray Bradbury         |            |       |
+| In Cold Blood                                 | Truman Capote        |            |       |
+| Happy to Be Here                              | Garrison Keillor     |            |       |
+| The Keillor Reader                            | Garrison Keillor     |            |       |
+| Slapstick                                     | Kurt Vonnegut        |            |       |
+| Mother Night                                  | Kurt Vonnegut        |            |       |
+| While Mortals Sleep                           | Kurt Vonnegut        |            |       |
+| The Sirens of Titan                           | Kurt Vonnegut        |            |       |
+| God Bless You, Mr. Rosewater                  | Kurt Vonnegut        |            |       |
+| Cat's Cradle                                  | Kurt Vonnegut        |            |       |
+| Player Piano                                  | Kurt Vonnegut        |            |       |
+| Romeo and Juliet                              | Shakespeare          |            |       |
+| Othello                                       | Shakespeare          |            |       |
+| Merchant of Venice                            | Shakespeare          |            |       |
+| Measure for Measure                           | Shakespeare          |            |       |
+| Much Ado About Nothing                        | Shakespeare          |            |       |
+| As You Like It                                | Shakespeare          |            |       |
+| Hamlet                                        | Shakespeare          |            |       |
+|-----------------------------------------------+----------------------+------------+-------|
 
 * Film & Television :noexport:
 

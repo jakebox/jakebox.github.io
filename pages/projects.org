@@ -1,0 +1,11 @@
+---
+title: projects
+---
+#+TITLE: Projects
+
++ [[https://withixion.com/][ixion]] (agentic AI purchasing and inventory management platform)
++ [[https://github.com/jakebox/org-preview-html][org-preview-html]] (Emacs minor mode)
++ [[https://github.com/jakebox/finance][finance]] (TUI budget / finance tracker in Haskell)
++ [[https://beerbellyapp.com/][Beerbelly]] (a new way to rate and track your favorite beers)
++ [[https://github.com/jakebox/jake-emacs][emacs configuration]] (my personal config, 100+ GitHub stars)
++ [[https://github.com/jakebox/partifuller][partifuller]] (90s-themed party RSVP system in Rust)
