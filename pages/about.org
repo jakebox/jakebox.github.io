@@ -1,12 +1,12 @@
 ---
-title: about
+title: About
 ---
 #+TITLE: About
 
 ** Interests
 
 + Woodworking/DIY. I teach woodshop tools at our Makerspace and spend time on my own projects. (/q.v./: [[./diy.html][DIY]])
-+ Launched high-altitude balloons with my team at Columbia. (/q.v./: [[./balloons.html][Balloons]])
++ aunched high-altitude balloons with my team at Columbia. (/q.v./: [[./balloons.html][Balloons]])
 + Worked writing software at some interesting places.
 + Learning about RF, got my amateur radio license. KE2CZX.
 + Tuning my digital life.

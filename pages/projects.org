@@ -9,3 +9,4 @@ title: projects
 + [[https://beerbellyapp.com/][Beerbelly]] (a new way to rate and track your favorite beers)
 + [[https://github.com/jakebox/jake-emacs][emacs configuration]] (my personal config, 100+ GitHub stars)
 + [[https://github.com/jakebox/partifuller][partifuller]] (90s-themed party RSVP system in Rust)
++ [[https://www.cs.columbia.edu/~sedwards/classes/2026/4840-spring/reports/Real-Time-Room-EQ-presentation.pdf][Real-Time Room EQ]] (real-time audio room equalization on FPGA — [[https://www.cs.columbia.edu/~sedwards/classes/2026/4840-spring/reports/Real-Time-Room-EQ-report.pdf][report]])

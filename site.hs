@@ -85,9 +85,14 @@ main = hakyllWith config $ do
     match "index.org" $ do
         route $ setExtension "html"
         compile $ do
-          pandocCompiler
+          latest <- fmap (take 1) . recentFirst =<< loadAllSnapshots "posts/*" "content"
+          let ctx = listField "latestPost" allPostsCtx (return latest)
+                 <> myDefaultContext
+          getResourceBody
+            >>= applyAsTemplate ctx
+            >>= renderPandoc
             >>= return . fmap demoteHeaders
-            >>= loadAndApplyTemplate "templates/default.html" myDefaultContext
+            >>= loadAndApplyTemplate "templates/default.html" ctx
             >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler

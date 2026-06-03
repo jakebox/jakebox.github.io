@@ -3,7 +3,10 @@ title: Home
 ---
 
 * Jacob Boxerman
-
 My deliberate digital life & the things outside of it.
 
-[[./pages/about.html][About]] / [[./pages/projects.html][Projects]] / [[./archive.html][Blog]]
+$for(latestPost)$
+Latest post: [[.$url$][$title$]]
+$endfor$
+
+Or: [[./pages/about.html][About]] / [[./pages/projects.html][Projects]] / [[./archive.html][Blog]]
