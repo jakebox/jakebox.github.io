@@ -2,11 +2,25 @@
 title: Home
 ---
 
-* Jacob Boxerman
-My deliberate digital life & the things outside of it.
+#+BEGIN_EXPORT html
+<div class="letterhead">
+  <div class="letterhead-name">Jacob Boxerman</div>
+  <div class="letterhead-tagline">Engineer<span class="letterhead-amp"> &c.</span></div>
+  <div class="letterhead-address">
+    <a href="./pages/about.html">About</a>
+    <a href="./pages/projects.html">Projects</a>
+    <a href="./archive.html">Posts</a>
+  </div>
+</div>
+#+END_EXPORT
+
+My deliberate digital life & the things outside of it
 
 $for(latestPost)$
-Latest post: [[.$url$][$title$]]
+Latest: [[.$url$][$title$]] \\
+Selected: [[./posts/2026-02-05-declarative_reproducible.html][Declarative, reproducible Emacs with straight.el and use-package]]
+/ [[./posts/2025-08-31-bankruptcy.html][How to declare Emacs bankruptcy]]
+/
+[[./posts/2026-05-14-clean_girl.html]["The Clean Girl": Rituals and Morals]]
 $endfor$
 
-Or: [[./pages/about.html][About]] / [[./pages/projects.html][Projects]] / [[./archive.html][Blog]]

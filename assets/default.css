@@ -226,6 +226,56 @@ body.page-Home #main_content {
 	padding-top: var(--space-6);
 }
 
+body.page-Home #sidebar h2:first-of-type {
+	display: none;
+}
+
+body.page-Home #sidebar {
+	padding-top: var(--space-3);
+}
+
+/* Letterhead */
+.letterhead {
+	font-family: 'EB Garamond', Georgia, serif;
+	margin-bottom: var(--space-6);
+	line-height: 1.5;
+	display: inline-block;
+	text-align: center;
+}
+
+.letterhead-name {
+	font-size: var(--text-md);
+	font-weight: 600;
+    text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.letterhead-tagline {
+	font-size: var(--text-sm);
+	letter-spacing: 0.02em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.letterhead-amp {
+	font-variant: normal;
+	font-style: regular;
+    text-transform: lowercase;
+}
+
+.letterhead-address {
+	display: flex;
+	justify-content: center;
+    font-size: var(--text-sm);
+	gap: 1.5rem;
+    font-weight: bold;
+}
+
+.letterhead-address a {
+	color: var(--text-color);
+}
+
+
 body.page-Home #main_content h2,
 body.page-Home #main_content > p {
 	max-width: 28rem;
@@ -366,9 +416,7 @@ button:hover {
 	.side-by-side-images {
 		flex-direction: column;
 	}
-}
 
-@media (max-width: 768px) {
 	#content {
 		flex-direction: column;
 	}
@@ -385,30 +433,14 @@ button:hover {
 		line-height: var(--lh-tight);
 	}
 
-	#sidebar h2 {
-		font-size: var(--text-md);
-		margin-top: var(--space-2);
-		margin-bottom: var(--space-2);
-	}
-
 	#sidebar h2:not(:first-of-type) {
 		font-size: var(--text-base);
 		margin-top: var(--space-4);
 		margin-bottom: var(--space-3);
 	}
 
-	#sidebar ul li {
-		margin-bottom: var(--space-2);
-	}
-
-	#sidebar ul li a {
-		font-size: var(--text-sm);
-		padding: var(--space-1) 0;
-	}
-
 	#main_content {
 		margin-left: 0;
-		padding: var(--space-3) var(--space-3);
+		padding: var(--space-3);
 	}
-
 }

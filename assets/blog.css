@@ -187,12 +187,6 @@ img {
 }
 
 
-@media (max-width: 1024px) {
-  #main_content {
-    padding: 20px 40px;
-  }
-}
-
 @media (max-width: 480px) {
   #main_content {
     padding: 16px 24px;
