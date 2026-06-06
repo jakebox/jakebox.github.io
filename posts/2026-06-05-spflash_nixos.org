@@ -1,0 +1,50 @@
+---
+title: 'Running SP Flash Tool on NixOS'
+---
+
+SmartPhone Flash Tool is software for flashing ROMs onto devices that run MediaTek processors. I recently needed to use the software and managed to do so on my NixOS machine with only a bit of difficulty. Here is how.
+
+* FHS
+We need to use =buildFHSEnv= to create an FHS-compatible (FileSystem Hierarchy Standard) environment for SP Flash Tool to run in, as it expects a standard filesystem structure with paths to shared libraries in places like =/usr/lib=. Here's what was required to run SP Flash Tool v.5.1924:
+
+#+BEGIN_SRC nix
+  { pkgs ? import <nixpkgs> {} }:
+
+  (pkgs.buildFHSEnv {
+    name = "spflash-fhs-env";
+    targetPkgs = pkgs: [
+      pkgs.stdenv.cc.cc
+      pkgs.glib
+      pkgs.glibc
+      pkgs.qt5.qtbase
+      pkgs.xorg.libXrender
+      pkgs.fontconfig
+      pkgs.freetype
+      pkgs.zlib
+      pkgs.libxext
+      pkgs.libx11
+      pkgs.libpng12
+      pkgs.libsm
+      pkgs.libice
+      pkgs.gtk2
+    ];
+  }).env
+#+END_SRC
+
+You can save this in a file e.g. =fhsenv.nix= and enter it with =nix-shell fhsenv.nix=.
+
+The second requirement is to ensure your device gets properly connected over USB. This can be done with udev rules (udev manages the =/dev= directory in Linux).
+
+Here's what I used:
+
+#+BEGIN_SRC nix
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", ATTR{idProduct}=="2000", MODE="0666", GROUP="plugdev"
+  '';
+
+  users.users.me.extraGroups = [ "plugdev" ];
+#+END_SRC
+
+You may also need to add yourself to the =plugdev= group as I show above.
+
+You can run SP Flash Tool by using the provided =flash.sh= or equivalent in the download from SP Flash Tool's website.

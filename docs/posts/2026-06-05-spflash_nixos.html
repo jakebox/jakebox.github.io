@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Jacob Boxerman">
+        <meta name="description" content="Personal website and blog of Jacob Boxerman">
+        <title>Jacob Boxerman - Running SP Flash Tool on NixOS</title>
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style>
+        :root{--bg-color:#f8f8f8;--text-color:#181818;--accent-color:#4389f7;--sidebar-bg:#eee;--border-color:#ccc}html[data-theme="dark"]{--bg-color:#130505;--text-color:#e1bd74;--accent-color:#f09536;--sidebar-bg:#1a0a0a;--border-color:#332222}body{background:var(--bg-color);font-family:'EB Garamond',Georgia,serif;line-height:1.4em;color:var(--text-color);font-size:18px;margin:0;height:100vh}#content{display:flex;max-width:1200px;min-height:100vh}#sidebar{width:250px;min-width:200px;padding:40px 20px;background-color:var(--sidebar-bg);border-right:1px solid var(--border-color);box-sizing:border-box;flex-shrink:0;margin-left:0;margin-right:40px;height:100vh;position:fixed;left:0;top:0;z-index:10}#main_content{flex-grow:1;padding:20px 20px 40px 20px;box-sizing:border-box;margin-left:290px}
+        </style>
+        <script>
+        (function() {
+          var theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
+        <link rel="preload" href="../assets/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/default.css"></noscript>
+        <link rel="preload" href="../assets/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../assets/blog.css"></noscript>
+        <script src="../assets/script.js" defer></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKYYG67N0W"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BKYYG67N0W');
+        </script>
+    </head>
+    <body class="page-Running SP Flash Tool on NixOS">
+      <div id="content" class="content">
+        <div id="sidebar">
+          <h2 id="section-1"><a href="../">Jacob Boxerman</a></h2>
+<p><span class="math inline"><span class="page-list"><a href="../pages/about.html">about</a><span class="page-sep">&nbsp;/</span> <a href="../pages/balloons.html">balloons</a><span class="page-sep">&nbsp;/</span> <a href="../pages/diy.html">diy</a><span class="page-sep">&nbsp;/</span> <a href="../pages/education.html">education</a><span class="page-sep">&nbsp;/</span> <a href="../pages/emacs.html">emacs</a><span class="page-sep">&nbsp;/</span> <a href="../pages/literature.html">literature</a><span class="page-sep">&nbsp;/</span> <a href="../pages/projects.html">projects</a><span class="page-sep">&nbsp;/</span> <a href="../pages/references.html">references</a><span class="page-sep">&nbsp;/</span> <a href="../pages/stationery.html">stationery</a><span class="page-sep">&nbsp;/</span> <a href="../pages/talks.html">talks</a><span class="page-sep">&nbsp;/</span> <a href="../pages/tex.html">tex</a><span class="page-sep">&nbsp;/</span> </span>
+</span></p>
+        </div>
+
+        <main id="main_content">
+            <!-- <h1>Running SP Flash Tool on NixOS</h1> -->
+            <article>
+    <section class="header">
+        <h1>Running SP Flash Tool on NixOS</h1>
+        Posted on June  5, 2026
+        
+    </section>
+    <section>
+        <p>SmartPhone Flash Tool is software for flashing ROMs onto devices that run MediaTek processors. I recently needed to use the software and managed to do so on my NixOS machine with only a bit of difficulty. Here is how.</p>
+<h2 id="fhs">FHS</h2>
+<p>We need to use <code class="verbatim">buildFHSEnv</code> to create an FHS-compatible (FileSystem Hierarchy Standard) environment for SP Flash Tool to run in, as it expects a standard filesystem structure with paths to shared libraries in places like <code class="verbatim">/usr/lib</code>. Here’s what was required to run SP Flash Tool v.5.1924:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode nix"><code class="sourceCode nix"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> <span class="va">pkgs</span> <span class="op">?</span> <span class="bu">import</span> &lt;nixpkgs&gt; <span class="op">{}</span> <span class="op">}</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">(</span>pkgs<span class="op">.</span>buildFHSEnv <span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">name</span> <span class="op">=</span> <span class="st">&quot;spflash-fhs-env&quot;</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">targetPkgs</span> <span class="op">=</span> <span class="va">pkgs</span><span class="op">:</span> <span class="op">[</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>stdenv<span class="op">.</span>cc<span class="op">.</span>cc</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>glib</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>glibc</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>qt5<span class="op">.</span>qtbase</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>xorg<span class="op">.</span>libXrender</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>fontconfig</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>freetype</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>zlib</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>libxext</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>libx11</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>libpng12</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>libsm</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>libice</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    pkgs<span class="op">.</span>gtk2</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="op">];</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="op">}).</span>env</span></code></pre></div>
+<p>You can save this in a file e.g. <code class="verbatim">fhsenv.nix</code> and enter it with <code class="verbatim">nix-shell fhsenv.nix</code>.</p>
+<p>The second requirement is to ensure your device gets properly connected over USB. This can be done with udev rules (udev manages the <code class="verbatim">/dev</code> directory in Linux).</p>
+<p>Here’s what I used:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode nix"><code class="sourceCode nix"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>services<span class="op">.</span>udev<span class="op">.</span>extraRules = <span class="st">''</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">  SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0e8d&quot;, ATTR{idProduct}==&quot;2000&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">''</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>users<span class="op">.</span>users<span class="op">.</span>me<span class="op">.</span>extraGroups = <span class="op">[</span> <span class="st">&quot;plugdev&quot;</span> <span class="op">]</span>;</span></code></pre></div>
+<p>You may also need to add yourself to the <code class="verbatim">plugdev</code> group as I show above.</p>
+<p>You can run SP Flash Tool by using the provided <code class="verbatim">flash.sh</code> or equivalent in the download from SP Flash Tool’s website.</p>
+    </section>
+</article>
+
+        </main>
+        </div>
+
+        <!-- <footer> -->
+        <!--     Site proudly generated by -->
+        <!--     <a href="http://jaspervdj.be/hakyll">Hakyll</a> -->
+        <!-- </footer> -->
+
+    </body>
+</html>
