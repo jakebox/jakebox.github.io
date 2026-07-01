@@ -1,0 +1,8 @@
+---
+title: Technical
+---
+
+Notes and references on tools I use.
+
+- [[./tex.html][LaTeX]] — layout templates, fonts, and links.
+- [[./emacs.html][Emacs]] — editing tricks and configuration notes.
