@@ -5,7 +5,7 @@ title: Home
 #+BEGIN_EXPORT html
 <div class="letterhead">
   <div class="letterhead-name">Jacob Boxerman</div>
-  <div class="letterhead-tagline">Engineer<span class="letterhead-amp"> &c.</span></div>
+  <!-- <div class="letterhead-tagline">Engineer<span class="letterhead-amp"> &c.</span></div> -->
   <div class="letterhead-address">
     <a href="./pages/about.html">About</a>
     <a href="./pages/projects.html">Projects</a>

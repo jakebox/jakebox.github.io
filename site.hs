@@ -74,7 +74,7 @@ main = hakyllWith config $ do
 
     match "sidebar.org" $ do
       compile $ do
-        pages <- loadAllSnapshots ("pages/*" .&&. complement "pages/tex.org" .&&. complement "pages/emacs.org") "content"
+        pages <- loadAllSnapshots ("pages/*" .&&. complement "pages/tex.org" .&&. complement "pages/emacs.org" .&&. complement "pages/balloons.org" .&&. complement "pages/stationery.org" ) "content"
         let thisCtx =
               listField "pages" pageCtx (return pages)
         pandocCompiler

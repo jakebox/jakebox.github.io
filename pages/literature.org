@@ -2,16 +2,14 @@
 title: Literature
 ---
 
-This is a non-comprehensive list of the books I have read. I include books that were assigned for a
-school course /iff/: I paid particular attention to, and can claim to have some taste for it. *I
-exclude:* books of which I only read a small excerpt; textbooks; reference books; technical
-books. *Motivation:* to remember what I have read; to look for patterns.
+This is a non-comprehensive list of the books I have read.
 
 -----
 
 |-----------------------------------------------+----------------------+------------+-------|
 | Which                                         | Who                  | When Did I | Stars |
 |-----------------------------------------------+----------------------+------------+-------|
+| Leaving Home                                  | Garrison Keillor     |    10/2026 | =****=  |
 | City of Glass                                 | Paul Auster          |    02/2026 | =***=   |
 | Play It as It Lays                            | Joan Didion          |    02/2026 | =*=     |
 | Giovanni's Room                               | James Baldwin        |    01/2026 | =**=    |
